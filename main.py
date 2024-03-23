@@ -697,7 +697,7 @@ def search():
     print(f'Search query: {query}')
     
     # Construct the file path based on the lowercase query
-    file_path = f'{query}.txt'
+    file_path = f'./csv/{query}.txt'
     
     # Check if the file exists
     if os.path.exists(file_path):
