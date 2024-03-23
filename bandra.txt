@@ -1,0 +1,35 @@
+"source_address","destination_address","temperature","weather","food","clothes","transportation",imglink
+
+"Bandra, Mumbai","Bandra Fort","Varies (typically 25-35°C)","Scenic views","Local snacks","Casual wear","Auto-rickshaws, cabs","https://images.app.goo.gl/eqmrsoSAuvkFUJY89"
+
+"Bandra, Mumbai","Bandra-Worli Sea Link","Varies (typically 25-35°C)","Coastal drive","N/A","Casual wear","Taxis, cabs","https://images.app.goo.gl/LYXmKxpXj4ugnTJT6"
+
+"Bandra, Mumbai","Mount Mary Basilica","Varies (typically 25-35°C)","Religious site","Local eateries","Modest attire","Auto-rickshaws, cabs","https://images.app.goo.gl/GdGPr71rFYjiP5qH9"
+
+"Bandra, Mumbai","Carter Road Promenade","Varies (typically 25-35°C)","Seaside walk","Various cafes","Casual wear","Auto-rickshaws, cabs","https://images.app.goo.gl/vMJbS6koevBDsYUx9"
+
+"Bandra, Mumbai","Bandra Kurla Complex (BKC)","Varies (typically 25-35°C)","Business district","International cuisine","Business casual","Auto-rickshaws, cabs","https://images.app.goo.gl/FTYiUspFzjrxML4o6"
+
+"Bandra, Mumbai","Pali Hill","Varies (typically 25-35°C)","Residential area","Local cafes","Casual wear","Auto-rickshaws, cabs","https://images.app.goo.gl/fFBio24WScVWti686"
+
+"Bandra, Mumbai","Linking Road","Varies (typically 25-35°C)","Shopping street","Multicuisine options","Casual wear","Auto-rickshaws, cabs","https://images.app.goo.gl/7BQWB99YwP6QGvQZ7"
+
+"Bandra, Mumbai","D'Monte Park Recreation Centre","Varies (typically 25-35°C)","Recreational park","N/A","Casual wear","Auto-rickshaws, cabs","https://images.app.goo.gl/acyKyr7am6gksVCRA"
+
+"Bandra, Mumbai","Bandra Amphitheatre","Varies (typically 25-35°C)","Open-air events","Local vendors","Casual wear","Auto-rickshaws, cabs","https://images.app.goo.gl/sKqXkdEsSmUJAWJf9"
+
+"Bandra, Mumbai","Bandra Railway Station","Varies (typically 25-35°C)","Transportation hub","Street food stalls","Casual wear","Trains, auto-rickshaws, cabs"https://images.app.goo.gl/SnTg3AAnHJ3xbTFy7"
+
+"Bandra, Mumbai","Ranwar Village","Varies (typically 25-35°C)","Heritage village","Local eateries","Casual wear","Auto-rickshaws, cabs","https://images.app.goo.gl/np6cKF7k85QF8GYq9"
+
+"Bandra, Mumbai","Hill Road Shopping Complex","Varies (typically 25-35°C)","Shopping destination","Diverse cuisine","Casual wear","Auto-rickshaws, cabs","https://images.app.goo.gl/3zF2LWFQAJuru7bb9"
+
+"Bandra, Mumbai","St. Andrew's Church","Varies (typically 25-35°C)","Historical church","Local vendors","Modest attire","Auto-rickshaws, cabs","https://images.app.goo.gl/tnAbedp2p2nMBoVh6"
+
+"Bandra, Mumbai","Pali Naka","Varies (typically 25-35°C)","Urban village area","Street food stalls","Casual wear","Auto-rickshaws, cabs","https://images.app.goo.gl/oa1Rzzd9YApycb8F6"
+
+"Bandra, Mumbai","Bandra Reclamation","Varies (typically 25-35°C)","Commercial area","Modern cafes","Business casual","Auto-rickshaws, cabs","https://images.app.goo.gl/C1sehGH1pZxs4TWd8"
+
+"Bandra, Mumbai","Bandra Bandstand","Varies (typically 25-35°C)","Coastal promenade","Beachside eateries","Casual beachwear","Auto-rickshaws, cabs","https://images.app.goo.gl/zQmiQAxMxLPfatFv9"
+
+"Bandra, Mumbai","Bandra Terminus","Varies (typically 25-35°C)","Railway station","Local vendors","Casual wear","Trains, auto-rickshaws, cabs","https://images.app.goo.gl/dkrmJgZp1FMZywdG9"

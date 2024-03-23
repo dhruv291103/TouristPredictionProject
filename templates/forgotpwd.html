@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log In </title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/loginsignUp.css') }}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/loginlogouticon.css')}}">
+    <style>
+        .background-image {
+            height: 60vh;
+            width:100%;
+            background-image: url('https://images.unsplash.com/photo-1650612157176-b9e3b50c24b6?auto=format&fit=crop&q=80&w=1826&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+            background-repeat: no-repeat;
+            background-size:cover;
+            background-position: center;
+        }
+    </style>
+</head>
+
+<body>
+  {% include 'navbar.html' %}
+
+    <div class="background-image">
+    <div class="wrapper login">
+        <div class="container-form mb-5">
+            <div class="col-left">
+                <div class="login-text">
+                    <h2>Welcome!</h2>
+                    <p>Change your account<br> password For Free!</p>
+                    <a href="{{ url_for('signUp')}}" class="btn">Sign Up</a>
+                </div>
+            </div>
+
+            <div class="col-right">
+                <div class="login-form">
+                    <h2 class="border-bottom border-danger">Reset your password</h2>
+                    <form action="/forgot" method="POST">
+                        <p>
+                            <!-- <label for="email">Username/Email address<span>*</span></label> -->
+                            <input type="email" placeholder="email" name="email" title="first character should be letter then integer number then @gmail.com" pattern="[A-Za-z]{1,}[0-9]{1,}[@]{1}gmail.com" required>
+                        </p><br>
+                        <p>
+                            <!-- <label for="email">Username/Email address<span>*</span></label> -->
+                            <input type="password" placeholder="Enter new password" name="new password" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required>
+                        </p><br>
+                        <p>
+                            <!-- <label for="pwd">Password<span>*</span></label> -->
+                            <input type="password" placeholder="Confirm password" name="confirm password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required>
+                        </p><br>
+                        <p>
+                            <!-- <input type="submit" value="Sign In"> -->
+                            <input type="submit" style="background-image: linear-gradient(-225deg, #FF057C 0%, #8D0B93 50%, #321575 100%);" class="btn text-white rounded-5 mb-3" value="Change password">
+                        </p><br>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+ <!-- start of footer -->
+ {% include 'footer.html' %}
+<!-- end of footer -->
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+   <script>
+  const LoginDetails = document.getElementById("LoginDetails")
+  const loginDiv = document.getElementById("loginDiv")
+  const loginmenu = document.getElementById("loginmenu")
+  const Info_div = document.getElementById("info")
+  const ul_info = document.getElementById("ulinfo")
+  const liname = document.getElementById("liname")
+  const liemail = document.getElementById("liemail")
+  const li_logout = document.querySelector("#logout")
+  console.log(li_logout);
+
+  if('{{session.email}}')
+  {
+    console.log('{{session.email}}');
+    LoginDetails.style.display = "flex";
+    loginDiv.style.display = "flex";
+    loginmenu.style.display= "none";
+
+    liemail.innerText = '{{session.email}}'.replace('&#39','')
+          ul_info.append(liemail)
+
+    li_logout.innerHTML = "<a href='{{ url_for('login')}}' class='btn btn-light' id='logoutBtn'>Logout</a>"
+    ul_info.appendChild(li_logout);
+    let toggleValue = 1
+        loginDiv.addEventListener("click",()=>{
+  
+    });
+
+
+    loginDiv.addEventListener("click",()=>{
+      console.log("hello");
+      if (toggleValue){
+          Info_div.style.display = "flex";
+          Info_div.classList.add("info")
+          // const a = document.createElement("a")
+          toggleValue = 0 
+        } 
+        else{
+          Info_div.style.display ="none"; 
+          toggleValue = 1
+        } 
+      
+    })
+  }
+</script>
+  </body>
+</html>

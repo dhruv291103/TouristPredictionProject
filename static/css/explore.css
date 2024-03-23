@@ -1,0 +1,34 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap');
+* {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+    list-style: none;
+    font-family: 'Poppins', sans-serif;
+}
+
+.bg-image{
+    height: 70vh;
+    width:100vw;
+    background-position:center;
+    background-repeat: no-repeat;
+    background-size:cover;
+    object-fit: cover;
+}
+
+
+.bg-1{
+    background-image: url("https://www.piramalaranya.com/wp-content/themes/aranya/assets/images/marine-drive/banner-img.png");
+}
+.bg-2{
+    background-image: url("https://moxtain.s3.ap-south-1.amazonaws.com/blogs/PawanaLakeSideCamping/pawana-lake-camping.jpg");
+}
+.bg-3{
+    background-image: url("https://media.istockphoto.com/id/1453462931/photo/maldives-hotel-beach-resort-on-tropical-island-with-aerial-drone-view.jpg?s=612x612&w=0&k=20&c=Mgv-X8WDN5RmQUCapf1HKxGFIK-6PW56Euflghg3zhk=");
+}
+.bg-4{
+    background-image: url("https://paramountclientweb.s3.ap-south-1.amazonaws.com/indian-holiday-trip/Place/2023/Mar/Img_2726_202353271046_juhu_beach.jpg");
+}
+.bg-5{
+    background-image: url("https://assets.cntraveller.in/photos/645373373de70554923b8f9f/master/pass/Matheran%20final%201.jpg");
+}

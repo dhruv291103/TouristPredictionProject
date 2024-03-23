@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Tourist Prediction Web App</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="{{url_for('static', filename='css/loginlogouticon.css')}}">
+    <style>
+        .background-image {
+            background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTubBiL1hIy1UX_Nwzd_TVXTog90TMOuoks1Q&usqp=CAU');
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            height: 80vh;
+            width: 100%;
+            
+        }
+        .description{
+            position:relative;
+            left:2rem;
+            top:30vh;
+            color:white;
+        }
+    </style>
+</head>
+<body>
+    {% include 'navbar.html' %}
+
+    <div class="background-image">
+        <div class="description">
+            <h2>Where2Go Iskon Temple What's Around Iskon Temple</h2>
+            <p class="fs-5 fw-light">>The internationally renowned ISKCON (International Society for Krishna Consciousness) Temple is settled in the  Mumbai neighbourhood of Johesgwari.<br>
+                Not only is this building sacred, but it also serves other purposes. <br>
+               It aspires to provide a comprehensive cultural experience that will blow the visitors’ minds.
+            </p>
+        </div>
+    </div>
+
+    <div class="things_to_do">
+        <div class="trip__grid" id="price">
+            <div class="trip__card">
+                <div class="img_wrapper">
+            <img src="https://media-cdn.tripadvisor.com/media/photo-f/1c/76/ff/2a/d5-cheese-dosa.jpg"/> 
+                </div>
+                <div class="trip__details">
+                    <p> Dakshinayan</p>
+                    <p class="text-dark">It is very famous hotel to eat the breakfast type food item and much more.
+                        lots a variety of breakfast food item are available.
+                    </p>
+                    <div class="booking__price">
+                        <div class="price"><span>From</span> ₹ 10,000</div>
+                        <a class="learn_more" href="{{ url_for('daexplore')}}">explore</a>
+                        <!-- <a class="book__now" href="{{ url_for('Payment')}}">Book Now</a> -->
+                    </div>
+                </div>
+            </div>
+            <div class="trip__card">
+                <div class="img_wrapper">
+                <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1a/50/74/7d/img-20191214-175713-largejpg.jpg?w=1100&h=-1&s=1" >
+                </div>
+                <div class="trip__details">
+                    <p>Juhu Beach</p>
+                    <p class="text-dark">
+                        A vast sandy beach that you might have seen in Bollywood movies, Juhu Chowpatty attracts a large number of visitors due to its prime location. <br>
+                        From giant wheels to street food, it has something for everyone.
+                    </p>
+                    <div class="booking__price">
+                        <div class="price"><span>From</span> ₹5,000</div>
+                        <a class="learn_more" href="{{ url_for('juhuexplore')}}">explore</a>
+                        <!-- <a class="book__now" href="{{ url_for('Payment')}}">Book Now</a> -->
+                    </div>
+                </div>
+            </div>
+            <div class="trip__card">
+                <div class="img_wrapper">
+                <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0d/96/23/9f/inside-the-temple.jpg?w=1000&h=-1&s=1" />
+                </div>
+                <div class="trip__details">
+                    <p>Mukteshwar Temple</p>
+                    <p class="text-dark">
+                        It's temple just opposite to the Iskon temple nice, clean. Devotees are very loving. Cleanliness is followed. Food was excellent!i would like to visit this temple again and again.
+                    </p>
+                    <div class="booking__price">
+                        <div class="price"><span>From</span> ₹ 5,000</div>
+                        <a class="learn_more" href="{{ url_for('mukteshwarexplore')}}">explore</a>
+                        <!-- <a class="book__now" href="{{ url_for('Payment')}}">Book Now</a> -->
+                    </div>
+                </div>
+            </div>
+    </div>
+</div>
+{% include 'footer.html' %}
+</body>
+<script>
+    const LoginDetails = document.getElementById("LoginDetails")
+    const loginDiv = document.getElementById("loginDiv")
+    const loginmenu = document.getElementById("loginmenu")
+    const Info_div = document.getElementById("info")
+    const ul_info = document.getElementById("ulinfo")
+    const liname = document.getElementById("liname")
+    const liemail = document.getElementById("liemail")
+    const li_logout = document.querySelector("#logout")
+    console.log(li_logout);
+  
+    if('{{session.email}}')
+    {
+      console.log('{{session.email}}');
+      LoginDetails.style.display = "flex";
+      loginDiv.style.display = "flex";
+      loginmenu.style.display= "none";
+  
+      liemail.innerText = '{{session.email}}'.replace('&#39','')
+            ul_info.append(liemail)
+  
+      li_logout.innerHTML = "<a href='{{ url_for('login')}}' class='btn btn-light' id='logoutBtn'>Logout</a>"
+      ul_info.appendChild(li_logout);
+      let toggleValue = 1
+          loginDiv.addEventListener("click",()=>{
+    
+      });
+  
+  
+      loginDiv.addEventListener("click",()=>{
+        console.log("hello");
+        if (toggleValue){
+            Info_div.style.display = "flex";
+            Info_div.classList.add("info")
+            // const a = document.createElement("a")
+            toggleValue = 0 
+          } 
+          else{
+            Info_div.style.display ="none"; 
+            toggleValue = 1
+          } 
+        
+      })
+    }
+  </script>
+</html>

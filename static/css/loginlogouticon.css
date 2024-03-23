@@ -1,0 +1,42 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css');
+* {
+    padding:0px;
+    margin:0px;
+    box-sizing: border-box;
+    list-style: none;
+    font-family: 'Poppins', sans-serif;
+}
+#LoginDetails,#loginDiv{
+    display:none;
+}
+#LoginDetails i{
+    font-size: 27px;
+}
+#LoginDetails i:hover{
+    cursor: pointer;
+}
+#info{
+display: none;
+}
+.info{
+display: flex;
+align-items: center;
+justify-content: center;
+overflow: hidden;
+position: absolute;
+z-index: 100;
+top:75px;
+right:10px;
+height: 120px;
+border-radius: 7px;
+width:220px;
+background-color: white;
+color :black;
+box-shadow: rgba(0, 0, 0, 0.10) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+/* display:none; */
+}
+.btn{
+    --bs-btn-padding-x: 0.2rem;
+    --bs-btn-padding-y: 0.3rem;
+}

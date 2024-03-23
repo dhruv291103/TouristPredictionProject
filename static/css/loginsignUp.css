@@ -1,0 +1,232 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap');
+* {
+    padding:0px;
+    margin:0px;
+    box-sizing: border-box;
+    list-style: none;
+    font-family: 'Poppins', sans-serif;
+}
+
+.navbar {
+    width: 100%;
+    height: 80px;
+    background-color: #fee;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    color: #000;
+}
+
+.menu ul {
+    display: flex;
+    align-items: center;
+}
+nav img{
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    margin-inline:.4rem;
+}
+
+.menu ul li a {
+    text-decoration: none;
+    color: #000;
+    padding: 5px 12px;
+    letter-spacing: 2px;
+    font-size: 16px;
+}
+
+.menu ul li a:hover {
+    border-bottom: 4px solid #000;
+    transition: 0.4s;
+}
+
+body {
+    margin: 0;
+    font-family: poppins, Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    color: #666666;
+    background: #eaeff4;
+}
+
+.wrapper {
+    margin: 0 auto;
+    width: 100%;
+    max-width: 1140px;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.container-form {
+    position: relative;
+    width: 100%;
+    border-radius: 10px;
+    max-width: 600px;
+    margin:2rem auto;
+    height: auto;
+    display: flex;
+    background: #ffffff;
+    box-shadow: 0 0 5px #999999;
+}
+
+.mzn{
+    margin-top: 14rem!important;
+}
+.login .col-right {
+    padding: 30px;
+    display: flex;
+}
+
+.login .col-left {
+    width: 60%;
+    padding:3rem;
+    clip-path: polygon(0 0, 0% 100%, 100% 0);
+    background-image: linear-gradient(-225deg, #FF057C 0%, #8D0B93 50%, #321575 100%);
+}
+
+.login .col-right {
+    padding: 60px 30px;
+    width: 50%;
+    margin-left: -10%;
+}
+
+@media(max-width: 575px) {
+    .login .container {
+        flex-direction: column;
+        box-shadow: none;
+    }
+    .login .col-left,
+    .login .col-right {
+        width: 100%;
+        margin: 0;
+        clip-path: none;
+    }
+    .login .col-right {
+        padding: 30px;
+    }
+}
+
+.login .login-text {
+    position: relative;
+    width: 100%;
+    color: #ffffff;
+}
+
+.login .login-text h2 {
+    margin: 0 0 15px 0;
+    font-size: 30px;
+    font-weight: 700;
+}
+
+.login .login-text p {
+    margin: 0 0 20px 0;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 22px;
+}
+
+.login .login-text .btn {
+    display: inline-block;
+    font-family: poppins;
+    padding: 7px 20px;
+    font-size: 16px;
+    letter-spacing: 1px;
+    text-decoration: none;
+    border-radius: 30px;
+    color: #ffffff;
+    outline: none;
+    border: 1px solid #ffffff;
+    box-shadow: inset 0 0 0 0 #ffffff;
+    transition: .3s;
+}
+
+.login .login-text .btn:hover {
+    color: #8D0B93;
+    box-shadow: inset 150px 0 0 0 #ffffff;
+}
+
+.login .login-form {
+    position: relative;
+    width: 100%;
+}
+
+.login .login-form h2 {
+    margin: 0 0 15px 0;
+    font-size: 22px;
+    font-weight: 700;
+}
+
+.login .login-form p {
+    margin: 0 0 10px 0;
+    text-align: left;
+    color: #666666;
+    font-size: 15px;
+}
+
+.login .login-form p:last-child {
+    margin: 0;
+    /* padding-top: 3px; */
+}
+
+.login .login-form p a {
+    color:  #8D0B93;
+    font-size: 14px;
+    text-decoration: none;
+}
+
+.login .login-form label {
+    display: block;
+    width: 100%;
+    margin-bottom: 2px;
+    letter-spacing: .5px;
+}
+
+.login .login-form p:last-child label {
+    width: 60%;
+    float: left;
+}
+
+.login .login-form label span {
+    color: #ff574e;
+    padding-left: 2px;
+}
+
+.login .login-form input {
+    display: block;
+    width: 100%;
+    height: 35px;
+    padding: 0 10px;
+    outline: none;
+    border: 1px solid #cccccc;
+    border-radius: 30px;
+}
+
+.login .login-form input:focus {
+    border-color: #4eff9b;
+}
+
+.login .login-form button,
+.login .login-form input[type=submit] {
+    display: inline-block;
+    width: 100%;
+    margin-top: 5px;
+    color: #8D0B93;
+    font-size: 16px;
+    letter-spacing: 1px;
+    cursor: pointer;
+    background: transparent;
+    border: 1px solid #8D0B93;;
+    border-radius: 30px;
+    box-shadow: inset 0 0 0 0 #8D0B93;
+    transition: .3s;
+}
+
+/* .login .login-form button:hover,
+.login .login-form input[type=submit]:hover {
+    color:#8D0B93;
+    box-shadow: inset 250px 0 0 0 #fff;
+} */

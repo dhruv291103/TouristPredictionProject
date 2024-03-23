@@ -1,0 +1,11 @@
+"source_address","destination_address","temperature","weather","food","clothes","transportation",imglink
+"Jogeshwari, Mumbai","Jogeshwari Caves","Varies (typically 25-35°C)","Historical caves","Local snacks","Comfortable walking attire","Local trains, auto-rickshaws, cabs","https://images.app.goo.gl/MR3EhyrNZqfmJTas8"
+"Jogeshwari, Mumbai","Mumbai Film City","Varies (typically 25-35°C)","Film and television studios","Cafes and canteens","Casual wear","Local buses, cabs","https://images.app.goo.gl/xajuJTe2xrVQ61dM7"
+"Jogeshwari, Mumbai","Mahakali Caves","Varies (typically 25-35°C)","Ancient caves","Local snacks","Comfortable walking attire","Local trains, auto-rickshaws, cabs","https://images.app.goo.gl/t8ZQbixuGM8pGTzp9"
+"Jogeshwari, Mumbai","Infinity Mall","Varies (typically 25-35°C)","Shopping mall","Diverse dining options","Casual wear","Local trains, buses, cabs","https://images.app.goo.gl/FCxt26viLyzcZnku7"
+"Jogeshwari, Mumbai","Nalanda Buddha Vihar Temple","Varies (typically 25-35°C)","Buddhist temple","Nearby eateries","Modest attire","Local trains, auto-rickshaws, cabs","https://files.yappe.in/place/full/nalanda-buddha-vihar-3606233.webp"
+"Jogeshwari, Mumbai","Versova Beach","Varies (typically 25-35°C)","Coastal area","Beachside shacks","Casual beachwear","Local trains, auto-rickshaws, cabs","https://images.app.goo.gl/FweyGc3rjTwKRtGL6"
+"Jogeshwari, Mumbai","Jogeshwari West Fish Market","Varies (typically 25-35°C)","Fish market","Seafood stalls","Casual wear","Local trains, auto-rickshaws, cabs","https://images.app.goo.gl/EWGRXi3SG5J3ibHx8"
+"Jogeshwari, Mumbai","Jogeshwari East Garden","Varies (typically 25-35°C)","Public garden","Local snacks","Casual wear","Local trains, auto-rickshaws, cabs","https://images.app.goo.gl/vba4LismhwSNdGnHA"
+"Jogeshwari, Mumbai","Jogeshwari West Market","Varies (typically 25-35°C)","Local market","Street food stalls","Casual wear","Local trains, auto-rickshaws, cabs","https://images.app.goo.gl/eda7TeDLQiGzbq676"
+"Jogeshwari, Mumbai","Jogeshwari Railway Station","Varies (typically 25-35°C)","Transport hub","Snack stalls","Casual wear","Local trains, cabs","https://images.app.goo.gl/Yecs5eCfdoiNeteZA"

@@ -1,0 +1,27 @@
+"source_address","destination_address","temperature","weather","food","clothes","transportation",imglink
+
+"Borivali, Mumbai","Sanjay Gandhi National Park","Varies (typically 25-35°C)","Natural surroundings","Local eateries","Casual wear","Buses, auto-rickshaws, cabs","https://images.app.goo.gl/arwAX9HYuQTaBu3u5"
+
+"Borivali, Mumbai","EsselWorld","Varies (typically 25-35°C)","Amusement park","Multiple dining options","Casual wear","Auto-rickshaws, cabs","https://images.app.goo.gl/ezvFYdcztSB6ohYe7"
+
+"Borivali, Mumbai","Kanheri Caves","Varies (typically 25-35°C)","Cave complex","Local snacks","Comfortable walking attire","Buses, auto-rickshaws, cabs","https://images.app.goo.gl/R5hCKjEmafQdznog7"
+
+"Borivali, Mumbai","Gorai Beach","Varies (typically 25-35°C)","Coastal area","Beachside shacks","Casual beachwear","Ferries, cabs","https://images.app.goo.gl/GVwcYoFhNVqYywLGA"
+
+"Borivali, Mumbai","Mandapeshwar Caves","Varies (typically 25-35°C)","Historical caves","Local snacks","Comfortable walking attire","Buses, auto-rickshaws, cabs","https://images.app.goo.gl/JGmKDGj9KkApPJyQ7"
+
+"Borivali, Mumbai","Global Vipassana Pagoda","Varies (typically 25-35°C)","Meditation center","Cafeteria on-site","Modest attire","Buses, auto-rickshaws, cabs","https://images.app.goo.gl/eviXdAKkNfw3wG5RA"
+
+"Borivali, Mumbai","Gorai Creek","Varies (typically 25-35°C)","Waterfront area","Local seafood","Casual wear","Ferries, cabs","https://images.app.goo.gl/HBSVNsPmJ2H6EPBF6"
+
+"Borivali, Mumbai","Mumbai Film City","Varies (typically 25-35°C)","Film and television studios","Cafes and canteens","Casual wear","Buses, auto-rickshaws, cabs","https://images.app.goo.gl/3NiArDkY2jQVZ4Y26"
+
+"Borivali, Mumbai","Kora Kendra Ground","Varies (typically 25-35°C)","Sports and recreation","Local snacks","Sportswear","Buses, auto-rickshaws, cabs","https://images.app.goo.gl/v2kdFr9bAJgttrm96"
+
+"Borivali, Mumbai","Jain Derasar","Varies (typically 25-35°C)","Religious site","Nearby vegetarian eateries","Modest attire","Auto-rickshaws, cabs","https://images.app.goo.gl/7ido8mBVwNaHEuVr9"
+
+"Borivali, Mumbai","Nancy Lake Homes","Varies (typically 25-35°C)","Residential area with a lake","Local eateries","Casual wear","Buses, auto-rickshaws, cabs","https://images.app.goo.gl/2GkVSQNu7w41JSWH7"
+
+"Borivali, Mumbai","Thakkar Shopping Mall","Varies (typically 25-35°C)","Shopping mall","Multicuisine food court","Casual wear","Auto-rickshaws, cabs","https://images.app.goo.gl/2UP2cHvT4tn4iNF38"
+
+"Borivali, Mumbai","Chota Kashmir","Varies (typically 25-35°C)","Recreational area with boat rides","Local snacks","Casual wear","Auto-rickshaws, cabs","https://images.app.goo.gl/eAoTBzbAn7KKUshGA"

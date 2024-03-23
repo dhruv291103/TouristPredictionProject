@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Tourist Prediction Web App</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="{{url_for('static', filename='css/loginlogouticon.css')}}">
+    <style>
+        html,
+    body {
+      overflow-x: hidden;
+      position: relative;
+      height: 100%;
+    }
+    .swiper-button-next,.swiper-button-prev{
+      opacity: .6;
+      color: #222121;
+    }
+        .form-control{
+            color:none;
+        }
+        .video{
+          display: flex;
+          height: 75vh;
+          width:99vw;
+          align-items: center;
+          justify-content:center;
+          overflow: hidden;
+          background-position: center;
+          background-size: cover;
+          
+        }
+        #video{
+          width:100%;
+        }
+        .large_img img{
+          height:85vh;
+          width:100%;
+          background-repeat: no-repeat;
+          background-size: cover;
+          background-position: center;
+          /* image-rendering: pixelated;
+          image-rendering: -webkit-optimize-contrast; */
+        }
+      .description{
+            position:absolute;
+            left:5rem;
+            top:60vh;
+            font-weight: 500;
+            font-size: 1.5rem;
+            color:rgb(250, 242, 242);
+            backdrop-filter: brightness(75%);
+            transition:.3s;
+      }
+      .description:hover{
+        backdrop-filter: brightness(50%);
+        transition:.3s;
+        color: #fff;
+      }
+      #btn-back-to-top {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      height: 55px;
+      width:55px;
+      border-radius: 50%;
+      text-align: center;
+      display: none;
+      }
+      .links_section a:hover{
+        color:rgb(242, 55, 55)!important;
+        border-bottom:1.5px solid rgb(242, 55, 55);
+      }
+      #full_detail{
+        display:none;
+      }
+        </style>
+</head>
+
+<body>
+  {% include 'navbar.html' %}
+
+  <!-- top button functionality -->
+  <button
+        type="button"
+        class="btn btn-danger btn-floating btn-lg"
+        id="btn-back-to-top"
+        >
+<i class="fas fa-arrow-up"></i>
+
+{% with messages = get_flashed_messages(with_categories=true) %}
+{% if messages %}
+    <script>
+        alert("{{ messages[0][1] }}");
+    </script>
+{% endif %}
+{% endwith %}
+</button>
+    <div class="text-center">
+        <h2 class="bg-dark text-white p-3">Tour & Travel cancellation form</h2>
+    </div iv>
+
+    <div class="d-flex align-item-center justify-content-space-between gap-5">
+    <div class="div1 col-6">
+    <ul><h3>Booked ticket details:</h3></ul>
+    {% if user_book_data %}
+  <ul>
+    <li>Name: {{ user_book_data.Name }}</li>
+    <li>Email: {{ user_book_data.Email }}</li>
+    <li>Status: {{ user_book_data.status }}</li>
+    <li>Hotel: {{ user_book_data.hotel }}</li>
+    <li>Check-in: {{ user_book_data.checkin }}</li>
+    <li>Check-out: {{ user_book_data.checkout }}</li>
+    <li>Adults: {{ user_book_data.adult }}</li>
+    <li>Children: {{ user_book_data.child }}</li>
+  </ul>
+{% else %}
+  <ul><p>No booking found for this email.</p></ul>
+{% endif %}
+</div>
+<div class="div2 col-6">
+  <img src="../static/script/profile.png" height="200" width="200" class="rounded-5" >
+  <li class="ms-5" id="name">Name: {{user_book_data.Name }}</li>
+  <li class="ms-5" id="email">Email: {{user_book_data.Email }}</li>
+</div>
+</div>
+
+  <ul><button type="submit" class="btn btn-primary col-3" id="cancel">Cancel booking</button></ul>
+
+<div id="full_detail">
+<div class="col-12 d-flex align-item-center justify-content-center container mx-auto">
+<div class="col-6 mx-auto my-5">
+<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 mt30">
+    <h4 class="tour-form-title my-2">Lead traveller details</h4>
+</div>
+<form action="/cancel" method="POST">
+<div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12 mb-4">
+    <div class="form-group">
+        <label class="control-label" for="name">Name</label>
+        <input id="name" type="text" name="fullname" placeholder="Full Name" class="form-control" required>
+    </div>
+</div>
+<div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12 mb-4">
+    <div class="form-group">
+        <label class="control-label" for="email"> Email</label>
+        <input id="email" type="text" name="email" placeholder="Example123@gmail.com" class="form-control" required>
+    </div>
+</div>
+<div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12 mb-4">
+    <div class="form-group">
+        <label class="control-label" for="phone"> Phone</label>
+        <input id="phone" type="text"  name="phone" placeholder="(222) 222-2222" class="form-control" required>
+    </div>
+</div>
+<div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12 mb-4">
+    <div class="form-group">
+        <label class="control-label" for="country">Country</label>
+        <input id="country" type="text" name="country" value="India" disabled class="form-control" required>
+    </div>
+</div>
+<div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12 mb-4">
+    <div class="form-group">
+        <label class="control-label" for="city">City</label>
+        <input id="city" type="text" name="city" placeholder="Mumbai" class="form-control" required>
+    </div>
+</div>
+<div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
+    <!-- <a href="{{url_for('Payment')}}" class="btn btn-primary">Proceed to pay</a> -->
+    <input type="submit" class="btn btn-primary col-12" value="Cancel"></input>
+</div>
+</form>
+</div>
+<div class="col-6 cancel details">
+    <table class="table my-5 table-bordered" >
+        <thead>
+          <tr>
+            <th scope="col">Days</th>
+            <th scope="col">Tours</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Number of days before departure from the date of receipt of your cancellation request</td>
+            <td>Amount of cancellation charges in % on total tour price must be paid by the Guest/s</td>
+           
+          </tr>
+          <tr>
+            
+            <td>More than 90 days</td>
+            <td>Registration Amount or 20% of tour cost whichever is higher</td>
+           
+          </tr>
+          <tr>
+            <td>90 - 61 days</td>
+            <td>	30%</td>
+            
+          </tr>
+          <tr>
+            <td>60 - 46 days</td>
+            <td>50%</td>
+            
+          </tr>
+          <tr>
+            <td>45 - 31 days</td>
+            <td>75%</td>
+            
+          </tr>
+          <tr>
+            <td> On the day of departure</td>
+            <td>100%</td>
+            
+          </tr>
+        </tbody>
+      </table>
+</div>
+</div>
+</div>
+
+    <!-- start of footer -->
+    {% include 'footer.html' %}
+    <!-- end of footer -->
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" 
+integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" 
+crossorigin="anonymous"></script>
+<script type="text/javascript" src="{{ url_for('static', filename='script/index.js') }}"></script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+<script>
+  let cancel = document.getElementById("cancel");
+  let full_detail = document.getElementById("full_detail")
+  cancel.addEventListener("click",()=>{
+    full_detail.style.display ="block";
+    cancel.style.display ="none";
+  })
+</script>
+
+<script id="userBookData" type="application/json">{{ user_book_data | tojson | safe }}</script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    let nameElement = document.getElementById("name");
+    let emailElement = document.getElementById("email");
+
+    // Assuming user_book_data is a Python variable passed to the template
+    var userBookDataElement = document.getElementById("userBookData");
+    var user_book_data = JSON.parse(userBookDataElement.textContent);
+
+    if (!user_book_data || Object.keys(user_book_data).length === 0) {
+      nameElement.style.display = "none";
+      emailElement.style.display = "none";
+    }
+  });
+</script>
+
+<script>
+  const LoginDetails = document.getElementById("LoginDetails")
+  const loginDiv = document.getElementById("loginDiv")
+  const loginmenu = document.getElementById("loginmenu")
+  const Info_div = document.getElementById("info")
+  const ul_info = document.getElementById("ulinfo")
+  const liname = document.getElementById("liname")
+  const liemail = document.getElementById("liemail")
+  const li_logout = document.querySelector("#logout")
+
+  if('{{session.email}}')
+  {
+    LoginDetails.style.display = "flex";
+    loginDiv.style.display = "flex";
+    loginmenu.style.display= "none";
+
+    liemail.innerText = '{{session.email}}'.replace('&#39','')
+    ul_info.append(liemail)
+
+    li_logout.innerHTML = "<a href='{{ url_for('login')}}' class='btn btn-light' id='logoutBtn'>Logout</a>"
+    ul_info.appendChild(li_logout);
+    let toggleValue = 1
+        loginDiv.addEventListener("click",()=>{
+    });
+
+    loginDiv.addEventListener("click",()=>{
+      console.log("hello");
+      if (toggleValue){
+          Info_div.style.display = "flex";
+          Info_div.classList.add("info")
+          toggleValue = 0 
+        } 
+        else{
+          Info_div.style.display ="none"; 
+          toggleValue = 1
+        } 
+      
+    })
+  }
+</script>
+
+
+
+<!-- Initialize Swiper -->
+<script>
+  var swiper = new Swiper(".mySwiper", {
+    loop: true,
+    spaceBetween: 10,
+    slidesPerView: 6,
+    freeMode: true,
+    watchSlidesProgress: true,
+  });
+  var swiper2 = new Swiper(".mySwiper2", {
+    loop: true,
+    spaceBetween: 10,
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+    thumbs: {
+      swiper: swiper,
+    },
+  });
+</script>
+
+<!-- When the user scrolls down 20px from the top of the document, show the button -->
+<script>
+  let mybutton = document.getElementById("btn-back-to-top");
+window.onscroll = function () {
+  scrollFunction();
+};
+
+function scrollFunction() {
+  if (
+    document.body.scrollTop > 20 ||
+    document.documentElement.scrollTop > 20
+  ) {
+    mybutton.style.display = "block";
+  } else {
+    mybutton.style.display = "none";
+  }
+}
+// When the user clicks on the button, scroll to the top of the document
+mybutton.addEventListener("click", backToTop);
+
+function backToTop() {
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,434 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer"
+    />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/Navbar.css') }}">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/loginlogouticon.css')}}">
+    <style>
+      html{
+        overflow-x: hidden;
+      }
+      .backBtn{
+        display: flex;
+        align-items: center;
+      }
+      .backBtn a i{
+        margin-left: 3rem;
+        font-size: 35px;
+        color:black;
+      }
+    </style>
+  </head>
+  <body>
+    
+
+  {% include 'navbar.html' %}
+
+
+
+  <div class="backBtn">
+    <a class="nav-link " href="{{ url_for('Destinations')}}"><i class="fa-solid fa-arrow-left"></i></a>
+  </div>
+
+  <div id="carouselExampleAutoplaying" class="carousel slide  row featurette" data-bs-ride="carousel" data-aos="fade-left">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <div class="row featurette my-5 mx-5  shadow">
+          <div class="col-md-5">
+              <img class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid " width="400" height="350" src="../static/script/vaibhav.jpeg" />
+          </div>
+      <div class="col-md-7">
+      <div class="mt-3">
+        <h2 class="featurette-heading fw-normal  text-danger">Vaibhav Travels</h2>
+        <p class="lead">
+          Vaibhav Travels ensures the safety and comfort of the passengers. On-time bus service , friendly staff and easy bus ticket booking options are also among the top reasons that make Vaibhav Travels among the most sought after bus operators in India
+        </p>
+        
+      </div>
+      </div>
+    </div>
+      </div>
+
+      <div class="carousel-item">
+        <div class="row featurette my-5 mx-5  shadow">
+          <div class="col-md-5">
+            <img class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid" width="400" height="350" src="../static//script/Ashoka.jpeg"></img>
+          </div>
+          <div class="col-md-7">
+          <div class="mt-3">
+            <h2 class="featurette-heading fw-normal  text-danger">N.T Ashoka </h2>
+            <p class="lead">They have grown significantly since then and have a massive fleet of 1398 buses. They are headquartered in Pune & Mumbai and cover 64 cities in India. They provide frequent bus services to many routes & cover more than 1100 routes daily.
+              </p>
+              
+          </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="carousel-item">
+        <div class="row featurette my-5 mx-5 shadow">
+          <div class="col-md-5">
+            <img class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid" width="400" height="350" src="../static//script/balaji.jpeg"></img>
+          </div>
+          <div class="col-md-7">
+          <div class="mt-3">
+            <h2 class="featurette-heading fw-normal  text-danger">Balaji Travels</h2>
+            <p class="lead">
+              Balaji Travels is the ultimate resource for making your travel plans successful. Our team of experts is entirely dedicated to making your entire travel seamless and hassle-free. We offer the best deals and great value for your money.
+              </p>
+          </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+  <h2 class="featurette-heading fw-bold mt-5 ms-5 lh-1 text-danger">Getting Started</h2>
+  <hr class="featurette-divider">
+
+      <div class="p-2">
+        <div class="row featurette my-5 mx-5  shadow">
+          <div class="col-md-3">
+              <img class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid rounded-2 " width="400" height="350" src="https://media.istockphoto.com/id/1216113490/photo/3d-navigation-map-pointer-marker-pin-travel-destinations.webp?b=1&s=170667a&w=0&k=20&c=SF7_o-RY4Hk_I9QTfChi1y1BLxbB66u-jx_UjWj7LMg=" />
+          </div>
+      <div class="col-md-9">
+      <div class="mt-5">
+        <h2 class="featurette-heading fw-normal  text-danger">Map your Trip</h2>
+        <p class="lead">Top of the list is choosing your trip. Whether you’re planning to head south down the Red Sea coast or to cruise between cities, you’ll want a rough schedule to your days.
+        </p>
+        
+      </div>
+      </div>
+    </div>
+      </div>
+
+      <div class="p-2">
+        <div class="row featurette my-5 mx-5 shadow">
+
+          <div class="col-md-9">
+          <div class="mt-5">
+            <h2 class="featurette-heading fw-normal  text-danger">Rent you wheel</h2>
+            <p class="lead">Renting a car is the easiest way to get on the road. Mumbai has a range of car hire companies and the process of renting is straightforward.
+              </p>
+              
+          </div>
+          </div>
+          <div class="col-md-3">
+            <img class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid rounded-2 " width="400" height="350" src="https://images.unsplash.com/photo-1472709171579-139831cdf19e?auto=format&fit=crop&q=60&w=500&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cmVudCUyMHdoZWVsc3xlbnwwfDB8MHx8fDA%3D"></img>
+          </div>
+        </div>
+      </div>
+
+      <div class="p-2">
+        <div class="row featurette my-5 mx-5 shadow">
+          <div class="col-md-3">
+            <img class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid rounded-2 " width="400" height="350" src="https://images.unsplash.com/photo-1530549231827-780ff1c59540?auto=format&fit=crop&q=60&w=500&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8Y3JhJTIwd2l0aCUyMHJvYWR8ZW58MHwwfDB8fHww"></img>
+          </div>
+          <div class="col-md-9">
+          <div class="mt-5">
+            <h2 class="featurette-heading fw-normal  text-danger">Car health 101</h2>
+            <p class="lead">Comfortable cruising needs a well-serviced car. If you plan to take your own ride, ensure the battery, brakes, lights and engine are in good working order, and check your oil and tire pressure (not forgetting the spare). </p>
+          </div>
+          </div>
+        </div>
+      </div>
+
+  <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 mb30">
+    <div class="tour-booking-form container border">
+        <form action="/train_booking" method="POST">
+            <div class="row">
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 ">
+                    <h4 class="tour-form-title my-3">Add traveller details</h4>
+                </div>
+                
+
+                <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
+                  <div class="form-group">
+                      <label class="control-label required" for="select">From</label>
+                      <div class="select">
+                          <select id="select" class="form-select" name="select_to" class="form-control">
+                              <option selected value="">Select your location</option>
+                              <option value="Marine drive">Marine drive</option>
+                              <option value="korigad">korigad</option>
+                              <option value="lohagad">lohagad</option>
+                              <option value="Taj hotel">Taj hotel</option>
+                              <option value="CSMT">CSMT</option>
+                              <option value="National Park">National Park</option>
+                              <option value="Vipasana Temple">Vipasana Temple</option>
+                              <option value="Jivdani Temple">Jivdani Temple</option>
+                              <option value="Arnala Fort">Arnala Fort</option>
+                              <option value="Bandstand">Bandstand</option>
+                              <option value="Carter Road">Carter Road</option>
+                              <option value="Warli sea link">Warli sea link</option>
+                              <option value="Babulnath Temple">Babulnath Temple</option>
+                              <option value="Hanging Garden">Hanging Garden</option>
+                              <option value="Banganga Ghat">Banganga Ghat</option>
+                              <option value="Gateway of India">Gateway of India</option>
+                              <option value="Mahakali Caves">Mahakali Caves</option>
+                              <option value="Lokhandwala Market">Lokhandwala Market</option>
+                              <option value="Vesova Beach">Vesova Beach</option>
+                              <option value="Juhu Beach">Juhu Beach</option>
+                              <option value="Iskon Temple">Iskon Temple</option>
+                              <option value="Mukteshwar Temple">Mukteshwar Temple</option>
+                              <option value="Takmak Fort">Takmak Fort</option>
+                              <option value="IT park">IT park</option>
+                              <option value="Kanheri Caves">Kanheri Caves</option>
+                              <option value="Elephanta">Elephanta</option>
+                              <option value="Tungareshwar">Tungareshwar</option>
+                              <option value="Lonavala">Lonavala</option>
+                              <option value="Khandala">Khandala</option>
+                              <option value="Mahableshwar">Mahableshwar</option>
+                              <option value="Matheran">Matheran</option>
+                          </select>
+                      </div>
+                  </div>
+          </div>
+                <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
+                  <div class="form-group">
+                      <label class="control-label" for="date">Booking date</label>
+                      <div class="input-group">
+                          <input type="date" id="date1"  name="date" placeholder="Date" class="form-control" required>
+                          </div>
+                  </div>
+              </div>
+              <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                <div class="form-group">
+                    <label class="control-label" for="date">Email</label>
+                    <div class="input-group">
+                        <input type="email" id="date1"  name="email" placeholder="enter email" class="form-control" required>
+                        </div>
+                </div>
+            </div>
+            <br />
+
+              <div class="col-xl-7 col-lg-7 col-md-12 col-sm-12 col-12 my-5 d-flex align-item-center justify-content-space-around gap-5">
+                  <div class="form-group col-6">
+                      <label class="control-label required" for="select">To</label>
+                      <div class="select">
+                          <select id="select" class="form-select" name="select_from" class="form-control">
+                              <option selected value="">Where you want to go</option>
+                              <option value="Marine drive">Marine drive</option>
+                              <option value="korigad">korigad</option>
+                              <option value="lohagad">lohagad</option>
+                              <option value="Taj hotel">Taj hotel</option>
+                              <option value="CSMT">CSMT</option>
+                              <option value="National Park">National Park</option>
+                              <option value="Vipasana Temple">Vipasana Temple</option>
+                              <option value="Jivdani Temple">Jivdani Temple</option>
+                              <option value="Arnala Fort">Arnala Fort</option>
+                              <option value="Bandstand">Bandstand</option>
+                              <option value="Carter Road">Carter Road</option>
+                              <option value="Warli sea link">Warli sea link</option>
+                              <option value="Babulnath Temple">Babulnath Temple</option>
+                              <option value="Hanging Garden">Hanging Garden</option>
+                              <option value="Banganga Ghat">Banganga Ghat</option>
+                              <option value="Gateway of India">Gateway of India</option>
+                              <option value="Mahakali Caves">Mahakali Caves</option>
+                              <option value="Lokhandwala Market">Lokhandwala Market</option>
+                              <option value="Vesova Beach">Vesova Beach</option>
+                              <option value="Juhu Beach">Juhu Beach</option>
+                              <option value="Iskon Temple">Iskon Temple</option>
+                              <option value="Mukteshwar Temple">Mukteshwar Temple</option>
+                              <option value="Takmak Fort">Takmak Fort</option>
+                              <option value="IT park">IT park</option>
+                              <option value="Kanheri Caves">Kanheri Caves</option>
+                              <option value="Elephanta">Elephanta</option>
+                              <option value="Tungareshwar">Tungareshwar</option>
+                              <option value="Lonavala">Lonavala</option>
+                              <option value="Khandala">Khandala</option>
+                              <option value="Mahableshwar">Mahableshwar</option>
+                              <option value="Matheran">Matheran</option>
+                          </select>
+                      </div>
+                  </div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                  <table class="table table-bordered col-6 ms-5">
+                    <thead>
+                      <tr>
+                        <th scope="col">Day breakdown</th>
+                        <th scope="col">Best Buses</th>
+                        <th scope="col">Price</th>
+                        <th scope="col">Selection</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>Morning</td>
+                        <td>Shree Balaji Travels</td>
+                        <td>₹ 800</td>
+                        <td>
+                            <input type="radio" name="data" value="Morning  & ₹ 8000 ">
+                        </td>
+                      </tr>
+                      <tr>
+                        
+                        <td>Afternoon</td>
+                        <td>NT Ashoka</td>
+                        <td>₹ 616</td>
+                        <td>
+                            <input type="radio" name="data" value="Afternoon & ₹ 616">
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Evening</td>
+                        <td>Vaibhav Travels</td>
+                        <td>1,000</td>
+                        <td>
+                            <input type="radio" name="data" value="Evening & ₹ 1,000">
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+              </div>
+              <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                <!-- <a href="{{url_for('Payment')}}" class="btn btn-primary">Proceed to pay</a> -->
+                <input type="submit" class="btn btn-lg btn-primary px-5" value="Proceed to pay"></input>
+              </div>
+        </div>
+      </form>
+      </div>
+      </div>
+
+
+  <!--  more info -->
+  <h2 class="featurette-heading fw-bold mt-5 ms-5 lh-1 text-danger"> Planning your driving</h2>
+  <hr class="featurette-divider">
+<div class="d-flex flex-wrap my-5">
+    <div class="card text-bg-light mb-3 mx-auto" style="max-width: 25rem;">
+        <div class="card-header bg-danger text-white"><i class="fa-solid fa-file"></i>  It's all about planning</div>
+        <div class="card-body">
+          <!-- <h5 class="card-title">Info card title</h5> -->
+          <p class="card-text">Less time behind the wheel means more time to explore. An early morning start allows you to beat the traffic, spend the day sightseeing, and to be off the road after dark. Break up long stretches with fuel stops or take it in turns to get behind the wheel. And if you’re planning to head off the main routes, take backup directions. While GPS is great for directions, 
+            it may not always work in remote or offroad areas. Have an offline map or print map on-hand, just in case.</p>
+        </div>
+      </div>
+    
+      <div class="card text-bg-light mb-3 mx-auto" style="max-width: 25rem;">
+        <div class="card-header bg-danger text-white"><i class="fa-solid fa-boxes-packing"></i> What to pack</div>
+        <div class="card-body">
+          <!-- <h5 class="card-title">Info card title</h5> -->
+          <p class="card-text">Packing light means more room in the trunk to stow souvenirs, and less luggage to carry each night. Keep a bag of essentials within reach for the journey: antibacterial wipes, face masks and gloves, sunglasses, sun cream, a first-aid kit, a cooler with snacks and water, 
+            and a phone car charger for the ride. We’d also recommend a bathing suit and towel for any spontaneous swims. </p>
+        </div>
+      </div>
+    
+      <div class="card text-bg-light mb-3 mx-auto" style="max-width: 25rem;">
+        <div class="card-header bg-danger text-white"> <i class="fas fa-gifts"></i> Plot your playlist</div>
+        <div class="card-body">
+          <!-- <h5 class="card-title">Info card title</h5> -->
+          <p class="card-text">Mumbai's captivating landscape means you’ll never be bored, but a well-crafted playlist adds to the view. Depending on tastes, throw in some podcasts and audiobooks alongside the music to keep you 
+            interested. Download them rather than relying on mobile data, for uninterrupted listening.</p>
+        </div>
+      </div>
+    </div>
+    <!-- end of more info -->
+
+
+    <!--  more info -->
+<div class="d-flex flex-wrap my-5">
+    <div class="card text-bg-light mb-3 mx-auto" style="max-width: 25rem;">
+        <div class="card-header bg-danger text-white"> <i class="fas fa-car"></i> Driving with kids</div>
+        <div class="card-body">
+          <!-- <h5 class="card-title">Info card title</h5> -->
+          <p class="card-text">Successful road tripping with kids requires planning. Having a list of games and other entertainment can go a long way towards helping the miles fly by and avoiding a constant refrain of ‘are we there yet?’ In addition to music, tables, audiobook stories and boardgames, classic road games are a great way to pass the time. From 21 questions and the alphabet game, 
+            to name that song and I spy, family members of any age can play along. If all else fails, pass the snacks.</p>
+        </div>
+      </div>
+    
+      <div class="card text-bg-light mb-3 mx-auto" style="max-width: 25rem;">
+        <div class="card-header bg-danger text-white"> <i class="fas fa-indian-rupee"></i> Carry cash</div>
+        <div class="card-body">
+          <!-- <h5 class="card-title">Info card title</h5> -->
+          <p class="card-text">Whether it’s for unexpected stops in rural villages, or snack stops at roadside stalls, 
+            carry enough cash to see you through between ATM visits and in case of emergencies</p>
+        </div>
+      </div>
+    
+      <div class="card text-bg-light mb-3 mx-auto" style="max-width: 25rem;">
+        <div class="card-header bg-danger text-white"> <i class="fa-solid fa-phone"></i> Essential numbers</div>
+        <div class="card-body">
+          <!-- <h5 class="card-title">Info card title</h5> -->
+          <p class="card-text">Police: 999<br>
+            Ambulance: 997<br>
+            For traffic accidents: 993<br>
+            Civil defence: 998<br>
+            Highway Patrol: 996,
+            Coastguard: 994,
+            Tourism call centre: 930 </p>
+        </div>
+      </div>
+    </div>
+    <!-- end of more info -->
+
+
+<!-- start footer -->
+{% include 'footer.html' %}
+</body>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <script>
+      const LoginDetails = document.getElementById("LoginDetails")
+      const loginDiv = document.getElementById("loginDiv")
+      const loginmenu = document.getElementById("loginmenu")
+      const Info_div = document.getElementById("info")
+      const ul_info = document.getElementById("ulinfo")
+      const liname = document.getElementById("liname")
+      const liemail = document.getElementById("liemail")
+      const li_logout = document.querySelector("#logout")
+      console.log(li_logout);
+    
+      if('{{session.email}}')
+      {
+        console.log('{{session.email}}');
+        LoginDetails.style.display = "flex";
+        loginDiv.style.display = "flex";
+        loginmenu.style.display= "none";
+    
+        liemail.innerText = '{{session.email}}'.replace('&#39','')
+              ul_info.append(liemail)
+    
+        li_logout.innerHTML = "<a href='{{ url_for('login')}}' class='btn btn-light' id='logoutBtn'>Logout</a>"
+        ul_info.appendChild(li_logout);
+        let toggleValue = 1
+            loginDiv.addEventListener("click",()=>{
+      
+        });
+    
+    
+        loginDiv.addEventListener("click",()=>{
+          console.log("hello");
+          if (toggleValue){
+              Info_div.style.display = "flex";
+              Info_div.classList.add("info")
+              toggleValue = 0 
+            } 
+            else{
+              Info_div.style.display ="none"; 
+              toggleValue = 1
+            } 
+          
+        })
+      }
+    </script>
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+          var today = new Date();
+          var yesterday = new Date(today);
+          yesterday.setDate(today.getDate()+1);
+      
+          // Format the date in 'yyyy-mm-dd' for the input's min attribute
+          var formattedYesterday = yesterday.toISOString().split('T')[0];
+      
+          // Set the min attribute of the date input
+          document.getElementById('date1').min = formattedYesterday;
+      });
+      </script>
+</html>

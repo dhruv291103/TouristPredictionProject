@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/Navbar.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/learn_more.css') }}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/loginlogouticon.css')}}">
+  <style>
+    nav{
+      background-color: white!important;
+    }
+    .backBtn{
+      display: flex;
+      align-items: center;
+    }
+    .backBtn a i{
+      margin-left: 3rem;
+      font-size: 35px;
+      color:black;
+    }
+  </style>
+  </head>
+  <body>
+    {% include 'navbar.html' %}
+
+    <div class="backBtn">
+      <a class="nav-link " href="{{ url_for('learn_more')}}"><i class="fa-solid fa-arrow-left"></i></a>
+    </div>
+
+    <div class="row featurette my-5 mx-5 shadow">
+        <div class="col-md-7">
+          <nav class="navbar navbar-expand-lg">
+            <div class="container-fluid">
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mb-2 mb-lg-0">
+                  <li class="nav-item">
+                    <a class="nav-link" aria-current="page" href="{{ url_for('summer')}}">summer</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="{{ url_for('spring')}}">spring</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="{{ url_for('autumn')}}">autumn</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link " href="{{ url_for('winter')}}">winter</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </nav>
+        <div class="margin_center">
+          <h2 class="featurette-heading fw-normal lh-1 text-danger content_shown">Climate & Season</h2>
+    
+         
+    
+    
+        <p class="lead">Mid-September to Mid-December
+
+ 
+
+            Autumn brings gentler weather and cool breezes in both Saudi Arabia’s northern regions and the southwestern highlands. While daytime temperatures remain warm and can reach the 30s in early fall, evenings are milder and fit for outdoor strolling, especially along Jeddah’s waterfront, indulging in al-fresco dining or visiting Al Ahsa’s cool desert springs.
+            
+             
+            
+            Don’t forget to pack your walking shoes and a sweater for air-conditioned buildings and cooler evenings.</p>
+        </div>
+        </div>
+        <div class="col-md-5">
+            <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                  <div class="carousel-item active">
+                    <img class="d-block w-100 mt-5" height="300px" alt="..." src="https://images.unsplash.com/photo-1523712999610-f77fbcfc3843?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fGF1dHVtbnxlbnwwfDB8MHx8fDA%3D">
+                </div>
+                <div class="carousel-item ">
+                  <img class="d-block w-100 mt-5" height="300px" alt="..." src="https://plus.unsplash.com/premium_photo-1669842613532-1f0947aa6fa6?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8YXV0dW1ufGVufDB8MHwwfHx8MA%3D%3D">
+              </div>
+              <div class="carousel-item ">
+                <img class="d-block w-100 mt-5" height="300px" alt="..." src="https://images.unsplash.com/photo-1504788363733-507549153474?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8YXV0dW1ufGVufDB8MHwwfHx8MA%3D%3D">
+            </div>
+                </div>
+              </div>
+        </div>
+      </div>
+
+      {% include 'footer.html' %}
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <script>
+      const LoginDetails = document.getElementById("LoginDetails")
+      const loginDiv = document.getElementById("loginDiv")
+      const loginmenu = document.getElementById("loginmenu")
+      const Info_div = document.getElementById("info")
+      const ul_info = document.getElementById("ulinfo")
+      const liname = document.getElementById("liname")
+      const liemail = document.getElementById("liemail")
+      const li_logout = document.querySelector("#logout")
+      console.log(li_logout);
+    
+      if('{{session.email}}')
+      {
+        console.log('{{session.email}}');
+        LoginDetails.style.display = "flex";
+        loginDiv.style.display = "flex";
+        loginmenu.style.display= "none";
+    
+        liemail.innerText = '{{session.email}}'.replace('&#39','')
+              ul_info.append(liemail)
+    
+        li_logout.innerHTML = "<a href='{{ url_for('login')}}' class='btn btn-light' id='logoutBtn'>Logout</a>"
+        ul_info.appendChild(li_logout);
+        let toggleValue = 1
+            loginDiv.addEventListener("click",()=>{
+      
+        });
+    
+    
+        loginDiv.addEventListener("click",()=>{
+          console.log("hello");
+          if (toggleValue){
+              Info_div.style.display = "flex";
+              Info_div.classList.add("info")
+              // const a = document.createElement("a")
+              toggleValue = 0 
+            } 
+            else{
+              Info_div.style.display ="none"; 
+              toggleValue = 1
+            } 
+          
+        })
+      }
+    </script>
+  </body>
+</html>

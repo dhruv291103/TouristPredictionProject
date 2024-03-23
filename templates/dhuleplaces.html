@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Tourist Prediction Web App</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer"
+    />
+    <!-- <link rel="stylesheet" href="{{url_for('static', filename='css/explore.css')}}"> -->
+    <link rel="stylesheet" href="{{url_for('static', filename='css/loginlogouticon.css')}}">
+    <style>
+    .bg-image{
+      height: 70vh;
+      width:100%;
+      background-position:center;
+      background-repeat: no-repeat;
+      background-size:cover;
+      object-fit: cover;
+  }
+  
+  .bg-1{
+      background-image: url("https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0f/36/58/c4/way-for-tungi.jpg?w=1200&h=-1&s=1");
+  }
+  .bg-2{
+      background-image: url("https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0f/36/58/67/mangi-view-from-tungi.jpg?w=1200&h=-1&s=1");
+  }
+  .bg-3{
+      background-image: url("https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0f/36/57/fb/view-from-the-top.jpg?w=1200&h=-1&s=1");
+  }
+</style>
+</head>
+<body>
+    {% include 'navbar.html' %}
+
+    <div id="carouselExampleInterval" class="carousel slide carousel-fade" data-bs-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active bg-image bg-1" >
+           
+          </div>
+          <div class="carousel-item bg-image bg-2">
+            
+          </div>
+          <div class="carousel-item bg-image bg-3">
+            
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+
+      <div class="place_description my-5 w-75">
+        <div class="des">
+        <h2 class="ms-4 text-danger border-bottom">Overview</h2>
+        <ul>
+        <p>24 Avatars is a historical place that comprises a group of Hindu & Jain temples. <br>
+          The temples are known for their unique architectural beauty and exclusive style of construction.
+        </p></ul>
+        </div>
+
+        <div class="time mt-3">
+        <h2 class="ms-4 text-danger border-bottom"><i class="fa-regular fa-clock" style="font-size: 1.8rem;">&nbsp;</i>Suggested duration time-></h2>
+        <ul>
+        <p> <span class="fw-bold fs-5">3-4 days</span></p>
+        </ul>
+        </div>
+
+        <div class="expect mt-3">
+        <h2 class="ms-4 text-danger border-bottom">What to expect</h2>
+        <ul>
+        <p>The peaceful environment and exquisite temples are worth visiting. The 24 Avatars are known to be Omkareshwars' hidden treasure.<br>
+           Each temple exhibits a unique style that makes the 24 Avatars a great tourist attraction place.</p>
+        </ul>
+        </div>
+
+        <div class="tips mt-3">
+        <h2 class="ms-4 text-danger border-bottom">Tips</h2>
+        <ul>
+            <li>Photography enthusiasts can also visit this place to please their eyes with its architectural beauty.</li>
+            <li>It is recommended to carry a sunblock lotion, especially during summers.</li>
+        </ul>
+        </div>
+
+        <div class="reach">
+        <h2 class="ms-4 text-danger border-bottom">How to reach</h2>
+        
+        <div class="ms-4 d-flex justify-content-around align-item-center gap-5">
+        <div class="card border-primary mb-3" style="width: 25rem;">
+            <div class="card-header bg-danger text-white"><i class="fa-solid fa-plane-departure"></i>&nbsp;Air</div>
+            <div class="card-body">
+              <!-- <h5 class="card-title">Primary card title</h5> -->
+              <p class="card-text">
+                Chhatrapati Shivaji International Airport, formerly known as Sahar International Airport, is the primary international airport serving the Mumbai Metropolitan Area. 
+                It is situated about 30 km from CST Station. Domestic Airport is in Vile Parle East. Mumbai Chhatrapati Shivaji has 2 terminals. 
+                </p>
+            </div>
+          </div>
+          <div class="card border-secondary mb-3" style="width: 25rem;">
+            <div class="card-header bg-danger text-white"><i class="fa-solid fa-train"></i>&nbsp;Train</div>
+            <div class="card-body">
+              
+              <p class="card-text">
+                Mumbai is very well connected to rest of India by trains. 
+                The Chhatrapati Shivaji Terminus is the most popular station in Mumbai. 
+                Trains to Mumbai are available from all major railway stations in India. 
+                Some important Mumbai trains to note are the Mumbai Rajdhani, Mumbai Duronto, Konkan Kanya Express. 
+                
+              </p>
+            </div>
+          </div>
+          <div class="card border-success mb-3" style="width: 25rem;">
+            <div class="card-header bg-danger text-white"><i class="fa-solid fa-bus"></i>&nbsp;Bus</div>
+            <div class="card-body">
+              <!-- <h5 class="card-title">Success card title</h5> -->
+              <p class="card-text">
+                Mumbai is well-connected with national highways and expressways . Mumbai visit by bus is the most economical for individual tourists. 
+                Government, as well as private buses, operate daily services to this route. Mumbai bus stand is situated at the centre of the city
+                
+            .</p>
+            </div>
+          </div>
+        </div>    
+    </div>
+
+</div>
+
+{% include 'footer.html' %}
+</body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" 
+integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" 
+crossorigin="anonymous"></script>
+<!-- <script type="text/javascript" src="{{ url_for('static', filename='script/index.js') }}"></script> -->
+<script>
+    const LoginDetails = document.getElementById("LoginDetails")
+    const loginDiv = document.getElementById("loginDiv")
+    const loginmenu = document.getElementById("loginmenu")
+    const Info_div = document.getElementById("info")
+    const ul_info = document.getElementById("ulinfo")
+    const liname = document.getElementById("liname")
+    const liemail = document.getElementById("liemail")
+    const li_logout = document.querySelector("#logout")
+    console.log(li_logout);
+  
+    if('{{session.email}}')
+    {
+      console.log('{{session.email}}');
+      LoginDetails.style.display = "flex";
+      loginDiv.style.display = "flex";
+      loginmenu.style.display= "none";
+  
+      liemail.innerText = '{{session.email}}'.replace('&#39','')
+            ul_info.append(liemail)
+  
+      li_logout.innerHTML = "<a href='{{ url_for('login')}}' class='btn btn-light' id='logoutBtn'>Logout</a>"
+      ul_info.appendChild(li_logout);
+      let toggleValue = 1
+          loginDiv.addEventListener("click",()=>{
+    
+      });
+  
+  
+      loginDiv.addEventListener("click",()=>{
+        console.log("hello");
+        if (toggleValue){
+            Info_div.style.display = "flex";
+            Info_div.classList.add("info")
+            // const a = document.createElement("a")
+            toggleValue = 0 
+          } 
+          else{
+            Info_div.style.display ="none"; 
+            toggleValue = 1
+          } 
+        
+      })
+    }
+  </script>
+</html>

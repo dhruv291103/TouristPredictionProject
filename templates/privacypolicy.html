@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Tourist Prediction Web App</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="{{url_for('static', filename='css/loginlogouticon.css')}}">
+    <style>
+        html,
+    body {
+      position: relative;
+      height: 100%;
+    }
+    .swiper-button-next,.swiper-button-prev{
+      opacity: .6;
+      color: #222121;
+    }
+        .form-control{
+            color:none;
+        }
+        .video{
+          display: flex;
+          height: 75vh;
+          width:99vw;
+          align-items: center;
+          justify-content:center;
+          overflow: hidden;
+          background-position: center;
+          background-size: cover;
+          
+        }
+        #video{
+          width:100%;
+        }
+        .large_img img{
+          height:85vh;
+          width:100%;
+          background-repeat: no-repeat;
+          background-size: cover;
+          background-position: center;
+          /* image-rendering: pixelated;
+          image-rendering: -webkit-optimize-contrast; */
+        }
+      .description{
+            position:absolute;
+            left:5rem;
+            top:60vh;
+            font-weight: 500;
+            font-size: 1.5rem;
+            color:rgb(250, 242, 242);
+            backdrop-filter: brightness(75%);
+            transition:.3s;
+      }
+      .description:hover{
+        backdrop-filter: brightness(50%);
+        transition:.3s;
+        color: #fff;
+      }
+      #btn-back-to-top {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      height: 55px;
+      width:55px;
+      border-radius: 50%;
+      text-align: center;
+      display: none;
+      }
+      .trip_package_image1{
+    margin-top:.5rem;
+    background-color: #252b33;
+    color:white;
+    padding:1rem;
+    }
+        </style>
+</head>
+
+<body>
+  {% include 'navbar.html' %}
+
+<!-- top button functionality -->
+<button
+        type="button"
+        class="btn btn-danger btn-floating btn-lg"
+        id="btn-back-to-top"
+        >
+<i class="fas fa-arrow-up"></i>
+</button>
+
+
+<div class="trip_package_image1">
+    <h2 class="container border-bottom border-3 border-light-subtle w-50  rounded-bottom-circle section__title my-5 text-center">Privacy Policy</h2>
+    <p class="section__subtitle fs-5 text-center">
+    Be alert and attentive !!!
+    </p>
+</div>
+<div class="privacy container">
+<h2 class="text-danger my-4 border-bottom">Please Read the Following Carefully</h2>
+<p>
+    Welcome to Dezire Travel website (the “Site”). To make this Site informative, we request all our Guests visiting our Site to adhere to our terms and conditions (“Terms and Conditions”). By accessing the Site, you (“You”) indicate your acknowledgment and acceptance of these Terms and Conditions. You are advised to kindly check them periodically for changes from time to time. Your continued use of www.kesari.in following the posting of changes to these Terms and Conditions will mean that You accept those changes.
+
+While Dezire Travel will make every effort to maintain up-to-date and accurate information on the Site, visitors should be aware that Dezire Travel accepts no responsibility for the accuracy or completeness of any material contained on the Site and recommends that visitors exercise their own care, discretion and judgment with respect to its use.
+</p>
+
+<h2 class="text-danger my-4 border-bottom">Privacy Policy</h2>
+<p>
+    Dezire Travel Tours Pvt. Ltd. (referred to as Dezire,” "we," "us," or "our" herein) uses its best efforts to respect the privacy of its on-linevisitors. Dezire Travel Tours Pvt. Ltd. includes its divisions and subsidiaries.
+
+When You visit the Site, in certain parts of the Site, we may ask You to provide us with personal information so that we can provide You with information You request. You are under no obligation to provide us with this information, but without the said information, we may not be able to provide You the information You have requested. The Site may also include certain features that allow You to communicate with us by electronic means such as email. You are responsible if You choose to use these communication features to provide personal identification information to us (such as by including Your name and/or address in the body of an e-mail message). When You provide any personal identification information to us, You affirm that You are knowingly and voluntarily providing us the information. We may respond to the electronic communication messages You send us. The use of cookies and other information is used to optimize the viewing experience, troubleshoot any problems and better serve content.
+
+We work to ensure that the personal identification information You do intentionally provide us remains private. We will not sell, rent, or trade the personal identification information You provide to anyone outside Dezire Travel, unless we are required to do so by law. Please be aware, however, that it may be possible for others to read messages that You send over the Internet, you are therefore advised not to send any such information by electronic communication that You would like to keep confidential.
+</p>
+
+<h2 class="text-danger my-4 border-bottom">Intellectual Property Notice And Restrictions On Use Of Materials</h2>
+<p>
+    This Site is owned and operated by Dezire Travel Tours Private Limited and features trademarks, copyrights and other intellectual property which are the property of Dezire Travel Tours Private Limited, its divisions, affiliates or subsidiaries. You agree that You will not display the Dezire Travel Marks or other third party trademarks, or use the Dezire Travel Marks or other third party trademarks in any manner, without the prior written permission of Dezire Travel or the respective owners of other third party marks.
+
+This Site may also contain trademarks, copyrights and other intellectual property rights of third parties, including our clients. All such rights are proprietary to their respective owners. Users are prohibited by law and these conditions from modifying, copying, distributing, transmitting, displaying, publishing, selling, licensing, creating derivative works or using any content on this Site for commercial or public purposes in any way or in any manner or medium. Unauthorized use of this web site and system including but not limited to unauthorized entry, misuse of passwords, or misuse of any information posted on this site is strictly prohibited and would attract both penal and punitive action.
+
+Except as specifically permitted in accordance with the Terms and Conditions governing use of this Site, any use of Kesari’s or other third party trademarks or trade names found on the Site is strictly prohibited without the express written permission of their respective owners.
+</p>
+
+<h2 class="text-danger my-4 border-bottom">Disclaimer Of Warranties And Liability</h2>
+<p>
+    The contents of the Site are provided on an "as is" basis without warranties of any kind. Dezire Travel cannot be held responsible or liable –
+
+As to the accuracy, correctness, reliability, currentness, timeliness, non-infringement, title, merchantability or fitness for any particular purpose of the contents of the Site;
+the contents available through the Site or any functions associated therewith will be uninterrupted or error-free, or that defects will be corrected or that the Site and the server is and will be free of all viruses and/or other harmful elements.
+Dezire Travel shall also not be liable for any damage or loss of any kind, howsoever caused as a result (direct or indirect) of the use of the Site, including but not limited to any damage or loss suffered as a result of reliance on the contents contained in or available from the Site.
+</p>
+
+<h2 class="text-danger my-4 border-bottom">Third Party Advertisements</h2>
+<p>
+    Please note that third parties advertise on our Site. We do not share any of your personal Information with these third party advertisers unless you give us permission, in writing to do so. These advertisers may seek to use cookies and pixel tags to track Session Data about the ads you have seen and types of things in which you appear interested. These advertisers may also use combined information about your visits to our Site and other sites in order to provide advertisements about related goods and services that may be of interest to you.
+
+When you click on one of these advertisers' links, you are leaving our Site and entering another site. We are not responsible for such third party's sites. You should carefully review the privacy statements of any other site you visit, because those privacy statements will apply to your visit to that site, and may be very different from our policy.
+</p>
+
+<h2 class="text-danger my-4 border-bottom">Links</h2>
+<p>
+    This Site may include links to other websites operated by parties other than Dezire Travel. Dezire Travel is not responsible and assumes no responsibility for the contents of any non-Dezire Travel linked Internet website, or for any potential damage arising out of or in connection with the use of any such link. The Internet websites to which links are provided in this Site are not under the control of Dezire Travel. Access to any other Internet sites linked to the Site is entirely at the user's own risk.
+
+All links to other web sites are provided as a convenience to the user of the Site. In no circumstances shall Dezire Travel be considered to be associated or affiliated in whatever manner with any trade or service marks, logos, insignia or other devices used or appearing on web sites to which the Site is linked and shall not be held responsible in any manner whatsoever for use of the said web sites.
+</p>
+
+<h2 class="text-danger my-4 border-bottom">Logos, Concepts, Ideas</h2>
+<p>
+    We exclusively develop our logos, concepts and ideas for use in advertising, promotion, public relations and whatever else is appropriate to promote the products and services of our guests. You are not supposed to misuse, steal any of our creations, logos, and also not use any of our creations appearing on the Site for any purposes, otherwise the act may attract penal action.
+</p>
+</div>
+
+    <!-- start of footer -->
+    {% include 'footer.html' %}
+    <!-- end of footer -->
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" 
+integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" 
+crossorigin="anonymous"></script>
+<script type="text/javascript" src="{{ url_for('static', filename='script/index.js') }}"></script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script>
+  const LoginDetails = document.getElementById("LoginDetails")
+  const loginDiv = document.getElementById("loginDiv")
+  const loginmenu = document.getElementById("loginmenu")
+  const Info_div = document.getElementById("info")
+  const ul_info = document.getElementById("ulinfo")
+  const liname = document.getElementById("liname")
+  const liemail = document.getElementById("liemail")
+  const li_logout = document.querySelector("#logout")
+
+  if('{{session.email}}')
+  {
+    LoginDetails.style.display = "flex";
+    loginDiv.style.display = "flex";
+    loginmenu.style.display= "none";
+
+    liemail.innerText = '{{session.email}}'.replace('&#39','')
+    ul_info.append(liemail)
+
+    li_logout.innerHTML = "<a href='{{ url_for('login')}}' class='btn btn-light' id='logoutBtn'>Logout</a>"
+    ul_info.appendChild(li_logout);
+    let toggleValue = 1
+        loginDiv.addEventListener("click",()=>{
+    });
+
+    loginDiv.addEventListener("click",()=>{
+      console.log("hello");
+      if (toggleValue){
+          Info_div.style.display = "flex";
+          Info_div.classList.add("info")
+          toggleValue = 0 
+        } 
+        else{
+          Info_div.style.display ="none"; 
+          toggleValue = 1
+        } 
+      
+    })
+  }
+</script>
+
+
+
+<!-- Initialize Swiper -->
+<script>
+  var swiper = new Swiper(".mySwiper", {
+    loop: true,
+    spaceBetween: 10,
+    slidesPerView: 6,
+    freeMode: true,
+    watchSlidesProgress: true,
+  });
+  var swiper2 = new Swiper(".mySwiper2", {
+    loop: true,
+    spaceBetween: 10,
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+    thumbs: {
+      swiper: swiper,
+    },
+  });
+</script>
+
+<!-- When the user scrolls down 20px from the top of the document, show the button -->
+<script>
+  let mybutton = document.getElementById("btn-back-to-top");
+window.onscroll = function () {
+  scrollFunction();
+};
+
+function scrollFunction() {
+  if (
+    document.body.scrollTop > 20 ||
+    document.documentElement.scrollTop > 20
+  ) {
+    mybutton.style.display = "block";
+  } else {
+    mybutton.style.display = "none";
+  }
+}
+// When the user clicks on the button, scroll to the top of the document
+mybutton.addEventListener("click", backToTop);
+
+function backToTop() {
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
+}
+</script>
+</body>
+</html>

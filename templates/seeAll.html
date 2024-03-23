@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Tourist Prediction Web App</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/seeall.css') }}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/loginlogouticon.css')}}">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <style>
+        html{
+            overflow-x: hidden;
+        }
+        #btn-back-to-top {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        height: 55px;
+        width:55px;
+        border-radius: 50%;
+        text-align: center;
+        display: none;
+    }
+    form input:hover{
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    }
+    .form-control:focus,
+    .form-control:active {
+    outline: none!important;
+    -webkit-box-shadow: none!important;
+    box-shadow: none!important;
+}
+.edit_offer{
+  font-size: 10px!important;
+  margin-left:2rem!important;
+  text-align: center!important;
+  line-height: center!important;
+}
+.must_visit{
+  position:relative;
+  top:-14rem;
+  left:2rem;
+  z-index: 1
+}
+.trip_package_image1{
+    background-color: #252b33;
+    color:white;
+    padding:2rem;
+}
+    </style>
+</head>
+
+<body>
+    {% include 'navbar.html' %}
+    <button
+    type="button"
+    class="btn btn-danger btn-floating btn-lg"
+    id="btn-back-to-top"
+    >
+<i class="fas fa-arrow-up"></i>
+</button>
+    <section class="trip">
+        <div class="section__container trip__container">
+            
+            <div class="trip_package_image1 mb-5" data-aos="fade-right">
+                <h2 class="border-bottom border-3 border-light-subtle w-50  rounded-bottom-circle section__title my-5">Package collection</h2>
+                <p class="section__subtitle fs-5 ">
+                    Explore your suitable and dream places around Mumbai ↓
+                </p>
+            </div>
+                    <!-- search filters -->
+                    <form class="d-flex mt-5 col-8 mx-auto" role="search">
+                        <input class="form-control  me-2 rounded-5 border-1" type="search" id="search_text_box"  placeholder="Place to go..."  name="search">
+                        <button class="btn btn-danger rounded-5 px-5" type="submit" id="input_search">Search</button>
+                    </form>
+            <div class="trip__grid" id="price" data-aos="fade-up">
+                <div class="trip__card">
+                    <div class="img_wrapper">
+                      <a href="{{url_for('gateway')}}"><img src="https://im.hunt.in/cg/mumbai/City-Guide/Mumbai-Toursim.jpg"/>
+                        <span class="text-white bg-danger p-2 text-center must_visit">Must visit</span></a> 
+                    </div>
+                    <div class="trip__details">
+                      <div class="d-flex align-item-center justify-content-space-around">
+                        <p>Gateway of India</p>&nbsp;&nbsp;
+                        <span> ₹ 8,000</span>&nbsp;&nbsp;
+                        <span class="bg-danger text-white rounded-1 edit_offer p-2 mb-3">20% OFF</span>
+                      </div>
+                        <div class="booking__price">
+                            <div class="price"><span>From</span> <strike>₹ 10,000&nbsp;&nbsp;</strike> <span>1N/1D</span></div>
+                            <a class="learn_more" href="{{ url_for('learn_more')}}">Learn more</a>
+                            <a class="book__now" href="{{ url_for('bookings')}}">Book</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="trip__card">
+                    <div class="img_wrapper">
+                    <a href="{{url_for('nationalhome')}}"><img src="https://media.istockphoto.com/id/1221399000/photo/kanheri-caves-in-mumbai-india.jpg?s=612x612&w=0&k=20&c=cJhmSdWNE4fy_S6kRzkUeEuZzTy2BOxUoU5PasMrh1o=" />
+                    </a></div>
+                    <div class="trip__details">
+                        <p>National Park</p>
+                        <div class="booking__price">
+                            <div class="price"><span>From</span> ₹5,000&nbsp;&nbsp; <span>1D</span></div>
+                            <a class="learn_more" href="{{ url_for('learn_more')}}">Learn more</a>
+                            <a class="book__now" href="{{ url_for('bookings')}}">Book</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="trip__card">
+                    <div class="img_wrapper">
+                    <a href="{{url_for('iskonhome')}}"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTubBiL1hIy1UX_Nwzd_TVXTog90TMOuoks1Q&usqp=CAU" />
+                    </a></div>
+                    <div class="trip__details">
+                        <p>Iskon Temple</p>
+                        <div class="booking__price">
+                            <div class="price"><span>From</span> ₹ 5,000&nbsp;&nbsp; <span>1D</span></div>
+                            <a class="learn_more" href="{{ url_for('learn_more')}}">Learn more</a>
+                            <a class="book__now" href="{{ url_for('bookings')}}">Book</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="trip__card">
+                    <div class="img_wrapper">
+                    <a href="{{url_for('gateway')}}"><img src="https://static01.nyt.com/images/2019/10/21/travel/21mumbai-walkingtour2/merlin_162106725_227c3804-2c41-4f0d-a350-bf638b184ca1-articleLarge.jpg?quality=75&auto=webp&disable=upscale" />
+                      <span class="text-white bg-danger p-2 text-center must_visit">Must visit</span></a> </a>
+                  </div>
+                    <div class="trip__details">
+                        <p>Marine Drive</p>
+                        <div class="booking__price">
+                            <div class="price"><span>From</span> ₹7,000&nbsp;&nbsp; <span>1N/1D</span></div>
+                            <a class="learn_more" href="{{ url_for('learn_more')}}">Learn more</a>
+                            <a class="book__now" href="{{ url_for('bookings')}}">Book</a>
+                        </div>
+                    </div>
+                  </div>
+            </div>
+
+            <!-- second level trip grid -->
+            <div class="trip__grid" data-aos="fade-down">
+                <div class="trip__card">
+                    <div class="img_wrapper">
+                    <a href="{{url_for('tajhome')}}"><img src="https://navbharattimes.indiatimes.com/thumb/95857952/facts-about-taj-hotel-mumbai-you-probably-didnt-know-about-95857952.jpg?imgsize=175834&width=1200&height=900&resizemode=75" />
+                    <span class="text-white bg-danger p-2 text-center must_visit">Must visit</span></a>
+                  </div>
+                    <div class="trip__details">
+                        <p>Taj Hotel Mumbai</p>
+                        <div class="booking__price">
+                            <div class="price"><span>From</span> ₹ 15,000&nbsp;&nbsp; <span>1N/1D</span></div>
+                            <a class="learn_more" href="{{ url_for('learn_more')}}">Learn more</a>
+                            <a class="book__now" href="{{ url_for('bookings')}}">Book</a>
+                        </div>
+                    </div>
+                </div>
+                
+              <div class="trip__card">
+                <div class="img_wrapper">
+                  <a href="{{url_for('juhuhome')}}"><img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/15/b4/1f/da/20180410-184625-largejpg.jpg?w=700&h=-1&s=1" />
+                    <span class="text-white bg-danger p-2 text-center must_visit">Must visit</span></a>
+              </div>
+                <div class="trip__details">
+                    <p>Juhu Beach</p>
+                    <div class="booking__price">
+                        <div class="price"><span>From</span> ₹ 4,000&nbsp;&nbsp; <span>1D</span></div>
+                        <a class="learn_more" href="{{ url_for('learn_more')}}">Learn more</a>
+                        <a class="book__now" href="{{ url_for('bookings')}}">Book</a>
+                    </div>
+                </div>
+            </div>
+                <div class="trip__card">
+                    <div class="img_wrapper">
+                      <a href="{{url_for('babulhome')}}"><img src="https://www.trawell.in/admin/images/upload/95598077Mumbai_Babulnath_Temple_Main.jpg" />
+                        <span class="text-white bg-danger p-2 text-center must_visit">Must visit</span></a> </a>
+                  </div>
+                    <div class="trip__details">
+                        <p>Babulnath Temple</p>
+                        <div class="booking__price">
+                            <div class="price"><span>From</span> ₹9,000&nbsp;&nbsp; <span>1D</span></div>
+                            <a class="learn_more" href="{{ url_for('learn_more')}}">Learn more</a>
+                            <a class="book__now" href="{{ url_for('bookings')}}">Book</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="trip__card">
+                    <div class="img_wrapper">
+                    <a href="{{url_for('juhuhome')}}"><img src="https://mumbaitourism.travel/images/places-to-visit/headers/versova-beach-mumbai-indian-tourism-entry-fee-timings-holidays-reviews-header.jpg" />
+                    </a></div>
+                    <div class="trip__details">
+                        <p>Versova Beech</p>
+                        <div class="booking__price">
+                            <div class="price"><span>From</span> ₹4,000&nbsp;&nbsp; <span>1N/1D</span></div>
+                            <a class="learn_more" href="{{ url_for('learn_more')}}">Learn more</a>
+                            <a class="book__now" href="{{ url_for('bookings')}}">Book</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- third level trip grid -->
+            <div class="trip__grid" data-aos="fade-up">
+                <div class="trip__card">
+                    <div class="img_wrapper">
+                    <a href="{{url_for('warlihome')}}"><img src="https://digpu.com/wp-content/uploads/2021/11/Bandra-Worli-Sea-Link-A-masterpiece-of-innovative-civil-engineering-Digpu-News.jpg" />
+                    </a></div>
+                    <div class="trip__details">
+                        <p>Warli Sea Link</p>
+                        <div class="booking__price">
+                            <div class="price"><span>From</span> ₹ 12,000&nbsp;&nbsp; <span>1D</span></div>
+                            <a class="learn_more" href="{{ url_for('learn_more')}}">Learn more</a>
+                            <a class="book__now" href="{{ url_for('bookings')}}">Book</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="trip__card">
+                    <div class="img_wrapper">
+                    <a href="{{url_for('lonawalahome')}}"><img src="https://upload.wikimedia.org/wikipedia/commons/d/dd/Lonavalamh.jpg" />
+                    </a></div>
+                    <div class="trip__details">
+                        <p>Lonavala</p>
+                        <div class="booking__price">
+                            <div class="price"><span>From</span>₹25,000<span>1N/1D</span></div>
+                            <a class="learn_more" href="{{ url_for('learn_more')}}">Learn more</a>
+                            <a class="book__now" href="{{ url_for('bookings')}}">Book</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="trip__card">
+                    <div class="img_wrapper">
+                    <a href="{{url_for('jivdanihome')}}"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/JivDani%2CVirar_-_panoramio_%2823%29.jpg/800px-JivDani%2CVirar_-_panoramio_%2823%29.jpg" />
+                        <span class="text-white bg-danger p-2 text-center must_visit">Must visit</span></a></div>
+                    <div class="trip__details">
+                        <div class="d-flex align-item-center justify-content-space-around">
+                        <p>Jivdani Mata Mandir</p>
+                        <span> ₹ 4,500</span>&nbsp;&nbsp;
+                        <span class="bg-danger text-white rounded-1 edit_offer p-2 mb-3">10% OFF</span>
+                    </div>
+                        <div class="booking__price">
+                            <div class="price"><span>From</span> <strike>₹ 5,000&nbsp;&nbsp;</strike> <span>1D</span></div>
+                            <a class="learn_more" href="{{ url_for('learn_more')}}">Learn more</a>
+                            <a class="book__now" href="{{ url_for('bookings')}}">Book</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="trip__card">
+                    <div class="img_wrapper">
+                        <a href="{{url_for('gateway')}}"><img src="https://assets-news.housing.com/news/wp-content/uploads/2018/11/24203520/Mumbais-CSMT-junction-to-get-makeover-on-the-lines-of-New-Yorks-Times-Square-FB-1200x628-compressed.jpg" />
+                        </a></div>
+                    <div class="trip__details">
+                        <p>Chhatrapati shivaji maharaj</p>
+                        <div class="booking__price">
+                            <div class="price"><span>From</span> ₹3,000&nbsp;&nbsp; <span>1N/1D</span></div>
+                            <a class="learn_more" href="{{ url_for('learn_more')}}">Learn more</a>
+                            <a class="book__now" href="{{ url_for('bookings')}}">Book</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- fourth level trip grid -->
+
+            <div class="trip__grid" data-aos="fade-down">
+                <div class="trip__card">
+                    <div class="img_wrapper">
+                    <a href="{{url_for('lonawalahome')}}"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTMulcGMICKSlogdKmL34VQtlZ50vTy4yT3WQ&usqp=CAU" />
+                        <span class="text-white bg-danger p-2 text-center must_visit">Must visit</span></a></div>
+                    <div class="trip__details">
+                        <p>Mahableshwar</p>
+                        <div class="booking__price">
+                            <div class="price"><span>From</span> ₹ 32,000&nbsp;&nbsp; <span>1N/1D</span></div>
+                            <a class="learn_more" href="{{ url_for('learn_more')}}">Learn more</a>
+                            <a class="book__now" href="{{ url_for('bookings')}}">Book</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="trip__card">
+                    <div class="img_wrapper">
+                    <a href="{{url_for('lonawalahome')}}"><img src="https://www.india.com/wp-content/uploads/2019/07/Roads-leading-up-to-the-gorgeous-Matheran.-.jpg" />
+                        <span class="text-white bg-danger p-2 text-center must_visit">Must visit</span></a></div>
+                    <div class="trip__details">
+                        <p>Matheran</p>
+                        <div class="booking__price">
+                            <div class="price"><span>From</span> ₹ 20,000&nbsp;&nbsp; <span>1N/1D</span></div>
+                            <a class="learn_more" href="{{ url_for('learn_more')}}">Learn more</a>
+                            <a class="book__now" href="{{ url_for('bookings')}}">Book</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="trip__card">
+                    <div class="img_wrapper">
+                    <a href="{{url_for('ITparkhome')}}"><img src="https://www.krahejarealty.com/img/commercial/ongoing/infinity-it-building/banner.jpg" />
+                    </a></div>
+                    <div class="trip__details">
+                        <p>Goregaon IT park</p>
+                        <div class="booking__price">
+                            <div class="price"><span>From</span>₹5,000 &nbsp;<span>1D</span></div>
+                            <a class="learn_more" href="{{ url_for('learn_more')}}">Learn more</a>
+                            <a class="book__now" href="{{ url_for('bookings')}}">Book</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="trip__card">
+                    <div class="img_wrapper">
+                    <a href="{{url_for('caves')}}"><img src="https://bijoor.me/content/images/2023/04/mahakali-or-kondivite-caves-andheri-ideal-for-a-cycling-visit-1.jpg" />
+                    </a></div>
+                    <div class="trip__details">
+                        <p>Mahakali Caves</p>
+                        <div class="booking__price">
+                            <div class="price"><span>From</span>₹5,000&nbsp;&nbsp;<span>1D</span></div>
+                            <a class="learn_more" href="{{ url_for('learn_more')}}">Learn more</a>
+                            <a class="book__now" href="{{ url_for('bookings')}}">Book</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- fifth level -->
+            <div class="trip__grid" data-aos="fade-down">
+                <div class="trip__card">
+                    <div class="img_wrapper">
+                    <a href="{{url_for('caves')}}"><img src="https://media.assettype.com/outlooktraveller%2Fimport%2Foutlooktraveller%2Fpublic%2Fuploads%2Farticles%2Fexplore%2Fshutterstock_603505061.jpg?w=1200&ar=40%3A21&auto=format%2Ccompress&ogImage=true&mode=crop&enlarge=true&overlay=false&overlay_position=bottom&overlay_width=100" />
+                    </a></div>
+                    <div class="trip__details">
+                        <p>Jogeshwari Caves</p>
+                        <div class="booking__price">
+                            <div class="price"><span>From</span>₹5,000&nbsp;&nbsp; <span>1D</span></div>
+                            <a class="learn_more" href="{{ url_for('learn_more')}}">Learn more</a>
+                            <a class="book__now" href="{{ url_for('bookings')}}">Book</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="trip__card">
+                    <div class="img_wrapper">
+                    <a href="{{url_for('warlihome')}}"><img src="https://www.architecturebrio.com/wp-content/uploads/2021/01/Bandra-Collective-skate-park-carter-road-Siddharth-Chakraborty-01.jpg" />
+                    </a></div>
+                    <div class="trip__details">
+                        <p>Carter Road</p>
+                        <div class="booking__price">
+                            <div class="price"><span>From</span>₹7,000&nbsp;&nbsp; <span>1D</span></div>
+                            <a class="learn_more" href="{{ url_for('learn_more')}}">Learn more</a>
+                            <a class="book__now" href="{{ url_for('bookings')}}">Book</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="trip__card">
+                    <div class="img_wrapper">
+                    <a href="{{url_for('warlihome')}}"><img src="https://live.staticflickr.com/3098/2759408159_c23e88af5a_c.jpg" />
+                        <span class="text-white bg-danger p-2 text-center must_visit">Must visit</span> </a></div>
+                    <div class="trip__details">
+                        <p>Bandstand</p>
+                        <div class="booking__price">
+                            <div class="price"><span>From</span> ₹ 5,000&nbsp;&nbsp; <span>1D</span></div>
+                            <a class="learn_more" href="{{ url_for('learn_more')}}">Learn more</a>
+                            <a class="book__now" href="{{ url_for('bookings')}}">Book</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="trip__card">
+                    <div class="img_wrapper">
+                    <a href="{{url_for('babulhome')}}"><img src="https://media.assettype.com/outlooktraveller/import/outlooktraveller/public/uploads/articles/explore/shutterstock_1628983216.jpg?w=1200&h=675&auto=format%2Ccompress&fit=max&enlarge=true" />
+                    </a></div>
+                    <div class="trip__details">
+                        <p>Walkeshwar temple Banganga Ghat</p>
+                        <div class="booking__price">
+                            <div class="price"><span>From</span> ₹10,000&nbsp;&nbsp; <span>1D</span></div>
+                            <a class="learn_more" href="{{ url_for('learn_more')}}">Learn more</a>
+                            <a class="book__now" href="{{ url_for('bookings')}}">Book</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- sixth level -->
+            <div class="trip__grid" data-aos="fade-up">
+                <div class="trip__card">
+                    <div class="img_wrapper">
+                    <a href="{{url_for('hangingexplore')}}"><img src="https://imgstaticcontent.lbb.in/lbbnew/wp-content/uploads/sites/7/2017/08/07205027/12072017_hanginggarden01.jpg" />
+                    </a></div>
+                    <div class="trip__details">
+                        <p>Hanging Garden</p>
+                        <div class="booking__price">
+                            <div class="price"><span>From</span> ₹ 10,000&nbsp;&nbsp; <span>1D</span></div>
+                            <a class="learn_more" href="{{ url_for('learn_more')}}">Learn more</a>
+                            <a class="book__now" href="{{ url_for('bookings')}}">Book</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="trip__card">
+                    <div class="img_wrapper">
+                    <a href="{{url_for('jivdanihome')}}"><img src="https://ak-d.tripcdn.com/images/0352p120009438v469324_C_1136_640_Q60.jpg" />
+                    </a></div>
+                    <div class="trip__details">
+                        <p>Arnala Fort</p>
+                        <div class="booking__price">
+                            <div class="price"><span>From</span> ₹ 12,000&nbsp;&nbsp; <span>1D</span></div>
+                            <a class="learn_more" href="{{ url_for('learn_more')}}">Learn more</a>
+                            <a class="book__now" href="{{ url_for('bookings')}}">Book</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="trip__card">
+                    <div class="img_wrapper">
+                    <a href="{{url_for('nationalhome')}}"><img src="https://thelandofwanderlust.com/wp-content/uploads/2017/08/IMG_1956.jpeg" />
+                    </a></div>
+                    <div class="trip__details">
+                        <p>Chinchoti Waterfall</p>
+                        <div class="booking__price">
+                            <div class="price"><span>From</span> ₹10,000&nbsp;&nbsp; <span>1D</span></div>
+                            <a class="learn_more" href="{{ url_for('learn_more')}}">Learn more</a>
+                            <a class="book__now" href="{{ url_for('bookings')}}">Book</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="trip__card">
+                    <div class="img_wrapper">
+                    <a href="{{url_for('ITparkhome')}}"><img src="https://files.yappe.in/place/full/dahisar-lake-2315679.webp" />
+                    </a></div>
+                    <div class="trip__details">
+                        <p>Vaishali Dam</p>
+                        <div class="booking__price">
+                            <div class="price"><span>From</span> ₹8,000&nbsp;&nbsp; <span>1D</span></div>
+                            <a class="learn_more" href="{{ url_for('learn_more')}}">Learn more</a>
+                            <a class="book__now" href="{{ url_for('bookings')}}">Book</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+<!-- closing of trip grip -->
+        </div>  
+    </section>
+
+    <!-- start of footer -->
+    {% include 'footer.html' %}
+    <!-- end of footer -->
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" 
+integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" 
+crossorigin="anonymous"></script>
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script type="text/javascript" src="{{ url_for('static', filename='script/index.js') }}"></script>
+<script>
+    const LoginDetails = document.getElementById("LoginDetails")
+    const loginDiv = document.getElementById("loginDiv")
+    const loginmenu = document.getElementById("loginmenu")
+    const Info_div = document.getElementById("info")
+    const ul_info = document.getElementById("ulinfo")
+    const liname = document.getElementById("liname")
+    const liemail = document.getElementById("liemail")
+    const li_logout = document.querySelector("#logout")
+    console.log(li_logout);
+  
+    if('{{session.email}}')
+    {
+      console.log('{{session.email}}');
+      LoginDetails.style.display = "flex";
+      loginDiv.style.display = "flex";
+      loginmenu.style.display= "none";
+  
+      liemail.innerText = '{{session.email}}'.replace('&#39','')
+            ul_info.append(liemail)
+  
+      li_logout.innerHTML = "<a href='{{ url_for('login')}}' class='btn btn-light' id='logoutBtn'>Logout</a>"
+      ul_info.appendChild(li_logout);
+      let toggleValue = 1
+          loginDiv.addEventListener("click",()=>{
+    
+      });
+  
+  
+      loginDiv.addEventListener("click",()=>{
+        console.log("hello");
+        if (toggleValue){
+            Info_div.style.display = "flex";
+            Info_div.classList.add("info")
+       
+            toggleValue = 0 
+          } 
+          else{
+            Info_div.style.display ="none"; 
+            toggleValue = 1
+          } 
+        
+      })
+    }
+  </script>
+  <script>
+    AOS.init();
+    </script>
+
+  <!-- When the user scrolls down 20px from the top of the document, show the button -->
+<script>
+    let mybutton = document.getElementById("btn-back-to-top");
+  window.onscroll = function () {
+    scrollFunction();
+  };
+  
+  function scrollFunction() {
+    if (
+      document.body.scrollTop > 20 ||
+      document.documentElement.scrollTop > 20
+    ) {
+      mybutton.style.display = "block";
+    } else {
+      mybutton.style.display = "none";
+    }
+  }
+  // When the user clicks on the button, scroll to the top of the document
+  mybutton.addEventListener("click", backToTop);
+  
+  function backToTop() {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+  }
+  </script>
+</body>
+</html>

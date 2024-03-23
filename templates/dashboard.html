@@ -1,0 +1,422 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Tourist Prediction Web App</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/js/swiper.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/js/swiper.min.js"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='script/index.js') }}"></script>
+    <link rel="stylesheet" href="{{url_for('static', filename='css/loginlogouticon.css')}}">
+    <style>
+        i{
+            font-size: 27px;
+        }
+        i:hover{
+            cursor: pointer;
+        }
+        .display{
+            
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap:1rem;
+}
+#info{
+    display: none;
+}
+.info{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    position: absolute;
+    z-index: 100;
+    right:1px;
+    height: 100px;
+    border-radius: 10px;
+    width:200px;
+    background-color: white;
+    color :black;
+    box-shadow: rgba(0, 0, 0, 0.10) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+    /* display:none; */
+}
+.btn{
+    --bs-btn-padding-x: .1rem!important;
+    --bs-btn-padding-y: .1rem!important;
+}
+
+ul {
+    padding-left:.6rem!important;
+}
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT3WyPK0Au3GU--MtJWf-NsS9D3PIhunoJqqw&usqp=CAU">
+          <a class="navbar-brand" href="#">Travel Mumbai</a>
+          <!-- <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button> -->
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="{{ url_for('home')}}">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{{ url_for('contactUs')}}">Contact Us</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{{ url_for('aboutUs')}}">About Us</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  More
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="{{ url_for('Destinations')}}">Destination</a></li>
+                  <li><a class="dropdown-item" href="{{ url_for('Gallery')}}">Gallery</a></li>
+                  <!-- <li><hr class="dropdown-divider"></li> -->
+                  <li><a class="dropdown-item" href="{{ url_for('experience')}}">Experience</a></li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link " href="{{ url_for('signUp')}}">Sign Up</a>
+              </li>
+              <!-- <li class="nav-item">
+                <a class="nav-link " href="{{ url_for('login')}}">Log In</a>
+              </li> -->
+            </ul>
+        </div>
+        </div>
+    </nav>
+
+
+    
+    <!-- slider start  here -->
+    <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+        <div class="carousel-item bg-image bg-1 active" data-bs-interval="3000">
+            
+        </div>
+        <div class="carousel-item bg-image bg-2" data-bs-interval="3000">
+            
+        </div>
+        <div class="carousel-item bg-image bg-3" data-bs-interval="3000">
+           
+        </div>
+        <div class="carousel-item bg-image bg-4" data-bs-interval="3000">
+           
+        </div>
+        <div class="carousel-item bg-image bg-5" data-bs-interval="3000">
+            
+        </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+<!-- slider end here -->
+
+<section class="trip">
+    <div class="section__container trip__container">
+      <div class="trip_package_image">
+        <h2 class="border-bottom border-3 border-light-subtle w-50  rounded-bottom-circle section__title my-5">Best trip package</h2>
+        <p class="section__subtitle fs-5 ">
+            Explore your suitable and dream places around the world. Here you can find your right destination.
+        </p>
+      </div>
+      <!-- search filters -->
+        <form class="d-flex mt-5 col-8 mx-auto" role="search">
+          <input class="form-control me-2 rounded-5 border-1" type="search" id="search_text_box"  placeholder="Search"  name="search">
+          <button class="btn btn-danger rounded-5" type="submit" id="input_search">Search</button>
+        </form>
+
+
+        <div class="trip__grid" id="price">
+          <div class="trip__card">
+              <div class="img_wrapper">
+              <img src="https://im.hunt.in/cg/mumbai/City-Guide/Mumbai-Toursim.jpg"/>
+              </div>
+              <div class="trip__details">
+                  <p>Gateway of India</p>
+                  <div class="booking__price">
+                      <div class="price"><span>From</span> ₹ 10,000</div>
+                      <a class="learn_more" href="{{ url_for('learn_more')}}">Learn more</a>
+                      <a class="book__now" href="{{ url_for('Payment')}}">Book Now</a>
+                  </div>
+              </div>
+          </div>
+          <div class="trip__card">
+              <div class="img_wrapper">
+              <img src="https://media.istockphoto.com/id/1221399000/photo/kanheri-caves-in-mumbai-india.jpg?s=612x612&w=0&k=20&c=cJhmSdWNE4fy_S6kRzkUeEuZzTy2BOxUoU5PasMrh1o=" />
+              </div>
+              <div class="trip__details">
+                  <p>National Park</p>
+                  <div class="booking__price">
+                      <div class="price"><span>From</span> ₹5,000</div>
+                      <a class="learn_more" href="{{ url_for('learn_more')}}">Learn more</a>
+                      <a class="book__now" href="{{ url_for('Payment')}}">Book Now</a>
+                  </div>
+              </div>
+          </div>
+          <div class="trip__card">
+              <div class="img_wrapper">
+              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTubBiL1hIy1UX_Nwzd_TVXTog90TMOuoks1Q&usqp=CAU" />
+              </div>
+              <div class="trip__details">
+                  <p>Iskon Temple</p>
+                  <div class="booking__price">
+                      <div class="price"><span>From</span> ₹ 5,000</div>
+                      <a class="learn_more" href="{{ url_for('learn_more')}}">Learn more</a>
+                      <a class="book__now" href="{{ url_for('Payment')}}">Book Now</a>
+                  </div>
+              </div>
+          </div>
+          <!-- <div class="trip__card">
+              <div class="img_wrapper">
+              <img src="https://static01.nyt.com/images/2019/10/21/travel/21mumbai-walkingtour2/merlin_162106725_227c3804-2c41-4f0d-a350-bf638b184ca1-articleLarge.jpg?quality=75&auto=webp&disable=upscale" />
+              </div>
+              <div class="trip__details">
+                  <p>Marine Drive</p>
+                  <div class="booking__price">
+                      <div class="price"><span>From</span> ₹7,000</div>
+                      <a class="learn_more" href="{{ url_for('learn_more')}}">Learn more</a>
+                      <a class="book__now" href="{{ url_for('Payment')}}">Book Now</a>
+                  </div>
+              </div>
+          </div> -->
+      </div>
+
+      <!-- second level trip grid -->
+      <div class="trip__grid">
+          <div class="trip__card">
+              <div class="img_wrapper">
+              <img src="https://navbharattimes.indiatimes.com/thumb/95857952/facts-about-taj-hotel-mumbai-you-probably-didnt-know-about-95857952.jpg?imgsize=175834&width=1200&height=900&resizemode=75" />
+              </div>
+              <div class="trip__details">
+                  <p>Taj Hotel Mumbai</p>
+                  <div class="booking__price">
+                      <div class="price"><span>From</span> ₹ 15,000</div>
+                      <a class="learn_more" href="{{ url_for('learn_more')}}">Learn more</a>
+                      <a class="book__now" href="{{ url_for('Payment')}}">Book Now</a>
+                  </div>
+              </div>
+          </div>
+          <div class="trip__card">
+              <div class="img_wrapper">
+              <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/15/b4/1f/da/20180410-184625-largejpg.jpg?w=700&h=-1&s=1" />
+              </div>
+              <div class="trip__details">
+                  <p>Juhu Beach</p>
+                  <div class="booking__price">
+                      <div class="price"><span>From</span> ₹ 4,000</div>
+                      <a class="learn_more" href="{{ url_for('learn_more')}}">Learn more</a>
+                      <a class="book__now" href="{{ url_for('Payment')}}">Book Now</a>
+                  </div>
+              </div>
+          </div>
+          <div class="trip__card">
+              <div class="img_wrapper">
+              <img src="https://www.trawell.in/admin/images/upload/95598077Mumbai_Babulnath_Temple_Main.jpg" />
+              </div>
+              <div class="trip__details">
+                  <p>Babulnath Temple</p>
+                  <div class="booking__price">
+                      <div class="price"><span>From</span> ₹9,000</div>
+                      <a class="learn_more" href="{{ url_for('learn_more')}}">Learn more</a>
+                      <a class="book__now" href="{{ url_for('Payment')}}">Book Now</a>
+                  </div>
+              </div>
+          </div>
+          <!-- <div class="trip__card">
+              <div class="img_wrapper">
+              <img src="https://mumbaitourism.travel/images/places-to-visit/headers/versova-beach-mumbai-indian-tourism-entry-fee-timings-holidays-reviews-header.jpg" />
+              </div>
+              <div class="trip__details">
+                  <p>Versova Beech</p>
+                  <div class="booking__price">
+                      <div class="price"><span>From</span> ₹4,000</div>
+                      <a class="learn_more" href="{{ url_for('learn_more')}}">Learn more</a>
+                      <a class="book__now" href="{{ url_for('Payment')}}">Book Now</a>
+                  </div>
+              </div>
+          </div> -->
+      </div>
+
+      <!-- third level trip grid -->
+      <div class="trip__grid">
+          <div class="trip__card">
+              <div class="img_wrapper">
+              <img src="https://digpu.com/wp-content/uploads/2021/11/Bandra-Worli-Sea-Link-A-masterpiece-of-innovative-civil-engineering-Digpu-News.jpg" />
+              </div>
+              <div class="trip__details">
+                  <p>Warli Sea Link</p>
+                  <div class="booking__price">
+                      <div class="price"><span>From</span> ₹ 12,000</div>
+                      <a class="learn_more" href="{{ url_for('learn_more')}}">Learn more</a>
+                      <a class="book__now" href="{{ url_for('Payment')}}">Book Now</a>
+                  </div>
+              </div>
+          </div>
+          <div class="trip__card">
+              <div class="img_wrapper">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/d/dd/Lonavalamh.jpg" />
+              </div>
+              <div class="trip__details">
+                  <p>Lonavala</p>
+                  <div class="booking__price">
+                      <div class="price"><span>From</span> ₹ 25,000</div>
+                      <a class="learn_more" href="{{ url_for('learn_more')}}">Learn more</a>
+                      <a class="book__now" href="{{ url_for('Payment')}}">Book Now</a>
+                  </div>
+              </div>
+          </div>
+          <div class="trip__card">
+              <div class="img_wrapper">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/JivDani%2CVirar_-_panoramio_%2823%29.jpg/800px-JivDani%2CVirar_-_panoramio_%2823%29.jpg" />
+              </div>
+              <div class="trip__details">
+                  <p>Jivdani Mata Mandir</p>
+                  <div class="booking__price">
+                      <div class="price"><span>From</span> ₹7,000</div>
+                      <a class="learn_more" href="{{ url_for('learn_more')}}">Learn more</a>
+                      <a class="book__now" href="{{ url_for('Payment')}}">Book Now</a>
+                  </div>
+              </div>
+          </div>
+          <!-- <div class="trip__card">
+              <div class="img_wrapper">
+                  <img src="https://assets-news.housing.com/news/wp-content/uploads/2018/11/24203520/Mumbais-CSMT-junction-to-get-makeover-on-the-lines-of-New-Yorks-Times-Square-FB-1200x628-compressed.jpg" />
+              </div>
+              <div class="trip__details">
+                  <p>Chhatrapati shivaji maharaj</p>
+                  <div class="booking__price">
+                      <div class="price"><span>From</span> ₹3,000</div>
+                      <a class="learn_more" href="{{ url_for('learn_more')}}">Learn more</a>
+                      <a class="book__now" href="{{ url_for('Payment')}}">Book Now</a>
+                  </div>
+              </div>
+          </div> -->
+      </div>
+<!-- closing of trip grip -->
+    </div>
+    <!-- <div class="see_all_btn">
+    <a  href="{{url_for('seeAll')}}" style="background-image: linear-gradient(-225deg, #FF057C 0%, #8D0B93 50%, #321575 100%);" 
+    class="btn text-white rounded-5">See All...</a>
+    </div> --> 
+</section>
+
+    <!-- start of footer -->
+    <section class="py-5 mt-5" style="background-color: #252b33;">
+        <div class="container">
+        <div class="row flex-center">
+            <div class="col-auto mb-4 mx-auto">
+            <ul class="list-unstyled list-inline mb-0">
+                <li class="list-inline-item me3 me-sm-4"><a class="text-white text-decoration-none" href="/">Home</a></li>
+                <li class="list-inline-item me3 me-sm-4"><a class="text-white text-decoration-none" href="#carouselExampleAutoplaying">Video</a></li>
+                <li class="list-inline-item me3 me-sm-4"><a class="text-white text-decoration-none" href="/Destinations">Destinations</a></li>
+                <li class="list-inline-item me3 me-sm-4"><a class="text-white text-decoration-none" href="/">Booking</a></li>
+                <li class="list-inline-item me3 me-sm-4"><a class="text-white text-decoration-none" href="/contactUs">Contact</a></li>
+                <li class="list-inline-item me3 me-sm-4"><a class="text-white text-decoration-none" href="#price">Pricing</a></li>
+                <li class="list-inline-item me3 me-sm-4"><a class="text-white text-decoration-none" href="#">Privacy Policy</a></li>
+            </ul>
+            </div>
+        </div>
+        <div class="row flex-center">
+            <div class="col-auto mb-4 mx-auto">
+            <p class="mb-0 fs--1 text-white">© This template is made with&nbsp;<svg class="bi bi-suit-heart-fill" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#fff" viewBox="0 0 16 16">
+                <path d="M4 1c2.21 0 4 1.755 4 3.92C8 2.755 9.79 1 12 1s4 1.755 4 3.92c0 3.263-3.234 4.414-7.608 9.608a.513.513 0 0 1-.784 0C3.234 9.334 0 8.183 0 4.92 0 2.755 1.79 1 4 1z"></path>
+                </svg>&nbsp;by&nbsp;<a class="text-white" href="https://themewagon.com/" target="_blank">TheDezireTourist </a></p>
+            </div>
+        </div>
+        <div class="row flex-center">
+            <div class="col-auto mx-auto">
+            <ul class="list-unstyled list-inline">
+                <li class="list-inline-item me-3"><a class="text-decoration-none" href="#!"><svg class="bi bi-youtube" xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#fff" viewBox="0 0 16 16">
+                    <path d="M8.051 1.999h.089c.822.003 4.987.033 6.11.335a2.01 2.01 0 0 1 1.415 1.42c.101.38.172.883.22 1.402l.01.104.022.26.008.104c.065.914.073 1.77.074 1.957v.075c-.001.194-.01 1.108-.082 2.06l-.008.105-.009.104c-.05.572-.124 1.14-.235 1.558a2.007 2.007 0 0 1-1.415 1.42c-1.16.312-5.569.334-6.18.335h-.142c-.309 0-1.587-.006-2.927-.052l-.17-.006-.087-.004-.171-.007-.171-.007c-1.11-.049-2.167-.128-2.654-.26a2.007 2.007 0 0 1-1.415-1.419c-.111-.417-.185-.986-.235-1.558L.09 9.82l-.008-.104A31.4 31.4 0 0 1 0 7.68v-.122C.002 7.343.01 6.6.064 5.78l.007-.103.003-.052.008-.104.022-.26.01-.104c.048-.519.119-1.023.22-1.402a2.007 2.007 0 0 1 1.415-1.42c.487-.13 1.544-.21 2.654-.26l.17-.007.172-.006.086-.003.171-.007A99.788 99.788 0 0 1 7.858 2h.193zM6.4 5.209v4.818l4.157-2.408L6.4 5.209z"></path>
+                    </svg></a></li>
+                <li class="list-inline-item me-3"><a class="text-decoration-none" href="#!"><svg class="bi bi-facebook" xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#fff" viewBox="0 0 16 16">
+                    <path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z"></path>
+                    </svg></a></li>
+                <li class="list-inline-item me-3"><a href="#!"><svg class="bi bi-twitter" xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#fff" viewBox="0 0 16 16">
+                    <path d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z"></path>
+                    </svg></a></li>
+                <li class="list-inline-item me-3"><a href="#!"><svg class="bi bi-instagram" xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#fff" viewBox="0 0 16 16">
+                    <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z"> </path>
+                    </svg></a></li>
+            </ul>
+            </div>
+        </div>
+        </div><!-- end of .container-->
+      </section>
+    <!-- end of footer -->
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <script>
+        const LoginDetails = document.getElementById("LoginDetails")
+        const loginDiv = document.getElementById("loginDiv")
+        const loginmenu = document.getElementById("loginmenu")
+        const Info_div = document.getElementById("info")
+        const ul_info = document.getElementById("ulinfo")
+        const liname = document.getElementById("liname")
+        const liemail = document.getElementById("liemail")
+        const li_logout = document.querySelector("#logout")
+        console.log(li_logout);
+      
+        if('{{session.email}}')
+        {
+          console.log('{{session.email}}');
+          LoginDetails.style.display = "flex";
+          loginDiv.style.display = "flex";
+          loginmenu.style.display= "none";
+      
+          liemail.innerText = '{{session.email}}'.replace('&#39','')
+                ul_info.append(liemail)
+      
+          li_logout.innerHTML = "<button href='{{ url_for('login')}}' class='btn btn-light' id='logoutBtn'>Logout</button>"
+          ul_info.appendChild(li_logout);
+          let toggleValue = 1
+              loginDiv.addEventListener("click",()=>{
+        
+          });
+      
+      
+          loginDiv.addEventListener("click",()=>{
+            console.log("hello");
+            if (toggleValue){
+                Info_div.style.display = "flex";
+                Info_div.classList.add("info")
+                // const a = document.createElement("a")
+                toggleValue = 0 
+              } 
+              else{
+                Info_div.style.display ="none"; 
+                toggleValue = 1
+              } 
+            
+          })
+        }
+        const logoutBtn  = document.querySelector("#logout button")
+        logoutBtn.addEventListener("click",(e)=>{
+          loginmenu.style.display = "flex";
+          LoginDetails.style.display = "none";
+        });
+      
+      </script>
+</body>
+
+</html>

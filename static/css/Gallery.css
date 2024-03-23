@@ -1,0 +1,140 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600&display=swap');
+* {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    text-transform: capitalize;
+    transition: all .2s linear;
+    list-style: none;
+}
+:root {
+    --primary-color: #3685fb;
+    --primary-color-dark: #2f73d9;
+    --secondary-color: #fafcff;
+    --red-color:#dc3545;
+    --red-color-hover:#bb2d3b;
+    --text-dark: #0d213f;
+    --text-light: #767268;
+    --extra-light: #ffffff;
+    --max-width: 1200px;
+}
+/* 
+input[type=file]{
+    padding: 0.5rem 1.5rem;
+    color: var(--extra-light);
+    outline: none;
+    border: 1px solid var(--red-color);
+    border-radius: 5rem;
+    background-color: var(--red-color);
+    cursor: pointer;
+    transition: 0.3s;
+    margin-bottom: 4rem;
+    margin-top:1rem;
+    margin-inline: 8rem;
+}
+input[type=file]:hover {
+    color: var(--extra-light);
+    background-color: var(--red-color-hover);
+    transition: .7s;
+} */
+.thumbnail .anchor{
+    position: relative;
+    top:-4rem;
+    left:7.7rem;
+}
+.downloadBtn{
+    padding: 0.3rem .7rem;
+    color: var(--extra-light);
+    outline: none;
+    border: 1px solid var(--red-color);
+    border-radius: 5rem;
+    background-color: var(--red-color);
+    cursor: pointer;
+    transition: 0.3s;
+    margin-top:1rem;
+    margin-inline: 3rem;
+}
+.hide_anchor_tag{
+    display: none;
+}
+.downloadBtn:hover{
+    color: var(--extra-light);
+    background-color: var(--red-color-hover);
+    transition: .7s;
+}
+
+nav img{
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    margin-inline:.4rem;
+}
+/* #upload{
+    display: none;
+} */
+#result{
+    margin-top:2rem;
+    display: flex;
+    gap:2rem;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.thumbnail{
+    height:200px;
+    width:285px;
+}
+.thumbnail img{
+    height:200px;
+    width:285px;
+    border-radius: 10px;
+    background-position:center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    transition: .7s;
+   
+}
+.thumbnail img:hover{
+    transition: .7s;
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+    /* transform: scale(1.09); */
+    /* cursor: pointer; */
+
+}
+.imgIncOnClick{
+    display: flex;
+    align-items:center;
+    justify-content: center;
+    padding:2rem;
+    background-color: #252b33;
+}
+.imgIncOnClick img{
+    height:400px;
+    width:500px;
+    border-radius: 10px;
+}
+
+#largeImage{
+    display: none;
+}
+#largeImage #cross{
+    position: relative;
+    top: -186px;
+    right: -960px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height:35px;
+    width: 35px;
+    border-radius: 50%;
+    color: white;
+    font-size: 20px;
+}
+#largeImage #cross:hover{
+    background-color: gainsboro;
+    color:black;
+    cursor:pointer;
+}

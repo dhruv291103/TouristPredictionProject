@@ -1,0 +1,53 @@
+* {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    text-transform: capitalize;
+    transition: all .2s linear;
+    list-style: none;
+}
+nav img{
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    margin-inline:.4rem;
+}
+.tours {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.places{
+    /* display: inline; */
+    text-align: center;
+    border-radius: 12px;
+    flex-basis: 15%;    
+}
+
+.places h2 {
+    color: red;
+    margin-bottom:-5px;
+    font-size: 25px;
+    letter-spacing: 3px;
+    border-radius: 1px;
+    padding: 15px 15px;
+    background-color: #000;
+}
+.places img{
+    height: 250px;
+    width: 300px;
+    border-radius: 12px;
+    transition: .7s;
+}
+.places img:hover{
+    transition: .7s;
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 5px 5px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+    /* transform: scale(0.85) rotate(-10deg); */
+    cursor: pointer;
+    opacity: .8;
+    
+}

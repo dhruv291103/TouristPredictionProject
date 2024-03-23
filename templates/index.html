@@ -1,0 +1,783 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Tourist Prediction Web App</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="{{url_for('static', filename='css/loginlogouticon.css')}}">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <style>
+    .home-demo{
+    background: white;
+    border-radius: 1rem;
+    padding:2rem;
+    margin-inline:12rem;
+    margin-top:3rem;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+    
+}
+
+.home-demo .item h3{
+    position: relative;
+    top:-2.3rem;
+    color: white;
+    text-align: center;
+}
+
+.home-demo img{
+  border-radius: 1rem;
+  height: 250px;
+  width:200px;
+  filter: contrast(70%);
+}
+.owl-nav{
+  position:absolute;
+  top:-5.5rem;
+  right:1rem;
+  font-size: 3rem;
+}
+html,body {
+      position: relative;
+    }
+    .swiper-button-next,.swiper-button-prev{
+      opacity: .6;
+      color: #222121;
+    }
+        .form-control{
+            color:none;
+        }
+        .video{
+          display: flex;
+          height: 75vh;
+          width:100%;
+          align-items: center;
+          justify-content:center;
+          overflow: hidden;
+          background-position: center;
+          background-size: cover;
+          
+        }
+        #video{
+          width:100%;
+        }
+        .large_img img{
+          height:85vh;
+          width:100%;
+          background-repeat: no-repeat;
+          background-size: cover;
+          background-position: center;
+          /* image-rendering: pixelated;
+          image-rendering: -webkit-optimize-contrast; */
+        }
+      .description{
+            position:absolute;
+            left:1rem;
+            top:54vh;
+            font-weight: 500;
+            font-size: 1.5rem;
+            border-radius: 2rem;
+            color:rgb(250, 242, 242);
+            backdrop-filter: brightness(50%);
+            transition:.3s;
+            padding:1rem;
+            animation: visibility 6s linear 1.5s alternate infinite;
+      }
+      @keyframes visibility{
+        100%{
+          opacity: 1;
+        }
+        75%{
+          opacity: .75;
+        }
+        50%{
+          opacity: .5;
+        }
+      }
+      .description:hover{
+        backdrop-filter: brightness(25%);
+        transition:.3s;
+        color: #fff;
+      }
+      #btn-back-to-top {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      height: 55px;
+      width:55px;
+      border-radius: 50%;
+      text-align: center;
+      display: none;
+      }
+      .links_section a:hover{
+        color:rgb(242, 55, 55)!important;
+        border-bottom:1.5px solid rgb(242, 55, 55);
+      }
+      form input:hover{
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    }
+    .form-control:focus,
+    .form-control:active {
+    outline: none!important;
+    -webkit-box-shadow: none!important;
+    box-shadow: none!important;
+}
+.tours h3{
+  position: relative;
+  top:3rem;
+  left:1rem;
+  margin:0px;
+  font-size:2rem;
+  z-index:100;
+  color: white;
+}
+.tours{
+  position:relative;
+  top:-7rem;
+  left:1rem;
+}
+.tours img{
+  opacity: .90; 
+  transition: .3s;
+}
+.tours img:hover,
+.tours h3:hover~img{
+  opacity: 1;
+  transition: .3s;
+}
+.edit_offer{
+  font-size: 10px!important;
+  margin-left:2rem!important;
+  text-align: center!important;
+  line-height: center!important;
+}
+.must_visit{
+  position:relative;
+  top:-18rem;
+  left:2rem;
+  z-index: 1
+}
+</style>
+</head>
+
+<body>
+  {% include 'navbar.html' %}
+
+  <!-- top button functionality -->
+  <button
+        type="button"
+        class="btn btn-danger btn-floating btn-lg"
+        id="btn-back-to-top"
+        >
+  <i class="fas fa-arrow-up"></i>
+</button>
+
+        <div class="video" data-aos="fade-left">
+          <video  id="video" autoplay muted loop controls>
+            <source src="../static/search_video.mp4" type="video/mp4" >
+          </video>
+        </div>
+
+        <div class="tours container-fluid" data-aos="fade-left">
+          <div class="places">
+              <h3>Konkan</h3>
+              <a href="{{ url_for('kokanexplore')}}"><img src="https://assets.zeezest.com/blogs/PROD_Kokan-Beaches-banner_1627312841147.jpg" style="width: 350px; height: 250px; border-radius: 12px;"></a>
+             
+          </div>
+          <div class="places special">
+              <h3>Vidarbha</h3>
+              <a href="{{url_for('vidarbhaexplore')}}"><img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/21/99/6b/c7/caption.jpg?w=300&h=300&s=1" style="width: 350px; height:250px; border-radius: 12px;"/></a>
+             
+          </div>
+        
+          <div class="places">
+              <h3>Marathwada</h3>
+              <a href="{{url_for('marathwadaexplore')}}"><img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/2a/da/ab/8f/caption.jpg?w=300&h=300&s=1" style="width: 350px; height: 250px; border-radius: 12px;"></a>
+           
+          </div>
+
+          <div class="places">
+            <h3>Hill station</h3>
+            <a href="{{url_for('westmahaexplore')}}"><img src="https://media.istockphoto.com/id/1127266902/photo/waterfalls-on-road-to-ekvira-devi-temple-lonavala-maharashtra-india.jpg?b=1&s=612x612&w=0&k=20&c=QoHOFFOXoAr_hlFTO826CCoAWneock8ieNsfzfG6ng8=" style="width: 350px; height: 250px; border-radius: 12px;"/></a>
+        </div>
+      </div>
+
+    <section class="trip">
+        <div class="section__container trip__container" data-aos="fade-right">
+          <div class="trip_package_image">
+            <h2 class="border-bottom border-3 border-light-subtle w-50  rounded-bottom-circle section__title my-5">Best trip package</h2>
+            <p class="section__subtitle fs-5 ">
+                Explore your suitable and dream places around the world, Here you can find your right destination ↓
+            </p>
+          </div>
+
+            <form class="d-flex mt-5 col-8 mx-auto" role="search">
+              <input class="form-control me-2 rounded-5 border-1" type="search" id="search_text_box"  placeholder="Place to go..."  name="search">
+              <button class="btn btn-danger rounded-5 px-5" type="submit" id="input_search">Search</button>
+            </form>
+      
+            <!-- first set of card -->
+
+            <div class="links_section d-flex align-item-center justify-content-between container mt-5">
+              <a href="#ancient" class="col-2 text-decoration-none text-center text-danger border-bottom border-danger">Ancient</a>
+              <a href="#beach" class="col-2 text-decoration-none text-dark text-center " >Beach</a>
+              <a href="#cruise" class="col-2 text-decoration-none text-dark text-center " >Cruise</a>
+              <a href="#temple" class="col-2 text-decoration-none text-dark text-center " >Temple</a>
+              <a href="#hills" class="col-2 text-decoration-none text-dark text-center " >Hill station</a>
+              <a href="#offer" class="col-2 text-decoration-none text-dark text-center " >Offer deals</a>
+            </div>
+            <h2 class="ms-4 my-4 border-bottom text-danger" id="ancient">Ancient collection for you</h2>
+            <div class="trip__grid " id="price" data-aos="fade-up">
+              <div class="trip__card">
+                  <div class="img_wrapper">
+                    <a href="{{url_for('gateway')}}"><img src="https://im.hunt.in/cg/mumbai/City-Guide/Mumbai-Toursim.jpg"/>
+                      <span class="text-white bg-danger p-2 text-center must_visit">Must visit</span></a> 
+                  </div>
+                  <div class="trip__details">
+                    <div class="d-flex align-item-center justify-content-space-around">
+                      <p>Gateway of India</p>&nbsp;&nbsp;
+                      <span> ₹ 8,000</span>&nbsp;&nbsp;
+                      <span class="bg-danger text-white rounded-1 edit_offer p-2 mb-3">20% OFF</span>
+                    </div>
+                      <div class="booking__price">
+                          <div class="price"><span>From</span> <strike>₹ 10,000&nbsp;&nbsp;</strike> <span>1N/1D</span></div>
+                          <a class="learn_more" href="{{ url_for('learn_more')}}">Learn more</a>
+                          <a class="book__now" href="{{ url_for('bookings')}}">Book Now</a>
+                      </div>
+                  </div>
+              </div>
+
+              <div class="trip__card">
+                <div class="img_wrapper">
+                <a href="{{url_for('tajhome')}}"><img src="https://navbharattimes.indiatimes.com/thumb/95857952/facts-about-taj-hotel-mumbai-you-probably-didnt-know-about-95857952.jpg?imgsize=175834&width=1200&height=900&resizemode=75" />
+                  <span class="text-white bg-danger p-2 text-center must_visit">Must visit</span></a>
+              </div>
+                <div class="trip__details">
+                    <p>Taj Hotel Mumbai</p>
+                    <div class="booking__price">
+                        <div class="price"><span>From</span> ₹ 15,000&nbsp;&nbsp; <span>1N/1D</span></div>
+                        <a class="learn_more" href="{{ url_for('learn_more')}}">Learn more</a>
+                        <a class="book__now" href="{{ url_for('bookings')}}">Book Now</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="trip__card">
+              <div class="img_wrapper">
+                  <a href="{{url_for('gateway')}}"><img src="https://assets-news.housing.com/news/wp-content/uploads/2018/11/24203520/Mumbais-CSMT-junction-to-get-makeover-on-the-lines-of-New-Yorks-Times-Square-FB-1200x628-compressed.jpg" />
+                  </a></div>
+              <div class="trip__details">
+                  <p>Chhatrapati shivaji maharaj</p>
+                  <div class="booking__price">
+                      <div class="price"><span>From</span> ₹3,000&nbsp;&nbsp; <span>1N/1D</span></div>
+                      <a class="learn_more" href="{{ url_for('learn_more')}}">Learn more</a>
+                      <a class="book__now" href="{{ url_for('bookings')}}">Book Now</a>
+                  </div>
+              </div>
+          </div>
+          </div>
+
+          <!-- second set of card -->
+          <h2 class="ms-4 my-5 border-bottom text-danger" id="temple">Temple/Mandir collection for you</h2>
+          <div class="trip__grid" data-aos="fade-down">
+              <div class="trip__card">
+                <div class="img_wrapper">
+              <a href="{{url_for('iskonhome')}}"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTubBiL1hIy1UX_Nwzd_TVXTog90TMOuoks1Q&usqp=CAU" />
+              </a> </div>
+                <div class="trip__details">
+                    <p>Iskon Temple</p>
+                    <div class="booking__price">
+                        <div class="price"><span>From</span> ₹ 5,000&nbsp;&nbsp; <span>1D</span></div>
+                        <a class="learn_more" href="{{ url_for('learn_more')}}">Learn more</a>
+                        <a class="book__now" href="{{ url_for('bookings')}}">Book Now</a>
+                    </div>
+                </div>
+            </div>
+
+              <div class="trip__card">
+                <div class="img_wrapper">
+                  <a href="{{url_for('jivdanihome')}}"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/JivDani%2CVirar_-_panoramio_%2823%29.jpg/800px-JivDani%2CVirar_-_panoramio_%2823%29.jpg" />
+                </a></div>
+                <div class="trip__details">
+                    <p>Jivdani Mata Mandir</p>
+                    <div class="booking__price">
+                        <div class="price"><span>From</span> ₹7,000&nbsp;&nbsp; <span>1D</span></div>
+                        <a class="learn_more" href="{{ url_for('learn_more')}}">Learn more</a>
+                        <a class="book__now" href="{{ url_for('bookings')}}">Book Now</a>
+                    </div>
+                </div>
+            </div>
+
+              <div class="trip__card">
+                  <div class="img_wrapper">
+                    <a href="{{url_for('babulhome')}}"><img src="https://www.trawell.in/admin/images/upload/95598077Mumbai_Babulnath_Temple_Main.jpg" />
+                      <span class="text-white bg-danger p-2 text-center must_visit">Must visit</span></a> </a>
+                </div>
+                  <div class="trip__details">
+                      <p>Babulnath Temple</p>
+                      <div class="booking__price">
+                          <div class="price"><span>From</span> ₹9,000&nbsp;&nbsp; <span>1D</span></div>
+                          <a class="learn_more" href="{{ url_for('learn_more')}}">Learn more</a>
+                          <a class="book__now" href="{{ url_for('bookings')}}">Book Now</a>
+                      </div>
+                  </div>
+              </div>
+          </div>
+
+          <!-- third set of card -->
+          <h2 class="ms-4 my-5 border-bottom text-danger" id="beach">Beach collection for you</h2>
+          <div class="trip__grid" data-aos="fade-up">
+              <div class="trip__card">
+                <div class="img_wrapper">
+                <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/15/8e/6d/0f/rajodi-beach-21-largejpg.jpg?w=400&h=300&s=1" >
+                </div>
+                <div class="trip__details">
+                    <p>Rajodi Beach</p>
+                    <div class="booking__price">
+                        <div class="price"><span>From</span> ₹5,000&nbsp;&nbsp; <span>1D</span></div>
+                        <a class="learn_more" href="{{ url_for('learn_more')}}">Learn more</a>
+                        <a class="book__now" href="{{ url_for('bookings')}}">Book Now</a>
+                        <!-- <a class="book__now" href="{{ url_for('Payment')}}">Book Now</a> -->
+                    </div>
+                </div>
+            </div>
+
+              <div class="trip__card">
+                <div class="img_wrapper">
+                <a href="{{url_for('juhuhome')}}"><img src="https://mumbaitourism.travel/images/places-to-visit/headers/versova-beach-mumbai-indian-tourism-entry-fee-timings-holidays-reviews-header.jpg" />
+                </a></div>
+                <div class="trip__details">
+                    <p>Versova Beech</p>
+                    <div class="booking__price">
+                        <div class="price"><span>From</span> ₹4,000&nbsp;&nbsp; <span>1D</span></div>
+                        <a class="learn_more" href="{{ url_for('learn_more')}}">Learn more</a>
+                        <a class="book__now" href="{{ url_for('bookings')}}">Book Now</a>
+                    </div>
+                </div>
+            </div>
+
+              <div class="trip__card">
+                  <div class="img_wrapper">
+                    <a href="{{url_for('juhuhome')}}"><img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/15/b4/1f/da/20180410-184625-largejpg.jpg?w=700&h=-1&s=1" />
+                      <span class="text-white bg-danger p-2 text-center must_visit">Must visit</span></a> </a>
+                </div>
+                  <div class="trip__details">
+                      <p>Juhu Beach</p>
+                      <div class="booking__price">
+                          <div class="price"><span>From</span> ₹ 4,000&nbsp;&nbsp; <span>1D</span></div>
+                          <a class="learn_more" href="{{ url_for('learn_more')}}">Learn more</a>
+                          <a class="book__now" href="{{ url_for('bookings')}}">Book Now</a>
+                      </div>
+                  </div>
+              </div>
+          </div>
+
+<!-- fourth set of card -->
+<h2 class="ms-4 my-5 border-bottom text-danger" id="cruise">Cruise/sea collection for you</h2>
+<div class="trip__grid" id="price" data-aos="fade-down">
+<div class="trip__card">
+  <div class="img_wrapper">
+    <a href="{{url_for('warlihome')}}"><img src="https://digpu.com/wp-content/uploads/2021/11/Bandra-Worli-Sea-Link-A-masterpiece-of-innovative-civil-engineering-Digpu-News.jpg" />
+  </a></div>
+  <div class="trip__details">
+      <p>Warli Sea Link</p>
+      <div class="booking__price">
+          <div class="price"><span>From</span> ₹ 12,000&nbsp;&nbsp; <span>1N/1D</span></div>
+          <a class="learn_more" href="{{ url_for('learn_more')}}">Learn more</a>
+          <a class="book__now" href="{{ url_for('bookings')}}">Book Now</a>
+      </div>
+  </div>
+</div>
+
+<div class="trip__card">
+  <div class="img_wrapper">
+  <a href="{{url_for('warlihome')}}"><img src="https://live.staticflickr.com/3098/2759408159_c23e88af5a_c.jpg" />
+  </a></div>
+  <div class="trip__details">
+      <p>Bandstand</p>
+      <div class="booking__price">
+          <div class="price"><span>From</span> ₹10,000&nbsp;&nbsp; <span>1N/1D</span></div>
+          <a class="learn_more" href="{{ url_for('learn_more')}}">Learn more</a>
+          <a class="book__now" href="{{ url_for('bookings')}}">Book Now</a>
+      </div>
+  </div>
+</div>
+
+<div class="trip__card">
+  <div class="img_wrapper">
+  <a href="{{url_for('gateway')}}"><img src="https://static01.nyt.com/images/2019/10/21/travel/21mumbai-walkingtour2/merlin_162106725_227c3804-2c41-4f0d-a350-bf638b184ca1-articleLarge.jpg?quality=75&auto=webp&disable=upscale" />
+    <span class="text-white bg-danger p-2 text-center must_visit">Must visit</span></a> </a>
+</div>
+  <div class="trip__details">
+      <p>Marine Drive</p>
+      <div class="booking__price">
+          <div class="price"><span>From</span> ₹7,000&nbsp;&nbsp; <span>1N/1D</span></div>
+          <a class="learn_more" href="{{ url_for('learn_more')}}">Learn more</a>
+          <a class="book__now" href="{{ url_for('bookings')}}">Book Now</a>
+      </div>
+  </div>
+</div>
+</div>
+
+<!-- fifth set of card -->
+<h2 class="ms-4 my-5 border-bottom text-danger" id="hills">Hills station collection for you</h2>
+<div class="trip__grid" id="price" data-aos="fade-up">
+<div class="trip__card">
+  <div class="img_wrapper">
+    <a href="{{url_for('lonawalahome')}}"><img src="https://upload.wikimedia.org/wikipedia/commons/d/dd/Lonavalamh.jpg" />
+  </a></div>
+  <div class="trip__details">
+      <p>Lonavala</p>
+      <div class="booking__price">
+          <div class="price"><span>From</span> ₹ 25,000&nbsp;&nbsp; <span>1N/1D</span></div>
+          <a class="learn_more" href="{{ url_for('learn_more')}}">Learn more</a>
+          <a class="book__now" href="{{ url_for('bookings')}}">Book Now</a>
+      </div>
+  </div>
+</div>
+
+<div class="trip__card">
+  <div class="img_wrapper">
+  <a href="{{url_for('lonawalahome')}}"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTMulcGMICKSlogdKmL34VQtlZ50vTy4yT3WQ&usqp=CAU" />
+    <span class="text-white bg-danger p-2 text-center must_visit">Must visit</span></a> </a>
+</div>
+  <div class="trip__details">
+      <p>Mahableshwar</p>
+      <div class="booking__price">
+          <div class="price"><span>From</span> ₹ 32,000&nbsp;&nbsp; <span>1N/1D</span></div>
+          <a class="learn_more" href="{{ url_for('learn_more')}}">Learn more</a>
+          <a class="book__now" href="{{ url_for('bookings')}}">Book Now</a>
+      </div>
+  </div>
+</div>
+
+<div class="trip__card">
+  <div class="img_wrapper">
+  <a href="{{url_for('lonawalahome')}}"><img src="https://www.india.com/wp-content/uploads/2019/07/Roads-leading-up-to-the-gorgeous-Matheran.-.jpg" />
+  </a></div>
+  <div class="trip__details">
+      <p>Matheran</p>
+      <div class="booking__price">
+          <div class="price"><span>From</span>₹ 16,000&nbsp;&nbsp; <span>1N/1D</span></div>
+          <a class="learn_more" href="{{ url_for('learn_more')}}">Learn more</a>
+          <a class="book__now" href="{{ url_for('bookings')}}">Book Now</a>
+      </div>
+  </div>
+</div>
+</div>
+
+
+<!-- sixth set of card -->
+<h2 class="ms-4 my-5 border-bottom text-danger" id="offer">Offer deals collection for you</h2>
+<div class="trip__grid" id="price" data-aos="fade-down">
+<div class="trip__card">
+  <div class="img_wrapper">
+    <a href="{{url_for('lonawalahome')}}"><img src="https://thelandofwanderlust.com/wp-content/uploads/2017/08/IMG_1956.jpeg" />
+  </a></div>
+  <div class="trip__details">
+    <div class="d-flex align-item-center justify-content-space-around">
+      <p>Chinchoti waterfall</p>&nbsp;&nbsp;
+      <span> ₹ 18,750</span>&nbsp;&nbsp;
+      <span class="bg-danger text-white rounded-1 edit_offer p-2 mb-3">25% OFF</span>
+    </div>
+      <div class="booking__price">
+          <div class="price"><span>From</span> <strike>₹ 25,000&nbsp;&nbsp;</strike> <span>1N/1D</span></div>
+          <a class="learn_more" href="{{ url_for('learn_more')}}">Learn more</a>
+          <a class="book__now" href="{{ url_for('bookings')}}">Book Now</a>
+      </div>
+  </div>
+</div>
+
+<div class="trip__card">
+  <div class="img_wrapper">
+  <a href="{{url_for('ratnagiriexplore')}}"><img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/12/61/76/a3/cave-below-the-fort-formed.jpg?w=500&h=400&s=1" />
+  </a></div>
+  <div class="trip__details">
+    <div class="d-flex align-item-center justify-content-space-around">
+      <p>Ratnagiri Fort</p>&nbsp;&nbsp;
+      <span> ₹ 27,200</span>&nbsp;&nbsp;
+      <span class="bg-danger text-white rounded-1 edit_offer p-2 mb-3">15% OFF</span>
+    </div>
+      <div class="booking__price">
+          <div class="price"><span>From</span> <strike>₹ 32,000&nbsp;&nbsp; </strike><span>1N/1D</span></div>
+          <a class="learn_more" href="{{ url_for('learn_more')}}">Learn more</a>
+          <a class="book__now" href="{{ url_for('bookings')}}">Book Now</a>
+      </div>
+  </div>
+</div>
+
+<div class="trip__card">
+  <div class="img_wrapper">
+  <a href="{{url_for('nashikexplore')}}"><img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/09/ca/ec/a9/dugarwadi-waterfall.jpg?w=500&h=-1&s=1" />
+  </a></div>
+  <div class="trip__details">
+    <div class="d-flex align-item-center justify-content-space-around">
+      <p>Durgawadi waterfall</p>&nbsp;&nbsp;
+      <span> ₹ 11,200</span>&nbsp;&nbsp;
+      <span class="bg-danger text-white rounded-1 edit_offer p-2 mb-3">30% OFF</span>
+    </div>
+      <div class="booking__price">
+          <div class="price"><span>From</span> <strike>₹ 16,000&nbsp;&nbsp; </strike><span>1N/1D</span></div>
+          <a class="learn_more" href="{{ url_for('learn_more')}}">Learn more</a>
+          <a class="book__now" href="{{ url_for('bookings')}}">Book Now</a>
+      </div>
+  </div>
+</div>
+</div>
+
+
+
+</div>
+        <div class="see_all_btn">
+        <a  href="{{url_for('seeAll')}}" style="background-image: linear-gradient(-225deg, #FF057C 0%, #8D0B93 50%, #321575 100%);" 
+        class="btn text-white rounded-5 px-5">See All...</a>
+        </div>
+</section>
+
+    <div class="trip_package_image text-center mt-5" data-aos="fade-left">
+      <h2 class="mx-auto border-bottom border-3 border-light-subtle w-50  rounded-bottom-circle section__title my-5">Beautiful views on some best places</h2>
+      <p class="section__subtitle fs-5 ">
+          Taka a short glance of it and enjoy the places.
+      </p>
+    </div>
+
+
+<div class="home-demo col-11 mx-auto ">
+  <h2 class="text-danger my-3" id="offer">The best collection for you</h2>
+  <div class="owl-carousel owl-theme">
+    <div class="item">
+      <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0e/d2/87/e3/temple-tower.jpg?w=1200&h=-1&s=1" />
+      <h3>Mumbadevi Temple</h3>
+    </div>
+    <div class="item">
+      <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/12/f8/e3/58/caption.jpg?w=1200&h=-1&s=1" />
+      <h3>Hanging Garden</h3>
+    </div>
+    <div class="item">
+      <img src="https://www.tripsavvy.com/thmb/9fXFI68q_XHvMV1ma2B_PyxFJ6Q=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/_DSC0450_Fotor_Fotor-56d7daa83df78cfb37dbeb48.jpg" />
+      <h3>Banganga Ghat</h3>
+    </div>
+    <div class="item">
+      <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1a/2a/2c/bb/photo0jpg.jpg?w=1200&h=-1&s=1" />
+      <h3>Bandstand View</h3>
+    </div>
+    <div class="item">
+      <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/2b/66/d2/66/caption.jpg?w=1200&h=-1&s=1" />
+      <h3>Colaba Casba</h3>
+    </div>
+    <div class="item">
+      <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/18/d7/d0/dc/img-20190817-101500-largejpg.jpg?w=1000&h=-1&s=1" />
+      <h3>Tungareshwar Temple</h3>
+    </div>
+    <div class="item">
+      <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/06/03/30/25/kidzania-mumbai.jpg?w=500&h=-1&s=1" />
+      <h3>KidZania Mumbai</h3>
+    </div>
+    <div class="item">
+      <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/06/44/79/c2/water-kingdom.jpg?w=500&h=-1&s=1" />
+      <h3>Water Kingdom</h3>
+    </div>
+    <div class="item">
+      <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/11/0c/42/80/museum-visit.jpg?w=500&h=-1&s=1" />
+      <h3>Chatrapati Shivaji Maharaj Sangarhalay</h3>
+    </div>
+    <div class="item">
+      <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/18/1d/44/f3/sri-sri-radha-gopinath.jpg?w=500&h=400&s=1" />
+      <h3>Shree Radha Gopinath Temple</h3>
+    </div>
+  </div>
+</div>
+
+
+    <!-- key features -->
+<h2 class="featurette-heading fw-bold mt-5 ms-5 lh-1 text-danger">Features of Dezire Tourism</h2>
+<hr class="featurette-divider">
+<div class="card mb-5 ms-5" style="max-width: 540px;" data-aos="fade-down">
+    <div class="row g-0">
+      <div class="col-md-4 bg-warning-subtle">
+        <img src="https://cdn-icons-png.flaticon.com/128/4407/4407289.png?track=ais" class="img-fluid rounded-start" alt="...">
+      </div>
+      <div class="col-md-8 bg-danger">
+        <div class="card-body mt-4">
+          <h5 class="card-title fw-bolder text-white">9am to 9pm </h5>
+          <p class="card-text"><small class="text-white">Customer Support</small></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card mb-5 ms-5" style="max-width: 540px;" data-aos="fade-down">
+    <div class="row g-0">
+      <div class="col-md-4 bg-warning-subtle">
+        <img src="https://cdn-icons-png.flaticon.com/128/8445/8445169.png?track=ais" class="img-fluid rounded-start" alt="...">
+      </div>
+      <div class="col-md-8 bg-danger">
+        <div class="card-body mt-4">
+          <h5 class="card-title fw-bolder text-white">10k+ </h5>
+          <p class="card-text"><small class="text-white">Satisfied Guest</small></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card mb-5 ms-5" style="max-width: 540px;" data-aos="fade-down">
+    <div class="row g-0  ">
+      <div class="col-md-4 bg-warning-subtle">
+        <img src="https://cdn-icons-png.flaticon.com/128/1692/1692130.png?track=aiss" class="img-fluid rounded-start" alt="...">
+      </div>
+      <div class="col-md-8 bg-danger">
+        <div class="card-body mt-4">
+          <h5 class="card-title fw-bolder text-white">150+ </h5>
+          <p class="card-text"><small class="text-white">Tour Option</small></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- location map head office -->
+<h2 class="featurette-heading fw-bold mt-5 ms-5 lh-1 text-danger">Get location of Dezire Tourism</h2>
+<hr class="featurette-divider">
+  <iframe class="mb-5" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d30164.243192943424!2d72.79700326242308!3d19.084373813923342!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c9a6e4a411ed%3A0xc794e2bdd8a53e5d!2sSantacruz%2C%20Mumbai%2C%20Hasmukh%20Nagar%2C%20Santacruz%20West%2C%20Mumbai%2C%20Maharashtra%20400054!5e0!3m2!1sen!2sin!4v1709562110619!5m2!1sen!2sin" 
+  width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+    <!-- start of footer -->
+    {% include 'footer.html' %}
+    <!-- end of footer -->
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" 
+integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" 
+crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<!-- <script src="https://cdn.jsdelivr.net/scrollreveal.js/3.3.1/scrollreveal.min.js"></script> -->
+<script type="text/javascript" src="{{ url_for('static', filename='script/index.js') }}"></script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+
+<script>
+  const LoginDetails = document.getElementById("LoginDetails")
+  const loginDiv = document.getElementById("loginDiv")
+  const loginmenu = document.getElementById("loginmenu")
+  const Info_div = document.getElementById("info")
+  const ul_info = document.getElementById("ulinfo")
+  const liname = document.getElementById("liname")
+  const liemail = document.getElementById("liemail")
+  const li_logout = document.querySelector("#logout")
+
+  if('{{session.email}}')
+  {
+    LoginDetails.style.display = "flex";
+    loginDiv.style.display = "flex";
+    loginmenu.style.display= "none";
+
+    liemail.innerText = '{{session.email}}'.replace('&#39','')
+    ul_info.append(liemail)
+
+    li_logout.innerHTML = "<a href='{{ url_for('login')}}' class='btn btn-light' id='logoutBtn'>Logout</a>"
+    ul_info.appendChild(li_logout);
+    let toggleValue = 1
+        loginDiv.addEventListener("click",()=>{
+    });
+
+    loginDiv.addEventListener("click",()=>{
+      console.log("hello");
+      if (toggleValue){
+          Info_div.style.display = "flex";
+          Info_div.classList.add("info")
+          toggleValue = 0 
+        } 
+        else{
+          Info_div.style.display ="none"; 
+          toggleValue = 1
+        } 
+      
+    })
+  }
+</script>
+
+<script>
+  $(function() {
+  var owl = $(".owl-carousel");
+  owl.owlCarousel({
+    items: 3,
+    loop:true,
+    margin:10,
+    dots:false,
+    nav:true,
+    autoplay:true,   
+    smartSpeed: 3000, 
+    autoplayTimeout:4000,
+  });
+});
+  </script>
+
+
+<script>
+  AOS.init();
+  </script>
+
+<!-- Initialize Swiper -->
+<!-- <script>
+  var swiper = new Swiper(".mySwiper", {
+    loop: true,
+    spaceBetween: 10,
+    slidesPerView: 6,
+    freeMode: true,
+    watchSlidesProgress: true,
+  });
+  var swiper2 = new Swiper(".mySwiper2", {
+    loop: true,
+    spaceBetween: 10,
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+    thumbs: {
+      swiper: swiper,
+    },
+  });
+</script> -->
+<!-- <script>
+  window.sr = ScrollReveal();
+  sr.reveal('.pack1')
+  sr.reveal('.pack2')
+  </script> -->
+
+<!-- When the user scrolls down 20px from the top of the document, show the button -->
+<script>
+  let mybutton = document.getElementById("btn-back-to-top");
+window.onscroll = function () {
+  scrollFunction();
+};
+
+function scrollFunction() {
+  if (
+    document.body.scrollTop > 20 ||
+    document.documentElement.scrollTop > 20
+  ) {
+    mybutton.style.display = "block";
+  } else {
+    mybutton.style.display = "none";
+  }
+}
+// When the user clicks on the button, scroll to the top of the document
+mybutton.addEventListener("click", backToTop);
+
+function backToTop() {
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
+}
+</script>
+</body>
+</html>

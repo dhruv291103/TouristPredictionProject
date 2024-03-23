@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer"
+    />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <style>
+        .background-image {
+            background-image: url('https://www.shutterstock.com/image-photo/beautiful-waterfall-dramatic-sky-somewhere-260nw-2062700510.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            height: 80vh;
+            width: 100%;
+            
+        }
+        .description{
+            position:relative;
+            left:2rem;
+            top:30vh;
+            color:white;
+        }
+    </style>  
+</head>
+<body>
+    {% include 'navbar.html' %}
+
+    <div class="background-image">
+        <div class="description">
+            <h2>Where2Go western maharashtra What's Around western maharashtra</h2>
+            <p class="fs-5 fw-light">A coastal strip of land bounded by Sahyadri hills on the east and Arabian Sea on the west,<br>  it is rich in mineral resources, and offers long stretches of clean, 
+                <br>sandy beaches and bustling seaside towns such as Ratnagiri and Ganapatipule.
+            </p>
+        </div>
+    </div>
+
+    <div class="things_to_do">
+        <div class="trip__grid" id="price">
+            <div class="trip__card">
+                <div class="img_wrapper">
+            <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0c/95/d3/de/photo4jpg.jpg?w=400&h=-1&s=1"/> 
+                </div>
+                <div class="trip__details">
+                    <p>Pune(Shinghad fort)</p>
+                    <p class="text-dark">Earlier known as Kondhana, this historic fort perched atop Bhuleswar Range of Western Ghats houses old ramparts, monoliths and temple ruins dating back to the Maratha era.</p>
+                    <div class="booking__price">
+                        <div class="price"><span>From</span> ₹ 10,000&nbsp;&nbsp; <span>1N/2D</span></div>
+                        <a class="learn_more" href="{{ url_for('puneexplore')}}">explore</a>
+                        <!-- <a class="book__now" href="{{ url_for('Payment')}}">Book Now</a> -->
+                    </div>
+                </div>
+            </div>
+            <div class="trip__card">
+                <div class="img_wrapper">
+                <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/16/dc/b8/b1/pratapgad-fort.jpg?w=400&h=-1&s=1" >
+                </div>
+                <div class="trip__details">
+                    <p>Satara(pratapgad-fort)</p>
+                    <p class="text-dark">
+                        Built by Chatrapati Shivaji Maharaj, Pratapgarh Fort is situated 24 kms from Mahabaleshwar and has witnessed major wars, like the one between Shivaji Maharaj and Afzal Khan.
+                    </p>
+                    <div class="booking__price">
+                        <div class="price"><span>From</span> ₹5,000&nbsp;&nbsp; <span>1N/2D</span></div>
+                        <a class="learn_more" href="{{ url_for('sataraexplore')}}">explore</a>
+                        <!-- <a class="book__now" href="{{ url_for('Payment')}}">Book Now</a> -->
+                    </div>
+                </div>
+            </div>
+            <div class="trip__card">
+                <div class="img_wrapper">
+                <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/03/73/1b/d3/sangmeshwar-temple.jpg?w=1200&h=-1&s=1" />
+                </div>
+                <div class="trip__details">
+                    <p>Sangli(sangmeshwar-temple)</p>
+                    <p class="text-dark">
+                        The Sangmeshwar Temple is one of the most sacred sites in Sangli. Lord Shiva is worshipped at this Sangmeshwar temple. A significant number of worshippers congregate here since this deity is highly regarded in Hindu mythology.
+                    </p>
+                    <div class="booking__price">
+                        <div class="price"><span>From</span> ₹ 5,000&nbsp;&nbsp; <span>1N/2D</span></div>
+                        <a class="learn_more" href="{{ url_for('sangliexplore')}}">explore</a>
+                        <!-- <a class="book__now" href="{{ url_for('Payment')}}">Book Now</a> -->
+                    </div>
+                </div>
+            </div>
+    </div>
+
+    <!-- second layer -->
+    <div class="trip__grid" id="price">
+        <div class="trip__card">
+            <div class="img_wrapper">
+        <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0d/48/e5/23/panhala-fort.jpg?w=400&h=300&s=1"/> 
+            </div>
+            <div class="trip__details">
+                <p>kolhapur(panhala-fort)</p>
+                <p class="text-dark">
+                    Panhala, a charming city in the Kolhapur district in the Indian state of Maharashtra, is a famous hill station. Located at an elevation of around 3200 feet above sea level, it is the lowest-lying incorporated municipality in the state. As a result, the Panhala Fort sees a lot of visitors.
+                </p>
+                <div class="booking__price">
+                    <div class="price"><span>From</span> ₹ 10,000&nbsp;&nbsp; <span>1N/2D</span></div>
+                    <a class="learn_more" href="{{ url_for('kolhapurexplore')}}">explore</a>
+                    <!-- <a class="book__now" href="{{ url_for('Payment')}}">Book Now</a> -->
+                </div>
+            </div>
+        </div>
+        <div class="trip__card">
+            <div class="img_wrapper">
+            <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/05/09/c4/e3/bhuikot-fort.jpg?w=400&h=300&s=1" >
+            </div>
+            <div class="trip__details">
+                <p>Solapur(bhuikot-fort)</p>
+                <p class="text-dark">
+                    A must-see tourist destination whilst in the Solapur area is the Bhuikot Fort. During the Bahamani Dynasty's dominance in the 14th century AD, when it was constructed, the region was firmly rooted in the Middle Ages.
+                </p>
+                <div class="booking__price">
+                    <div class="price"><span>From</span> ₹5,000&nbsp;&nbsp; <span>1N/2D</span></div>
+                    <a class="learn_more" href="{{ url_for('solapurexplore')}}">explore</a>
+                    <!-- <a class="book__now" href="{{ url_for('Payment')}}">Book Now</a> -->
+                </div>
+            </div>
+        </div>
+</div>
+</div>
+
+    {% include 'footer.html' %}
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>

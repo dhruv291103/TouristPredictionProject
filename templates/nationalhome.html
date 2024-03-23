@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Tourist Prediction Web App</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="{{url_for('static', filename='css/loginlogouticon.css')}}">
+    <style>
+        .background-image {
+            background-image: url('https://dynamic-media-cdn.tripadvisor.com/media/photo-o/15/93/12/93/caption.jpg?w=1200&h=-1&s=1');
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            height: 80vh;
+            width: 100%;
+            
+        }
+        .description{
+            position:relative;
+            left:2rem;
+            top:30vh;
+            color:white;
+        }
+    </style>
+</head>
+<body>
+    {% include 'navbar.html' %}
+
+    <div class="background-image">
+        <div class="description">
+            <h2>Where2Go National park What's Around National park</h2>
+            <p class="fs-5 fw-light">The park is also known as Borivali National Park<br> since it is located in Borivali, 
+                a suburb of Mumbai.<br> The famous Kanheri Caves are located within the park.<br> A famous Jain Temple is also situated in the park.
+            </p>
+        </div>
+    </div>
+
+    <div class="things_to_do">
+        <div class="trip__grid" id="price">
+            <div class="trip__card">
+                <div class="img_wrapper">
+            <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1b/b0/46/27/caption.jpg?w=300&h=300&s=1"/> 
+                </div>
+                <div class="trip__details">
+                    <p>Pagoda Temple</p>
+                    <p class="text-dark">To see iconic Pagoda over the island and many ions old caves and jungle amidst concrete jungle - national park very few within the city limits.</p>
+                    <div class="booking__price">
+                        <div class="price"><span>From</span> ₹ 10,000</div>
+                        <a class="learn_more" href="{{ url_for('pagodaexplore')}}">explore</a>
+                        <!-- <a class="book__now" href="{{ url_for('Payment')}}">Book Now</a> -->
+                    </div>
+                </div>
+            </div>
+            <div class="trip__card">
+                <div class="img_wrapper">
+                <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1a/57/17/b7/caption.jpg?w=300&h=300&s=1" >
+                </div>
+                <div class="trip__details">
+                    <p>Kanheri caves</p>
+                    <p class="text-dark">Explore the more than 100 Buddhist caves known as the Kanheri Caves, which are tucked among the tranquil settings of Mumbai's Sanjay Gandhi National Park
+                    </p>
+                    <div class="booking__price">
+                        <div class="price"><span>From</span> ₹5,000</div>
+                        <a class="learn_more" href="{{ url_for('kanheriexplore')}}">explore</a>
+                        <!-- <a class="book__now" href="{{ url_for('Payment')}}">Book Now</a> -->
+                    </div>
+                </div>
+            </div>
+            <div class="trip__card">
+                <div class="img_wrapper">
+                <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1a/57/4e/57/caption.jpg?w=300&h=300&s=1" />
+                </div>
+                <div class="trip__details">
+                    <p>Elephanta Caves</p>
+                    <p class="text-dark">
+                        Located on an island off the coast of Mumbai, the Elephanta Caves are rock-cut temples, some dating back to the second century BC.
+                    </p>
+                    <div class="booking__price">
+                        <div class="price"><span>From</span> ₹ 5,000</div>
+                        <a class="learn_more" href="{{ url_for('elephantaexplore')}}">explore</a>
+                        <!-- <a class="book__now" href="{{ url_for('Payment')}}">Book Now</a> -->
+                    </div>
+                </div>
+            </div>
+    </div>
+</div>
+{% include 'footer.html' %}
+</body>
+<script>
+    const LoginDetails = document.getElementById("LoginDetails")
+    const loginDiv = document.getElementById("loginDiv")
+    const loginmenu = document.getElementById("loginmenu")
+    const Info_div = document.getElementById("info")
+    const ul_info = document.getElementById("ulinfo")
+    const liname = document.getElementById("liname")
+    const liemail = document.getElementById("liemail")
+    const li_logout = document.querySelector("#logout")
+    console.log(li_logout);
+  
+    if('{{session.email}}')
+    {
+      console.log('{{session.email}}');
+      LoginDetails.style.display = "flex";
+      loginDiv.style.display = "flex";
+      loginmenu.style.display= "none";
+  
+      liemail.innerText = '{{session.email}}'.replace('&#39','')
+            ul_info.append(liemail)
+  
+      li_logout.innerHTML = "<a href='{{ url_for('login')}}' class='btn btn-light' id='logoutBtn'>Logout</a>"
+      ul_info.appendChild(li_logout);
+      let toggleValue = 1
+          loginDiv.addEventListener("click",()=>{
+    
+      });
+  
+  
+      loginDiv.addEventListener("click",()=>{
+        console.log("hello");
+        if (toggleValue){
+            Info_div.style.display = "flex";
+            Info_div.classList.add("info")
+            // const a = document.createElement("a")
+            toggleValue = 0 
+          } 
+          else{
+            Info_div.style.display ="none"; 
+            toggleValue = 1
+          } 
+        
+      })
+    }
+  </script>
+</html>

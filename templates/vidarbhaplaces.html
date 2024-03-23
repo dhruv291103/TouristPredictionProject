@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer"
+    />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <style>
+        .background-image {
+            background-image: url('https://www.shutterstock.com/image-photo/beautiful-waterfall-dramatic-sky-somewhere-260nw-2062700510.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            height: 80vh;
+            width: 100%;
+        }
+        .description{
+            position:relative;
+            left:2rem;
+            top:30vh;
+            color:white;
+        }
+    </style>  
+</head>
+<body>
+    {% include 'navbar.html' %}
+
+    <div class="background-image">
+        <div class="description">
+            <h2>Where2Go Vidarbha What's Around Vidarbha</h2>
+            <p class="fs-5 fw-light">A coastal strip of land bounded by Sahyadri hills on the east and Arabian Sea on the west,<br>  it is rich in mineral resources, and offers long stretches of clean, 
+                <br>sandy beaches and bustling seaside towns such as Ratnagiri and Ganapatipule.
+            </p>
+        </div>
+    </div>
+
+    <div class="things_to_do">
+        <div class="trip__grid" id="price">
+            <div class="trip__card">
+                <div class="img_wrapper">
+            <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/11/65/fe/ce/bhadrawati-jain-temple.jpg?w=400&h=-1&s=1"/> 
+                </div>
+                <div class="trip__details">
+                    <p>chandrapur(bhadrawati-jain-temple)</p>
+                    <p class="text-dark">
+                        The city's Bhadravati Jain Temple is a renowned place of worship for local Jain devotees. Elegant sculptures adorn the interior. The Central Railway will take you 32 kilometres to the settlement of Bhadravati, where you'll find the temple.
+                    </p>
+                    <div class="booking__price">
+                        <div class="price"><span>From</span> ₹ 10,000&nbsp;&nbsp; <span>3N/4D</span></div>
+                        <a class="learn_more" href="{{ url_for('chandrapurexplore')}}">explore</a>
+                        <!-- <a class="book__now" href="{{ url_for('Payment')}}">Book Now</a> -->
+                    </div>
+                </div>
+            </div>
+            <div class="trip__card">
+                <div class="img_wrapper">
+                <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/16/d9/4c/4b/photo4jpg.jpg?w=400&h=-1&s=1" >
+                </div>
+                <div class="trip__details">
+                    <p>nagpur(Ramtek Temple)</p>
+                    <p class="text-dark">
+                        It is widely held that Ram, Lakshman, and Sita slept at the holy city of Ramtek during their exile from Lanka during the Ramayana, making it a popular pilgrimage destination close to Nagpur. In addition, the Vakatakas ruled this area from the second to the fourth century, hence the city is full of interesting buildings and monuments from that time period.
+                    </p>
+                    <div class="booking__price">
+                        <div class="price"><span>From</span> ₹5,000&nbsp;&nbsp; <span>3N/4D</span></div>
+                        <a class="learn_more" href="{{ url_for('nagpurexplore')}}">explore</a>
+                        <!-- <a class="book__now" href="{{ url_for('Payment')}}">Book Now</a> -->
+                    </div>
+                </div>
+            </div>
+            <div class="trip__card">
+                <div class="img_wrapper">
+                <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/2b/07/ca/1e/it-s-a-panch-dhara-fall.jpg?w=500&h=400&s=1" />
+                </div>
+                <div class="trip__details">
+                    <p>wardha(panch-dhara-fall)</p>
+                    <p class="text-dark">
+                        panch-dhara-fall is a picturesque waterfall located in the charming hill station of Dalhousie. Situated at an altitude of approximately 2,030 meters (6,660 feet) above sea level, the falls offer a refreshing retreat amidst lush greenery, cascading waters, and captivating natural beauty
+                    </p>
+                    <div class="booking__price">
+                        <div class="price"><span>From</span> ₹ 5,000&nbsp;&nbsp; <span>3N/4D</span></div>
+                        <a class="learn_more" href="{{ url_for('wardhaexplore')}}">explore</a>
+                        <!-- <a class="book__now" href="{{ url_for('Payment')}}">Book Now</a> -->
+                    </div>
+                </div>
+            </div>
+    </div>
+
+    <!-- second layer -->
+    <div class="trip__grid" id="price">
+        <div class="trip__card">
+            <div class="img_wrapper">
+        <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/09/fc/43/49/photo6jpg.jpg?w=400&h=-1&s=1"/> 
+            </div>
+            <div class="trip__details">
+                <p>gadchiroli(Itiadoh Dam)</p>
+                <p class="text-dark">
+                    Its amezeing place for fun silent water waves of dams feels relaxing mode of my mood i feel very good to visit to place again and again...
+                </p>
+                <div class="booking__price">
+                    <div class="price"><span>From</span> ₹ 10,000&nbsp;&nbsp; <span>3N/4D</span></div>
+                    <a class="learn_more" href="{{ url_for('gadchiroliexplore')}}">explore</a>
+                    <!-- <a class="book__now" href="{{ url_for('Payment')}}">Book Now</a> -->
+                </div>
+            </div>
+        </div>
+        <div class="trip__card">
+            <div class="img_wrapper">
+            <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/17/36/df/d7/518-94-25-12-750.jpg?w=400&h=-1&s=1" >
+            </div>
+            <div class="trip__details">
+                <p>gondia(Kachargarh caves)</p>
+                <p class="text-dark">
+                    Amazing trekking experience, the paths are too steep at parts and may become difficult to walk but are later supported with stairs and railings for support leading to the main cave point after an almost 1.5 - 1.2 mi hike. 
+                </p>
+                <div class="booking__price">
+                    <div class="price"><span>From</span> ₹5,000&nbsp;&nbsp; <span>3N/4D</span></div>
+                    <a class="learn_more" href="{{ url_for('gondiaexplore')}}">explore</a>
+                    <!-- <a class="book__now" href="{{ url_for('Payment')}}">Book Now</a> -->
+                </div>
+            </div>
+        </div>
+       
+</div>
+</div>
+
+    {% include 'footer.html' %}
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>

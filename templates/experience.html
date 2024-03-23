@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/Navbar.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/experience.css') }}">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/loginlogouticon.css')}}">
+</head>
+  <body>
+    {% include 'navbar.html' %}
+
+<!-- Adventures & Experiences -->
+<h2 class="featurette-heading fw-bold mt-5 ms-5 lh-1 text-danger">Adventures & Experiences </h2>
+<hr class="featurette-divider">
+<div class="tours ms-4">
+    <div class="places">
+        <h2 class="bg-danger text-white">Dadar</h2>
+        <a href="{{url_for('siddhiexplore')}}"><img src="https://book.visitsaudi.com/_next/image?url=https%3A%2F%2Fhalayallaimages-new.s3.me-south-1.amazonaws.com%2Fimages%2Fvenues%2Fprovider_venue_62ea58d7adb11.jpg&w=640&q=40"></a>
+        <br>
+        <br>
+    </div>
+    <div class="places">
+        <h2 class="bg-danger text-white">Byculla</h2>
+        <a href="{{url_for('nationalhome')}}"><img src="https://book.visitsaudi.com/_next/image?url=https%3A%2F%2Fhalayallaimages-new.s3.me-south-1.amazonaws.com%2Fimages%2Fvenues%2Fprovider_venue_63298b24ee7ac.jpeg&w=640&q=40"></a>
+        <br>
+        <br>
+    </div>
+    <div class="places">
+        <h2 class="bg-danger text-white">Elephanta Caves</h2>
+        <a href="{{url_for('elephantaexplore')}}"><img src="https://www.fabhotels.com/blog/wp-content/uploads/2018/08/600x400-35.jpg"></a>
+        <br>
+        <br>
+    </div>
+    
+    <!-- <div class="places">
+        <h2 class="bg-danger text-white">Magic Mumbai</h2>
+        <img src="https://www.nobroker.in/blog/wp-content/uploads/2021/05/Posh-Areas-in-Mumbai-1.jpg">
+        <br>
+        <br>
+    </div> -->
+    <div class="places">
+        <h2 class="bg-danger text-white">Marines</h2>
+        <a href="{{url_for('marineexplore')}} "><img src="https://images.unsplash.com/photo-1605928268926-931b09e57af4?auto=format&fit=crop&q=60&w=500&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8YmVlY2h8ZW58MHx8MHx8fDA%3D"></a>
+        <br>
+        <br>
+    </div>
+</div>
+<!-- adventure ends here -->
+
+
+<!-- Sports & Tournaments -->
+<h2 class="featurette-heading fw-bold mt-5 ms-5 lh-1 text-danger">Sports & Tournaments </h2>
+<hr class="featurette-divider">
+<div class="tours ms-4">
+    <div class="places">
+        <h2 class="bg-danger text-white">Cricket</h2>
+        <a href="{{url_for('nationalhome')}}"><img src="https://qph.cf2.quoracdn.net/main-qimg-2bb6952915832ad138d000754a75514e-lq"></a>
+        <br>
+        <br>
+    </div>
+    <div class="places">
+        <h2 class="bg-danger text-white">Football</h2>
+        <a href="{{url_for('nationalhome')}}"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQqYEQNLeKdPSjIqOxZKSyQV01KBZtg3W8lCQ&usqp=CAU"></a>
+        <br>
+        <br>
+    </div>
+    <div class="places">
+        <h2 class="bg-danger text-white">Kabaddi</h2>
+        <a href="{{url_for('nationalhome')}}"></a><img src="https://www.indianshooting.com/wp-content/uploads/PKL-final.jpg">
+        <br>
+        <br>
+    </div>
+
+    <div class="places">
+        <h2 class="bg-danger text-white">Fishing</h2>
+        <a href="{{url_for('warlihome')}}"><img src="https://im.whatshot.in/img/2021/Mar/pjimage-2021-03-30t100619085-1617079744.jpg"></a> 
+        <br>
+        <br>
+    </div>
+    </div>
+<!-- Sports & Tournaments -->
+
+<!-- Health & Fitness -->
+<h2 class="featurette-heading fw-bold mt-5 ms-5 lh-1 text-danger">Health & Fitness </h2>
+<hr class="featurette-divider">
+<div class="tours mb-5">
+    <div class="places">
+        <h2 class="bg-danger text-white">Public Exercise</h2>
+        <a href="{{url_for('hangingexplore')}}"><img src="https://static.toiimg.com/thumb/msid-88368587,width-1070,height-580,imgsize-213108,resizemode-6,overlay-toi_sw,pt-32,y_pad-40/photo.jpg"></a>
+        <br>
+        <br>
+    </div>
+    <div class="places">
+        <h2 class="bg-danger text-white">Cycling</h2>
+        <a href="{{url_for('gateway')}}"><img src="https://www.seawatersports.com/img/newimage/activies/slide/midnight-cycling-mumbai-tour-in-maharashtra-cost.jpg"></a>
+        <br>
+        <br>
+    </div>
+    <div class="places">
+        <h2 class="bg-danger text-white">Walking</h2>
+        <a href="{{url_for('marineexplore')}}"><img src="https://media.cntraveler.com/photos/5565e04a65ac761430eb8241/master/pass/marine-drive-mumbai-cr-getty.jpg"></a>
+        <br>
+        <br>
+    </div>
+
+    <div class="places">
+        <h2 class="bg-danger text-white">Swimming</h2>
+        <a href="{{url_for('juhuexplore')}}"><img src="https://content.jdmagicbox.com/comp/mumbai/e5/022pxx22.xx22.130521191916.d3e5/catalogue/salim-private-swimming-coach-andheri-west-mumbai-swimming-classes-1w5dtzg.jpg?clr="></a>
+        <br>
+        <br>
+    </div>
+    </div>
+<!-- Health & Fitness -->
+
+
+ <!-- start of footer -->
+ {% include 'footer.html' %}
+<!-- end of footer -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <script>
+      const LoginDetails = document.getElementById("LoginDetails")
+      const loginDiv = document.getElementById("loginDiv")
+      const loginmenu = document.getElementById("loginmenu")
+      const Info_div = document.getElementById("info")
+      const ul_info = document.getElementById("ulinfo")
+      const liname = document.getElementById("liname")
+      const liemail = document.getElementById("liemail")
+      const li_logout = document.querySelector("#logout")
+      console.log(li_logout);
+    
+      if('{{session.email}}')
+      {
+        console.log('{{session.email}}');
+        LoginDetails.style.display = "flex";
+        loginDiv.style.display = "flex";
+        loginmenu.style.display= "none";
+    
+        liemail.innerText = '{{session.email}}'.replace('&#39','')
+              ul_info.append(liemail)
+    
+        li_logout.innerHTML = "<a href='{{ url_for('login')}}' class='btn btn-light' id='logoutBtn'>Logout</a>"
+        ul_info.appendChild(li_logout);
+        let toggleValue = 1
+            loginDiv.addEventListener("click",()=>{
+      
+        });
+    
+    
+        loginDiv.addEventListener("click",()=>{
+          console.log("hello");
+          if (toggleValue){
+              Info_div.style.display = "flex";
+              Info_div.classList.add("info")
+              // const a = document.createElement("a")
+              toggleValue = 0 
+            } 
+            else{
+              Info_div.style.display ="none"; 
+              toggleValue = 1
+            } 
+          
+        })
+      }
+    </script>
+  </body>
+</html>

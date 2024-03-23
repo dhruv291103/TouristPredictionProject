@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer"
+    />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <style>
+        .background-image {
+            background-image: url('https://dynamic-media-cdn.tripadvisor.com/media/photo-o/08/8c/22/69/bibika-mukbara.jpg?w=1200&h=-1&s=1');
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            height: 80vh;
+            width: 100%;
+            
+        }
+        .description{
+            position:relative;
+            left:2rem;
+            top:30vh;
+            color:white;
+        }
+    </style>  
+</head>
+<body>
+    {% include 'navbar.html' %}
+
+    <div class="background-image">
+        <div class="description">
+            <h2>Where2Go Marathwada What's Around Marathwada</h2>
+            <p class="fs-5 fw-light">A coastal strip of land bounded by Sahyadri hills on the east and Arabian Sea on the west,<br>  it is rich in mineral resources, and offers long stretches of clean, 
+                <br>sandy beaches and bustling seaside towns such as Ratnagiri and Ganapatipule.
+            </p>
+        </div>
+    </div>
+
+    <div class="things_to_do">
+        <div class="trip__grid" id="price">
+            <div class="trip__card">
+                <div class="img_wrapper">
+            <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/12/44/10/f1/img-20180306-133126178.jpg?w=1100&h=-1&s=1"/> 
+                </div>
+                <div class="trip__details">
+                    <p>Latur(Siddheshwar Temple)</p>
+                    <p class="text-dark">
+                        The 12th-century Siddheshwar Ratneshwar Temple in Solapur honours Lord Siddharameshwar. As a devoted follower of Siddharameshwar, King Tamradwaj commissioned its construction. Lord Siddharameshwara, one of the most significant prophets and spiritual leaders of the Shaivism sect.
+                    </p>
+                    <div class="booking__price">
+                        <div class="price"><span>From</span> ₹ 10,000</div>
+                        <a class="learn_more" href="{{ url_for('laturexplore')}}">explore</a>
+                        <!-- <a class="book__now" href="{{ url_for('Payment')}}">Book Now</a> -->
+                    </div>
+                </div>
+            </div>
+            <div class="trip__card">
+                <div class="img_wrapper">
+                <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/10/b8/9a/01/pic-47.jpg?w=400&h=-1&s=1" >
+                </div>
+                <div class="trip__details">
+                    <p>Aurangabad(Ellora fort)</p>
+                    <p class="text-dark">
+                        Featuring Buddhist, Hindu and Jain monuments, Ellora Caves are a stunning rock-cut temple complex with 34 monasteries and temples. It takes about an hour by road to reach Ellora from Aurangabad. 
+                    </p>
+                    <div class="booking__price">
+                        <div class="price"><span>From</span> ₹5,000</div>
+                        <a class="learn_more" href="{{ url_for('aurangabadexplore')}}">explore</a>
+                        <!-- <a class="book__now" href="{{ url_for('Payment')}}">Book Now</a> -->
+                    </div>
+                </div>
+            </div>
+            <div class="trip__card">
+                <div class="img_wrapper">
+                <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0b/05/2f/26/sahastrakund-waterfall.jpg?w=400&h=-1&s=1" />
+                </div>
+                <div class="trip__details">
+                    <p>Nanded(sahastrakund-waterfall)</p>
+                    <p class="text-dark">
+                        Dropping down from a height of 50 feet, Sahastrakund waterfall is an amazing to be for all those who are in need to seek relaxation and rejuvenation. No wonder, the place is open for tourists throughout the year but the best time to see would be monsoon as this is when one can see its ghushing water splashing on one of its kind black stones that are hard to find anywhere in Maharashtra.
+                    </p>
+                    <div class="booking__price">
+                        <div class="price"><span>From</span> ₹ 5,000</div>
+                        <a class="learn_more" href="{{ url_for('nandedexplore')}}">explore</a>
+                        <!-- <a class="book__now" href="{{ url_for('Payment')}}">Book Now</a> -->
+                    </div>
+                </div>
+            </div>
+    </div>
+
+    <!-- second layer -->
+    <div class="trip__grid" id="price">
+        <div class="trip__card">
+            <div class="img_wrapper">
+        <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0f/02/26/7a/jayakwadi-dam.jpg?w=400&h=-1&s=1"/> 
+            </div>
+            <div class="trip__details">
+                <p>Beed(jayakwadi-dam)</p>
+                <p class="text-dark">
+                    This dam is around 50km from Aurangabad and 5km from Paithan.We need to walk for 2km from main road.Some construction work is going on
+                </p>
+                <div class="booking__price">
+                    <div class="price"><span>From</span> ₹ 10,000</div>
+                    <a class="learn_more" href="{{ url_for('beedexplore')}}">explore</a>
+                    <!-- <a class="book__now" href="{{ url_for('Payment')}}">Book Now</a> -->
+                </div>
+            </div>
+        </div>
+        <div class="trip__card">
+            <div class="img_wrapper">
+            <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/15/3f/53/b5/so-sweet.jpg?w=1200&h=-1&s=1" >
+            </div>
+            <div class="trip__details">
+                <p>Hingoli(Strawberry farm)</p>
+                <p class="text-dark">
+                    Hingoli located in Maharashtra, India, is a popular destination for the strawberry farming. Hingoli produced 70% of total strawberry cultivated in India. Mulberry season in mahabaleshwar is also very popular.
+                </p>
+                <div class="booking__price">
+                    <div class="price"><span>From</span> ₹5,000</div>
+                    <a class="learn_more" href="{{ url_for('hingoliexplore')}}">explore</a>
+                    <!-- <a class="book__now" href="{{ url_for('Payment')}}">Book Now</a> -->
+                </div>
+            </div>
+        </div>
+</div>
+</div>
+
+    {% include 'footer.html' %}
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>

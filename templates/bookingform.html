@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Tourist Prediction Web App</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous"> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="{{url_for('static', filename='css/loginlogouticon.css')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/index.css')}}">
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/7.1.0/mdb.min.css" integrity="sha512-eEdkKfYV/yKmpeDVb618mtl/JrJka0Y2ONEjJ9AjUazHpsRf+zm+eROxUqUKz3r89rR5tTyatSbkSlVNF/T1FQ=="
+     crossorigin="anonymous" referrerpolicy="no-referrer" /> -->
+     <!-- <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous"> -->
+     <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+</head>
+
+<body>
+  {% include 'navbar.html' %}
+  {% with messages = get_flashed_messages(with_categories=true) %}
+  {% if messages %}
+      <script>
+          alert("{{ messages[0][1] }}");
+      </script>
+  {% endif %}
+{% endwith %}
+  <div class="content mb-5">
+  <div class="">
+          <div class="row">
+      
+                      <div class="text-center container-fluid">
+                          <h2 class="bg-dark text-white p-3">Tour & Travel reservation booking form</h2>
+                          </div>
+                          <marquee direction="left"> <span id="emailHelp" class="bg-warning text-dark p-3">start & end city Mumbai for all Tours</span></marquee>
+                        </div>
+      <div class="row">
+      
+                      <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 mb30">
+                          <div class="tour-booking-form container">
+                              <form action="/booking" method="POST">
+                                  <div class="row">
+                                      <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 ">
+                                          <h4 class="tour-form-title my-3">Add traveller details</h4>
+                                      </div>
+                                      <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
+                                          <div class="form-group">
+                                              <label class="control-label" for="date">Check in</label>
+                                              <div class="input-group">
+                                                  <input type="date" id="date" name="checkin"  placeholder="Date" class="form-control" required>
+                                                  </div>
+                                          </div>
+                                      </div>
+
+                                      <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
+                                        <div class="form-group">
+                                            <label class="control-label" for="date">Check Out</label>
+                                            <div class="input-group">
+                                                <input type="date" id="date1"  name="checkout" placeholder="Date" class="form-control" required>
+                                                </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
+                                        <div class="form-group">
+                                            <label class="control-label required" for="select">Destination</label>
+                                            <div class="select">
+                                                <select id="select" class="form-select" name="select" class="form-control">
+                                                    <option selected value="">Where you want to go</option>
+                                                    <option value="Marine drive">Marine drive</option>
+                                                    <option value="korigad">korigad</option>
+                                                    <option value="lohagad">lohagad</option>
+                                                    <option value="Taj hotel">Taj hotel</option>
+                                                    <option value="CSMT">CSMT</option>
+                                                    <option value="National Park">National Park</option>
+                                                    <option value="Vipasana Temple">Vipasana Temple</option>
+                                                    <option value="Jivdani Temple">Jivdani Temple</option>
+                                                    <option value="Arnala Fort">Arnala Fort</option>
+                                                    <option value="Bandstand">Bandstand</option>
+                                                    <option value="Carter Road">Carter Road</option>
+                                                    <option value="Warli sea link">Warli sea link</option>
+                                                    <option value="Babulnath Temple">Babulnath Temple</option>
+                                                    <option value="Hanging Garden">Hanging Garden</option>
+                                                    <option value="Banganga Ghat">Banganga Ghat</option>
+                                                    <option value="Gateway of India">Gateway of India</option>
+                                                    <option value="Mahakali Caves">Mahakali Caves</option>
+                                                    <option value="Lokhandwala Market">Lokhandwala Market</option>
+                                                    <option value="Vesova Beach">Vesova Beach</option>
+                                                    <option value="Juhu Beach">Juhu Beach</option>
+                                                    <option value="Iskon Temple">Iskon Temple</option>
+                                                    <option value="Mukteshwar Temple">Mukteshwar Temple</option>
+                                                    <option value="Takmak Fort">Takmak Fort</option>
+                                                    <option value="IT park">IT park</option>
+                                                    <option value="Kanheri Caves">Kanheri Caves</option>
+                                                    <option value="Elephanta">Elephanta</option>
+                                                    <option value="Tungareshwar">Tungareshwar</option>
+                                                    <option value="Lonavala">Lonavala</option>
+                                                    <option value="Khandala">Khandala</option>
+                                                    <option value="Mahableshwar">Mahableshwar</option>
+                                                    <option value="Matheran">Matheran</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    
+                                      <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
+                                          <div class="form-group">
+                                              <label class="control-label required" for="select">Adults</label>
+                                              <label class="fw-light">(Above 12 yrs)</label>
+                                              <input type="text" id="datepicker" name="adult" type="text" placeholder="Number" class="form-control" required>
+                                          </div>
+                                      </div>
+                                      <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
+                                        <div class="form-group">
+                                            <label class="control-label required" for="select">Child</label>
+                                            <label class="fw-light">(Age 5-11 yrs)</label>
+                                            <input type="text" id="datepicker" name="child" type="text" placeholder="Number" class="form-control" required>
+                                        </div>
+                                    </div>
+                                    <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
+                                        <div class="form-group">
+                                            <label class="control-label required" for="select">Infant</label>
+                                            <label class="fw-light">(Age 0-4 yrs)</label>
+                                            <input type="text" id="datepicker" name="infant" type="text" placeholder="Number" class="form-control" required>
+                                        </div>
+                                    </div>
+                                     
+                                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 mt30">
+                                          <h4 class="tour-form-title my-3">Lead traveller details</h4>
+                                      </div>
+                                      <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
+                                          <div class="form-group">
+                                              <label class="control-label" for="name">Name</label>
+                                              <input id="name" type="text" name="fullname" placeholder="Full Name" class="form-control" required>
+                                          </div>
+                                      </div>
+                                      <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
+                                          <div class="form-group">
+                                              <label class="control-label" for="email"> Email</label>
+                                              <input id="email" type="text" name="email" placeholder="Example123@gmail.com" class="form-control" required>
+                                          </div>
+                                      </div>
+                                      <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
+                                          <div class="form-group">
+                                              <label class="control-label" for="phone"> Phone</label>
+                                              <input id="phone" type="text"  name="phone" placeholder="+91 " maxlength="10" pattern="[4-9]{1}[0-9]{9}" class="form-control" required>
+                                          </div>
+                                      </div>
+                                      <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
+                                          <div class="form-group">
+                                              <label class="control-label" for="country">Country</label>
+                                              <input id="country" type="text" name="country"  value="India" disabled class="form-control" required>
+                                          </div>
+                                      </div>
+                                      <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
+                                        <div class="form-group">
+                                            <label class="control-label" for="country">State</label>
+                                            <input id="country" type="text" name="state" value="Maharashtra" disabled class="form-control" required>
+                                        </div>
+                                    </div>
+                                    <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
+                                        <div class="form-group">
+                                            <label class="control-label required" for="select">City</label>
+                                            <div class="select">
+                                                <select id="select" class="form-select" name="select_city" class="form-control">
+                                                    <option  selected value="">City</option>
+                                                    <option value="Mumbai">Mumbai</option>
+                                                    <option value="Pune">Pune</option>
+                                                    <option value="Satara">Satara</option>
+                                                    <option value="Sangli">Sangli</option>
+                                                    <option value="Nanded">Nanded</option>
+                                                    <option value="Nashik">Nashik</option>
+                                                    <option value="jalgaon">jalgaon</option>
+                                                    <option value="Nagpur">Nagpur</option>
+                                                    <option value="Thane">Thane</option>
+                                                    <option value="Solapur">Solapur</option>
+                                                    <option value="Navi Mumbai">Navi Mumbai</option>
+                                                    <option value="	Dhule">Dhule</option>
+                                                    <option value="Latur">Latur</option>
+                                                    <option value="Aurangabad">Aurangabad</option>
+                                                    <option value="Akola">Akola</option>
+                                                    <option value="Jalna">Jalna</option>
+                                                    <option value="Vasai">Vasai</option>
+                                                    <option value="Virar">Virar</option>
+                                                    <option value="Dombivali">Dombivali</option>
+                                                    <option value="Kalyan">Kalyan</option>
+                                                    <option value="Amravati">Amravati</option>
+                                                    <option value="Kolhapur">Kolhapur</option>
+                                                    <option value="Beed">Beed</option>
+                                                    <option value="Parbharni">Parbharni</option>
+                                                    <option value="Chandrapur">Chandrapur</option>
+                                                    <option value="Bhusawal">Bhusawal</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+
+                                      <div class="accommodation my-5">
+                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 mt30">
+                                            <h4 class="tour-form-title my-3">Accommodation details</h4>
+                                        </div>
+                                        <table class="table table-bordered">
+                                            <thead>
+                                              <tr>
+                                                <th scope="col">Room Type</th>
+                                                <th scope="col">Price</th>
+                                                <th scope="col">Selection</th>
+                                              </tr>
+                                            </thead>
+                                            <tbody>
+                                              <tr>
+                                                <td>Half Shared Room</td>
+                                                <td>₹18,000.00</td>
+                                                <td>
+                                                    <input type="radio" name="data" value="Half Shared Room  & ₹18,000.00 ">
+                                                </td>
+                                              </tr>
+                                              <tr>
+                                                
+                                                <td>1 Single Room</td>
+                                                <td>₹25,000.00</td>
+                                                <td>
+                                                    <input type="radio" name="data" value="1 Single Room & ₹25,000.00">
+                                                </td>
+                                              </tr>
+                                              <tr>
+                                                <td>Triple sharing Room with Half other form</td>
+                                                <td>₹12,000.00</td>
+                                                <td>
+                                                    <input type="radio" name="data" value="Triple sharing Room with Half other form & ₹12,000.00">
+                                                </td>
+                                              </tr>
+                                            </tbody>
+                                          </table>
+                                      </div>
+                                      <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                                          <!-- <a href="{{url_for('Payment')}}" class="btn btn-primary">Proceed to pay</a> -->
+                                          <input type="submit" class="btn btn-primary" value="Proceed to pay"></input>
+                                        </div>
+                                  </div>
+                                  </form>
+                          </div>
+                          
+                      </div>
+      </div>
+  </div>
+  </div>
+    <!-- start of footer -->
+    {% include 'footer.html' %}
+    <!-- end of footer -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/7.1.0/mdb.umd.min.js" 
+    integrity="sha512-Z+V5WXTXHeut+GdKWOD2nGwTgq030voO42yy6hcCE12KISP/nGR5Ja3MR8z2N4ZR4wWHMn+kx8ocFzfjP3zxTA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var today = new Date();
+            var yesterday = new Date(today);
+            yesterday.setDate(today.getDate()+1);
+        
+            // Format the date in 'yyyy-mm-dd' for the input's min attribute
+            var formattedYesterday = yesterday.toISOString().split('T')[0];
+        
+            // Set the min attribute of the date input
+            document.getElementById('date').min = formattedYesterday;
+        });
+        </script>
+         <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                var today = new Date();
+                var yesterday = new Date(today);
+                yesterday.setDate(today.getDate()+1);
+            
+                // Format the date in 'yyyy-mm-dd' for the input's min attribute
+                var formattedYesterday = yesterday.toISOString().split('T')[0];
+            
+                // Set the min attribute of the date input
+                document.getElementById('date1').min = formattedYesterday;
+            });
+            </script>
+<script>
+  const LoginDetails = document.getElementById("LoginDetails")
+  const loginDiv = document.getElementById("loginDiv")
+  const loginmenu = document.getElementById("loginmenu")
+  const Info_div = document.getElementById("info")
+  const ul_info = document.getElementById("ulinfo")
+  const liname = document.getElementById("liname")
+  const liemail = document.getElementById("liemail")
+  const li_logout = document.querySelector("#logout")
+
+  if('{{session.email}}')
+  {
+    LoginDetails.style.display = "flex";
+    loginDiv.style.display = "flex";
+    loginmenu.style.display= "none";
+
+    liemail.innerText = '{{session.email}}'.replace('&#39','')
+    ul_info.append(liemail)
+
+    li_logout.innerHTML = "<a href='{{ url_for('login')}}' class='btn btn-light' id='logoutBtn'>Logout</a>"
+    ul_info.appendChild(li_logout);
+    let toggleValue = 1
+        loginDiv.addEventListener("click",()=>{
+    });
+
+    loginDiv.addEventListener("click",()=>{
+      console.log("hello");
+      if (toggleValue){
+          Info_div.style.display = "flex";
+          Info_div.classList.add("info")
+          toggleValue = 0 
+        } 
+        else{
+          Info_div.style.display ="none"; 
+          toggleValue = 1
+        } 
+      
+    })
+  }
+</script>
+</html>

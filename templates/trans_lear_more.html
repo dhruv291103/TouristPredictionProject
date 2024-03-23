@@ -1,0 +1,382 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer"
+    />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/carouselImage.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/Navbar.css') }}">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/loginlogouticon.css')}}">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    
+    <style>
+      .margin_center{
+    margin-top: 4rem!important;
+  }
+    .backBtn{
+      display: flex;
+      align-items: center;
+    }
+    html{
+      overflow-x: hidden;
+    }
+    .backBtn a i{
+      margin-left: 3rem;
+      font-size: 35px;
+      color:black;
+    }
+    </style>
+  </head>
+   
+  {% include 'navbar.html' %}
+  
+  <div class="backBtn">
+    <a class="nav-link " href="{{ url_for('Destinations')}}"><i class="fa-solid fa-arrow-left"></i></a>
+  </div>
+    <!-- <div class="row featurette my-5 mx-5  shadow"> -->
+        <!-- <div class="col-md-5"> -->
+          <div id="carouselExampleAutoplaying" class="carousel slide  row featurette" data-bs-ride="carousel" data-aos="fade-left">
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <div class="row featurette my-5 mx-5  shadow">
+                  <div class="col-md-5">
+                      <img class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid " width="400" height="350" src="../static//script/kokan.jpeg" />
+                  </div>
+              <div class="col-md-7">
+              <div class="margin_center">
+                <h2 class="featurette-heading fw-normal  text-danger">Konkan kanya Express</h2>
+                <p class="lead">
+                  The Konkan Kanya Express is superfast (earlier mail) of Indian Railways train running between Mumbai and Madgaon on the Konkan Railway route.
+                </p>
+                
+              </div>
+              </div>
+            </div>
+              </div>
+
+              <div class="carousel-item">
+                <div class="row featurette my-5 mx-5  shadow">
+                  <div class="col-md-5">
+                    <img class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid" width="400" height="350" src="../static//script/dadar.jpeg"></img>
+                  </div>
+                  <div class="col-md-7">
+                  <div class="margin_center">
+                    <h2 class="featurette-heading fw-normal  text-danger">Dadar Express </h2>
+                    <p class="lead">DADAR TEN SF EXP 22629 train passes through 26 major stations in 3 days to reach from Mumbai Dadar Central to Tirunelveli Junction .
+                      </p>
+                      
+                  </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="carousel-item">
+                <div class="row featurette my-5 mx-5 shadow">
+                  <div class="col-md-5">
+                    <img class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid" width="400" height="350" src="../static/script/mumbai.jpeg"></img>
+                  </div>
+                  <div class="col-md-7">
+                  <div class="margin_center">
+                    <h2 class="featurette-heading fw-normal  text-danger">Mumbai Express</h2>
+                    <p class="lead">The two cities are located at a distance of 1284kms.It leaves Chennai at 11:55 on day 1 and reaches Mumbai at 13:35 on day 2 </p>
+                  </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        <!-- </div> -->
+
+  
+
+
+        <!-- book form -->
+        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 mb30">
+          <div class="tour-booking-form container border">
+              <form action="/train_booking" method="POST">
+                  <div class="row">
+                      <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 ">
+                          <h4 class="tour-form-title my-3">Add traveller details</h4>
+                      </div>
+                      
+      
+                      <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
+                        <div class="form-group">
+                            <label class="control-label required" for="select">From</label>
+                            <div class="select">
+                                <select id="select" class="form-select" name="select_to" class="form-control">
+                                    <option selected value="">Select your location</option>
+                                    <option value="Marine drive">Marine drive</option>
+                                    <option value="korigad">korigad</option>
+                                    <option value="lohagad">lohagad</option>
+                                    <option value="Taj hotel">Taj hotel</option>
+                                    <option value="CSMT">CSMT</option>
+                                    <option value="National Park">National Park</option>
+                                    <option value="Vipasana Temple">Vipasana Temple</option>
+                                    <option value="Jivdani Temple">Jivdani Temple</option>
+                                    <option value="Arnala Fort">Arnala Fort</option>
+                                    <option value="Bandstand">Bandstand</option>
+                                    <option value="Carter Road">Carter Road</option>
+                                    <option value="Warli sea link">Warli sea link</option>
+                                    <option value="Babulnath Temple">Babulnath Temple</option>
+                                    <option value="Hanging Garden">Hanging Garden</option>
+                                    <option value="Banganga Ghat">Banganga Ghat</option>
+                                    <option value="Gateway of India">Gateway of India</option>
+                                    <option value="Mahakali Caves">Mahakali Caves</option>
+                                    <option value="Lokhandwala Market">Lokhandwala Market</option>
+                                    <option value="Vesova Beach">Vesova Beach</option>
+                                    <option value="Juhu Beach">Juhu Beach</option>
+                                    <option value="Iskon Temple">Iskon Temple</option>
+                                    <option value="Mukteshwar Temple">Mukteshwar Temple</option>
+                                    <option value="Takmak Fort">Takmak Fort</option>
+                                    <option value="IT park">IT park</option>
+                                    <option value="Kanheri Caves">Kanheri Caves</option>
+                                    <option value="Elephanta">Elephanta</option>
+                                    <option value="Tungareshwar">Tungareshwar</option>
+                                    <option value="Lonavala">Lonavala</option>
+                                    <option value="Khandala">Khandala</option>
+                                    <option value="Mahableshwar">Mahableshwar</option>
+                                    <option value="Matheran">Matheran</option>
+                                </select>
+                            </div>
+                        </div>
+                </div>
+                      <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
+                        <div class="form-group">
+                            <label class="control-label" for="date">Booking date</label>
+                            <div class="input-group">
+                                <input type="date" id="date1"  name="date" placeholder="Date" class="form-control" required>
+                                </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                      <div class="form-group">
+                          <label class="control-label" for="date">Email</label>
+                          <div class="input-group">
+                              <input type="email" id="date1"  name="email" placeholder="enter email" class="form-control" required>
+                              </div>
+                      </div>
+                  </div>
+                  <br />
+      
+                    <div class="col-xl-7 col-lg-7 col-md-12 col-sm-12 col-12 my-5 d-flex align-item-center justify-content-space-around gap-5">
+                        <div class="form-group col-6">
+                            <label class="control-label required" for="select">To</label>
+                            <div class="select">
+                                <select id="select" class="form-select" name="select_from" class="form-control">
+                                    <option selected value="">Where you want to go</option>
+                                    <option value="Marine drive">Marine drive</option>
+                                    <option value="korigad">korigad</option>
+                                    <option value="lohagad">lohagad</option>
+                                    <option value="Taj hotel">Taj hotel</option>
+                                    <option value="CSMT">CSMT</option>
+                                    <option value="National Park">National Park</option>
+                                    <option value="Vipasana Temple">Vipasana Temple</option>
+                                    <option value="Jivdani Temple">Jivdani Temple</option>
+                                    <option value="Arnala Fort">Arnala Fort</option>
+                                    <option value="Bandstand">Bandstand</option>
+                                    <option value="Carter Road">Carter Road</option>
+                                    <option value="Warli sea link">Warli sea link</option>
+                                    <option value="Babulnath Temple">Babulnath Temple</option>
+                                    <option value="Hanging Garden">Hanging Garden</option>
+                                    <option value="Banganga Ghat">Banganga Ghat</option>
+                                    <option value="Gateway of India">Gateway of India</option>
+                                    <option value="Mahakali Caves">Mahakali Caves</option>
+                                    <option value="Lokhandwala Market">Lokhandwala Market</option>
+                                    <option value="Vesova Beach">Vesova Beach</option>
+                                    <option value="Juhu Beach">Juhu Beach</option>
+                                    <option value="Iskon Temple">Iskon Temple</option>
+                                    <option value="Mukteshwar Temple">Mukteshwar Temple</option>
+                                    <option value="Takmak Fort">Takmak Fort</option>
+                                    <option value="IT park">IT park</option>
+                                    <option value="Kanheri Caves">Kanheri Caves</option>
+                                    <option value="Elephanta">Elephanta</option>
+                                    <option value="Tungareshwar">Tungareshwar</option>
+                                    <option value="Lonavala">Lonavala</option>
+                                    <option value="Khandala">Khandala</option>
+                                    <option value="Mahableshwar">Mahableshwar</option>
+                                    <option value="Matheran">Matheran</option>
+                                </select>
+                            </div>
+                        </div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <table class="table table-bordered col-6 ms-5">
+                          <thead>
+                            <tr>
+                              <th scope="col">Day breakdown</th>
+                              <th scope="col">Best Train</th>
+                              <th scope="col">Price</th>
+                              <th scope="col">Selection</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td>Morning</td>
+                              <td>Kokan-kalya Express</td>
+                              <td>₹ 800</td>
+                              <td>
+                                  <input type="radio" name="data" value="Morning  & ₹ 800">
+                              </td>
+                            </tr>
+                            <tr>
+                              
+                              <td>Afternoon</td>
+                              <td>Dadar Express</td>
+                              <td>₹ 616</td>
+                              <td>
+                                  <input type="radio" name="data" value="Afternoon & ₹ 616">
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>Evening</td>
+                              <td>Mumbai Express</td>
+                              <td>1,500</td>
+                              <td>
+                                  <input type="radio" name="data" value="Evening & ₹ 1,200">
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                    </div>
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                      <!-- <a href="{{url_for('Payment')}}" class="btn btn-primary">Proceed to pay</a> -->
+                      <input type="submit" class="btn btn-lg btn-primary px-5" value="Proceed to pay"></input>
+                    </div>
+              </div>
+            </form>
+            </div>
+            </div>
+      
+
+
+  <h2 class="featurette-heading fw-bold mt-5 ms-5 lh-1 text-danger">Train Travel Facility </h2>
+    <hr class="featurette-divider">
+    <div class="d-flex flex-wrap my-5" data-aos="fade-right">
+        <div class="card text-bg-light mb-3 mx-auto" style="max-width: 25rem;">
+            <div class="card-header bg-danger text-white"><i class="fa-solid fa-train"></i> &nbsp;Western Railway</div>
+            <div class="card-body">
+              <!-- <h5 class="card-title">Info card title</h5> -->
+              <p class="card-text">Virar - churchgate connects south bombay to the Eastern Region and passes 
+                through the following stations: Andheri, Dadar, MarineDrive,Boriwali, and Nalasopara.</p>
+            </div>
+          </div>
+        
+          <div class="card text-bg-light mb-3 mx-auto" style="max-width: 25rem;">
+            <div class="card-header bg-danger text-white"> <i class="fa-solid fa-train"></i> Harbour Railway</div>
+            <div class="card-body">
+              <!-- <h5 class="card-title">Info card title</h5> -->
+              <p class="card-text">It's connects harbour railway to the Eastern Region and passes 
+                through the following stations: Dadar, Parel , Byculla and many more</p>
+            </div>
+          </div>
+        
+          <div class="card text-bg-light mb-3 mx-auto" style="max-width: 25rem;">
+            <div class="card-header bg-danger text-white"><i class="fa-solid fa-train"></i> Central Railway</i></div>
+            <div class="card-body">
+              <!-- <h5 class="card-title">Info card title</h5> -->
+              <p class="card-text">It's connect central railway to the Chhatrapati Shivaji Maharaj terminus </p>
+            </div>
+          </div>
+        </div>
+
+
+
+        <h2 class="featurette-heading fw-bold mt-5 ms-5 lh-1 text-danger">Bus Travel Facility </h2>
+        <hr class="featurette-divider">
+        <div class="d-flex flex-wrap my-5" data-aos="fade-left">
+            <div class="card text-bg-light mb-3 mx-auto" style="max-width: 25rem;">
+                <div class="card-header bg-danger text-white"><i class="fa-solid fa-bus"></i> &nbsp;Boriwali to Mahim</div>
+                <div class="card-body">
+                  <!-- <h5 class="card-title">Info card title</h5> -->
+                  <p class="card-text">It connect the link road passes through malad, DN Nagar, Behrambaug etc</p>
+                </div>
+              </div>
+            
+              <div class="card text-bg-light mb-3 mx-auto" style="max-width: 25rem;">
+                <div class="card-header bg-danger text-white"> <i class="fa-solid fa-bus"></i> Dadar to Malad</div>
+                <div class="card-body">
+                  <!-- <h5 class="card-title">Info card title</h5> -->
+                  <p class="card-text">It connect the SV  road passes through Ajit glass factory, Andheri market, Mithibai colleg etc</p>
+                </div>
+              </div>
+            
+              <div class="card text-bg-light mb-3 mx-auto" style="max-width: 25rem;">
+                <div class="card-header bg-danger text-white"><i class="fa-solid fa-bus"></i> Marin-Drive to Goregaon</div>
+                <div class="card-body">
+                  <!-- <h5 class="card-title">Info card title</h5> -->
+                  <p class="card-text">It connect the south bombay region  passes through gateway of India nad marin lines .</p>
+                </div>
+              </div>
+            </div>
+    <!-- start footer -->
+    {% include 'footer.html' %}
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+    const LoginDetails = document.getElementById("LoginDetails")
+    const loginDiv = document.getElementById("loginDiv")
+    const loginmenu = document.getElementById("loginmenu")
+    const Info_div = document.getElementById("info")
+    const ul_info = document.getElementById("ulinfo")
+    const liname = document.getElementById("liname")
+    const liemail = document.getElementById("liemail")
+    const li_logout = document.querySelector("#logout")
+    console.log(li_logout);
+  
+    if('{{session.email}}')
+    {
+      console.log('{{session.email}}');
+      LoginDetails.style.display = "flex";
+      loginDiv.style.display = "flex";
+      loginmenu.style.display= "none";
+  
+      liemail.innerText = '{{session.email}}'.replace('&#39','')
+            ul_info.append(liemail)
+  
+      li_logout.innerHTML = "<a href='{{ url_for('login')}}' class='btn btn-light' id='logoutBtn'>Logout</a>"
+      ul_info.appendChild(li_logout);
+      let toggleValue = 1
+          loginDiv.addEventListener("click",()=>{
+    
+      });
+  
+  
+      loginDiv.addEventListener("click",()=>{
+        console.log("hello");
+        if (toggleValue){
+            Info_div.style.display = "flex";
+            Info_div.classList.add("info")
+           
+            toggleValue = 0 
+          } 
+          else{
+            Info_div.style.display ="none"; 
+            toggleValue = 1
+          } 
+        
+      })
+    }
+  </script>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+      var today = new Date();
+      var yesterday = new Date(today);
+      yesterday.setDate(today.getDate()+1);
+  
+      // Format the date in 'yyyy-mm-dd' for the input's min attribute
+      var formattedYesterday = yesterday.toISOString().split('T')[0];
+  
+      // Set the min attribute of the date input
+      document.getElementById('date1').min = formattedYesterday;
+  });
+  </script>
+
+   <script>
+    AOS.init();
+    </script>
+  </body>
+</html>

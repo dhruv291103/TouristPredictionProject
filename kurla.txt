@@ -1,0 +1,13 @@
+"source_address","destination_address","temperature","weather","food","clothes","transportation",imglink
+"Kurla, Mumbai","Phoenix Marketcity","Varies (typically 25-35°C)","Shopping mall","Diverse dining options","Casual wear","Trains, buses, cabs","https://images.app.goo.gl/CLA3VxVjH6T3uAbD9"
+"Kurla, Mumbai","Kamal Amrohi Studios","Varies (typically 25-35°C)","Film and television studios","Cafes and canteens","Casual wear","Local buses, cabs","https://images.app.goo.gl/hVRqJ2PWPKY8QVMA7"
+"Kurla, Mumbai","Kurla Market","Varies (typically 25-35°C)","Local market","Street food stalls","Casual wear","Local trains, auto-rickshaws, cabs","https://images.app.goo.gl/HAL7jJjrQPwNPMkSA"
+"Kurla, Mumbai","Snow World Mumbai","Varies (typically 25-35°C)","Indoor snow park","Cafeteria inside","Winter wear provided","Local trains, cabs","https://images.app.goo.gl/UmmfXTw2bTT1UzLU7"
+"Kurla, Mumbai","K-Star Mall","Varies (typically 25-35°C)","Shopping mall","Food court with various options","Casual wear","Trains, buses, cabs","https://images.app.goo.gl/oKdeuDKViN3T17CA6"
+"Kurla, Mumbai","Jai Hind Cinema","Varies (typically 25-35°C)","Movie theater","Snack counters","Casual wear","Local buses, cabs","https://images.app.goo.gl/dswBStJ1Pu1MaPg59"
+"Kurla, Mumbai","Kamla Nehru Park","Varies (typically 25-35°C)","Public park","Local snacks","Casual wear","Local trains, cabs","https://images.app.goo.gl/N3vrLyp2XtzACnkz8"
+"Kurla, Mumbai","Kurla Fish Market","Varies (typically 25-35°C)","Fish market","Seafood stalls","Casual wear","Local trains, auto-rickshaws, cabs","https://images.app.goo.gl/ujpiUps7ytkrs6ac8"
+"Kurla, Mumbai","Premier Residencies","Varies (typically 25-35°C)","Residential area","Local eateries","Casual wear","Local trains, cabs","https://images.app.goo.gl/kxXyfWFoaiPsZgdz6"
+"Kurla, Mumbai","Phoenix United Mall","Varies (typically 25-35°C)","Shopping mall","Diverse dining options","Casual wear","Trains, buses, cabs","https://images.app.goo.gl/yxKWNsJa3oius1T69"
+"Kurla, Mumbai","Nehru Nagar","Varies (typically 25-35°C)","Residential area","Local eateries","Casual wear","Local trains, auto-rickshaws, cabs","https://images.app.goo.gl/pxYGej8qHLTNQ6op6"
+"Kurla, Mumbai","BKC - Bandra Kurla Complex","Varies (typically 25-35°C)","Business district","Fine dining options","Business casual","Local buses, cabs","https://images.app.goo.gl/LVUMFnnK1iFxmCeC6"

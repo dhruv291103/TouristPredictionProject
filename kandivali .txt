@@ -1,0 +1,27 @@
+"source_address","destination_address","temperature","weather","food","clothes","transportation",imglink
+
+"Kandivali, Mumbai","Mahakali Caves","Varies (typically 25-35°C)","Historical caves","Local snacks","Comfortable walking attire","Buses, auto-rickshaws, cabs","https://images.app.goo.gl/F5hEgimVPvkKxewQ8"
+
+"Kandivali, Mumbai","Thakur Village","Varies (typically 25-35°C)","Residential area","Local eateries","Casual wear","Buses, auto-rickshaws, cabs","https://images.app.goo.gl/Y9EaQ1oMeZ3nCF4t6"
+
+"Kandivali, Mumbai","Aksa Beach","Varies (typically 25-35°C)","Coastal area","Beachside shacks","Casual beachwear","Auto-rickshaws, cabs","https://images.app.goo.gl/JVskfUfCiskYKue7A"
+
+"Kandivali, Mumbai","Poinsur Gymkhana","Varies (typically 25-35°C)","Sports and recreation","Clubhouse dining","Sportswear","Auto-rickshaws, cabs","https://images.app.goo.gl/1i3kWAAsM19YuY8J9"
+
+"Kandivali, Mumbai","Charkop Market","Varies ( typically 25-35°C)","Local market","Street food stalls","Casual wear","Buses, auto-rickshaws, cabs"',"https://images.app.goo.gl/j72z2neoht7Mwyj8A"
+
+"Kandivali, Mumbai","Thakur Cinema","Varies (typically 25-35°C)","Movie theater","Snack counters","Casual wear","Buses, auto-rickshaws, cabs","https://images.app.goo.gl/a4jmwvUG87pu92rJA"
+
+"Kandivali, Mumbai","Mindspace Garden","Varies (typically 25-35°C)","Landscaped garden","Local snacks","Casual wear","Buses, auto-rickshaws, cabs","https://images.app.goo.gl/Jsq1DukgqdUEF6m26"
+
+"Kandivali, Mumbai","Shankar Mandir","Varies (typically 25-35°C)","Religious site","Local eateries","Modest attire","Buses, auto-rickshaws, cabs" ,""
+
+"Kandivali, Mumbai","Poisar Gymkhana","Varies (typically 25-35°C)","Sports and recreation","Local snacks","Sportswear","Buses, auto-rickshaws, cabs","https://images.app.goo.gl/pB7ZF68pMWJs8bkB8"
+
+"Kandivali, Mumbai","Chota Kashmir","Varies (typically 25-35°C)","Recreational area with boat rides","Local snacks","Casual wear","Auto-rickshaws, cabs","https://images.app.goo.gl/82NFQCxFgdHMLgpD7"
+
+"Kandivali, Mumbai","Daffodil's Garden","Varies (typically 25-35°C)","Landscaped garden","Local snacks","Casual wear","Buses, auto-rickshaws, cabs","https://images.app.goo.gl/umi64iq5fzcT1yis6"
+
+"Kandivali, Mumbai","Thakur Complex","Varies (typically 25-35°C)","Residential and commercial area","Local eateries","Casual wear","Buses, auto-rickshaws, cabs","https://images.app.goo.gl/Uf1xka4J5kvyTnnk9"
+
+"Kandivali, Mumbai","Sai Dham Temple","Varies (typically 25-35°C)","Religious site","Local snacks","Modest attire","Buses, auto-rickshaws, cabs","https://images.app.goo.gl/9h1okFJV3fxX5uw57"

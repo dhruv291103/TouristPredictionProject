@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Destinations</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/Destinations.css') }}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script type="text/javascript" src="{{ url_for('static', filename='script/Destinations.js') }}"></script>
+    <link rel="stylesheet" href="{{url_for('static', filename='css/loginlogouticon.css')}}">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+  <style>
+    html{
+        overflow-x: hidden;
+      }
+      #btn-back-to-top{
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      height: 55px;
+      width:55px;
+      border-radius: 50%;
+      text-align: center;
+      display: none;
+      }
+  </style>  
+</head>
+
+<body>
+  {% include 'navbar.html' %}
+  <button
+  type="button"
+  class="btn btn-danger btn-floating btn-lg"
+  id="btn-back-to-top"
+  >
+<i class="fas fa-arrow-up"></i>
+</button>
+
+    <div class="body">
+        <div class="heading">
+            <h1>Explore Your Dream Destinations</h1>
+            <br>
+            <p>Welcome to the heart of adventure! The "Destinations" page of Tourist Prediction Web App is your gateway to a world of incredible travel possibilities. Whether you're seeking sandy beaches, historic places, or remote wilderness, we have you
+                covered. </p>
+            <br>
+            <br>
+            
+            <a style="background-image: linear-gradient(-225deg, #FF057C 0%, #8D0B93 50%, #321575 100%);" href="{{ url_for('signUp')}}">Sign Up</a>
+        </div>
+        <div class="tours" data-aos="fade-down">
+            <div class="places">
+                <h2>Konkan</h2>
+                <a href="{{ url_for('kokanexplore')}}"><img src="https://assets.zeezest.com/blogs/PROD_Kokan-Beaches-banner_1627312841147.jpg" style="width: 300px; height: 250px; border-radius: 12px;"></a>
+                <br>
+                <br>
+            </div>
+            <div class="places">
+                <h2>Western Maharashtra</h2>
+                <a href="{{url_for('westmahaexplore')}}"><img src="https://media.istockphoto.com/id/1127266902/photo/waterfalls-on-road-to-ekvira-devi-temple-lonavala-maharashtra-india.jpg?b=1&s=612x612&w=0&k=20&c=QoHOFFOXoAr_hlFTO826CCoAWneock8ieNsfzfG6ng8=" style="width: 300px; height: 250px; border-radius: 12px;"/></a>
+                <br>
+                <br>
+            </div>
+          
+            <div class="places">
+                <h2>Marathwada</h2>
+                <a href="{{url_for('marathwadaexplore')}}"><img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/2a/da/ab/8f/caption.jpg?w=300&h=300&s=1" style="width: 300px; height: 250px; border-radius: 12px;"></a>
+                <br>
+                <br>
+            </div>
+            
+            <div class="places">
+                <h2>Vidarbha</h2>
+                <a href="{{url_for('vidarbhaexplore')}}"><img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/21/99/6b/c7/caption.jpg?w=300&h=300&s=1" style="width: 300px; height: 250px; border-radius: 12px;"></a>
+                <br>
+                <br>
+            </div>
+            <div class="places">
+                <h2>North Maharashtra</h2>
+                <a href="{{url_for('northmaharashtraexplore')}}"><img src="https://cdn.s3waas.gov.in/s3db85e2590b6109813dafa101ceb2faeb/uploads/bfi_thumb/2018030762-olwczijgkgx2686bj63f3b3horwkqp2e3383dsdxtq.jpg" style="width: 300px; height: 250px; border-radius: 12px;"></a>
+                <br>
+                <br>
+            </div>
+
+            <div class="places">
+                <h2>Varhad</h2>
+                <a href="{{url_for('vidarbha2explore')}}"><img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/13/7c/04/fd/lake-at-malkhed.jpg?w=500&h=400&s=1" style="width: 300px; height: 250px; border-radius: 12px;"></a>
+                <br>
+                <br>
+            </div>
+            
+        </div>
+</div>
+
+
+<!-- start of useful information -->
+<h2 class="featurette-heading fw-bold mt-5 ms-5 lh-1 text-danger">Useful Things </h2>
+<hr class="featurette-divider">
+<div class="row featurette my-5 mx-5  shadow" data-aos="fade-left">
+    <div class="col-md-7">
+    <div class="mt-5">
+      <h2 class="featurette-heading fw-normal lh-1 text-danger">Train Trip </h2>
+      <p class="lead">Train journey is amazing in Mumbai getting to and around the Maya-Nagari couldn’t be easier. 
+        A first-rate transportation system connects Mumbai's serving millions of people each day.</p>
+        <a href="{{url_for('trans_learn_more')}}"> <button type="button" class="btn btn-lg btn-danger rounded-5">Book now</button></a>
+    </div>
+    </div>
+    <div class="col-md-5">
+      <img class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-5" width="532" height="500" src="https://upload.wikimedia.org/wikipedia/commons/b/b4/Western-Railway-Medha-EMU.jpg"></img>
+    </div>
+  </div>
+
+  <div class="row featurette my-5 mx-5 shadow" data-aos="fade-right">
+        <div class="col-md-5">
+            <img class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid " width="532" height="500" src="../static/script/rroadtrip.jpeg"></img>
+        </div>
+    <div class="col-md-7">
+    <div class="mt-5">
+      <h2 class="featurette-heading fw-normal lh-1 text-danger">Road Trip </h2>
+      <p class="lead">Routes, rental cars and local tips: Here's everything you need to know for an unforgettable road trip adventure.</p>
+      <a href="{{url_for('road_trip_learn_more')}}"><button type="button" class="btn btn-lg btn-danger rounded-5">Book now</button></a> 
+    </div>
+    </div>
+  </div>
+
+  <div class="row featurette my-5 mx-5 shadow" data-aos="fade-left">
+    <div class="col-md-7">
+    <div class="mt-5">
+      <h2 class="featurette-heading fw-normal lh-1 text-danger">Your best Mumbai holiday awaits</h2>
+      <p class="lead">Find the perfect holiday in Mumbai. Dive into the Juhu Beach, explore Mumbai’s cultural gem. 
+        Book now and create lifelong memories. </p>
+        <a href="{{url_for('mumbai_best_learn_more')}}"><button type="button" class="btn btn-lg btn-danger rounded-5">Learn more</button></a> 
+    </div>
+    </div>
+    <div class="col-md-5">
+      <img class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-5" width="532" height="500" src="../static/script/maha.jpeg"></img>
+    </div>
+  </div>
+  
+<!-- end of useful information -->
+
+
+ <!-- start of footer -->
+ {% include 'footer.html' %}
+<!-- end of footer -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+        <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+        <script>
+          const LoginDetails = document.getElementById("LoginDetails")
+          const loginDiv = document.getElementById("loginDiv")
+          const loginmenu = document.getElementById("loginmenu")
+          const Info_div = document.getElementById("info")
+          const ul_info = document.getElementById("ulinfo")
+          const liname = document.getElementById("liname")
+          const liemail = document.getElementById("liemail")
+          const li_logout = document.querySelector("#logout")
+        
+          if('{{session.email}}')
+          {
+            console.log('{{session.email}}');
+            LoginDetails.style.display = "flex";
+            loginDiv.style.display = "flex";
+            loginmenu.style.display= "none";
+        
+            liemail.innerText = '{{session.email}}'.replace('&#39','')
+                  ul_info.append(liemail)
+        
+            li_logout.innerHTML = "<a href='{{ url_for('login')}}' class='btn btn-light' id='logoutBtn'>Logout</a>"
+            ul_info.appendChild(li_logout);
+            let toggleValue = 1
+                loginDiv.addEventListener("click",()=>{
+          
+            });
+        
+        
+            loginDiv.addEventListener("click",()=>{
+              console.log("hello");
+              if (toggleValue){
+                  Info_div.style.display = "flex";
+                  Info_div.classList.add("info")
+                  // const a = document.createElement("a")
+                  toggleValue = 0 
+                } 
+                else{
+                  Info_div.style.display ="none"; 
+                  toggleValue = 1
+                } 
+              
+            })
+          }
+        </script>
+        <script>
+          AOS.init();
+      </script>
+      <script>
+        let mybutton = document.getElementById("btn-back-to-top");
+      window.onscroll = function () {
+        scrollFunction();
+      };
+      
+      function scrollFunction() {
+        if (
+          document.body.scrollTop > 20 ||
+          document.documentElement.scrollTop > 20
+        ) {
+          mybutton.style.display = "block";
+        } else {
+          mybutton.style.display = "none";
+        }
+      }
+      // When the user clicks on the button, scroll to the top of the document
+      mybutton.addEventListener("click", backToTop);
+      
+      function backToTop() {
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
+      }
+      </script>
+      </body>
+</html>

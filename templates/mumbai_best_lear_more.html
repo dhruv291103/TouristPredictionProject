@@ -1,0 +1,205 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer"
+    />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/Navbar.css') }}">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/loginlogouticon.css')}}">
+  <style>
+    .backBtn{
+      display: flex;
+      align-items: center;
+    }
+    .backBtn a i{
+      margin-left: 3rem;
+      font-size: 35px;
+      color:black;
+    }
+    .content{
+      position: absolute;
+      top:0px;
+      left:70px;
+    }
+  </style>
+  </head>
+  <body>
+    
+{% include 'navbar.html' %}
+
+    <div class="backBtn">
+      <a class="nav-link " href="{{ url_for('Destinations')}}"><i class="fa-solid fa-arrow-left"></i></a>
+    </div>
+<h2 class="featurette-heading fw-bold mt-5 ms-5 lh-1 text-danger">Traveler-Favorite Mumbai Holiday Package </h2>
+<hr class="featurette-divider">
+<div class="row featurette my-5 mx-5  shadow">
+    <div class="col-md-7">
+    <div class="margin_center">
+      <h2 class="featurette-heading fw-normal lh-1 text-danger mt-5">Mahableshwar & Lonavala </h2>
+      <p class="lead"><b>3 Days Tour</b><br>
+        For even more excitement, you can follow your evening view of sunset, morning waterfall view with touching cloud with an 
+        delicious cuisine and much more. </p>
+        <a href="/Payment"> <button type="button" class="btn btn-lg btn-danger rounded-5">Book Now</button></a>
+    </div>
+    </div>
+    <div class="col-md-5">
+      <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="https://images.unsplash.com/photo-1625911735930-751d496a00b4?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8bWFoYWJhbGVzaHdhcnxlbnwwfDB8MHx8fDA%3D" class="d-block w-100" height="348" alt="...">
+            <div class="carousel-caption d-none d-md-block content">
+              <h5>Waterfall Area</h5>
+              <p>You will love this place as because, It releases us from pain , stress, anxiety.</p>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img src="https://images.unsplash.com/photo-1600251869898-96138e5e3ad4?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8bWFoYWJhbGVzaHdhcnxlbnwwfDB8MHx8fDA%3D" class="d-block w-100" height="348" alt="...">
+            <div class="carousel-caption d-none d-md-block content">
+              <h5>Valley Region</h5>
+              <p>It is most wonderful part of the place, situated at the backside of mahableshwar</p>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img src="https://images.unsplash.com/photo-1625708878978-3787e6234fb7?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8bWFoYWJhbGVzaHdhcnxlbnwwfDB8MHx8fDA%3D" class="d-block w-100" height="348" alt="...">
+            <div class="carousel-caption d-none d-md-block content">
+              <h5>River view</h5>
+              <p>It is left of the entrace and very delightful to see the water to flow through it</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+
+
+<!-- frequent asked question -->
+<h2 class="featurette-heading fw-bold mt-5 ms-5 lh-1 text-danger"> Frequently Asked Question</h2>
+<hr class="featurette-divider">
+<div class="d-flex gap-5 mb-5">
+<h5 class="featurette-heading fw-bold mt-5 ms-5 lh-1 text-danger">What travelers want know <i class="fa-solid fa-right-from-bracket"></i></h5>
+<!-- <div class="col-8 mx-auto"></div> -->
+<div class="accordion accordion-flush shadow col-6 mx-auto rounded-4" id="accordionFlushExample">
+    <div class="accordion-item">
+      <h2 class="accordion-header">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+            When is the weekend in Mumbai?
+        </button>
+      </h2>
+      <div id="flush-collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+        <div class="accordion-body">
+            The weekend in Saudi is now Friday and Saturday. According to a royal decree issued in 2013, the official weekend days in Saudi changed from Thursday and Friday to Friday and Saturday. </div>
+      </div>
+    </div>
+    <div class="accordion-item">
+      <h2 class="accordion-header">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+            What is the cuisine like in Mumbai?
+        </button>
+      </h2>
+      <div id="flush-collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+        <div class="accordion-body">
+            Dishes vary by locale, but some traditional Saudi recipes are prevalent across the entire country, and trying them helps you experience another facet of Saudi culture. Depending on where you travel, you may also find international and fine-dining options.</div>
+      </div>
+    </div>
+    <div class="accordion-item">
+      <h2 class="accordion-header">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+            What are the top places to see in Mumbai?
+        </button>
+      </h2>
+      <div id="flush-collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+        <div class="accordion-body">
+            Many destinations in Saudi are worthy of a spot on any bucket list. The UNESCO World Heritage Sites of Hegra and Historic Jeddah are options that let you experience Saudi’s incredible history and unparalleled beauty.</div>
+      </div>
+    </div>
+    <div class="accordion-item">
+        <h2 class="accordion-header">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseFour" aria-expanded="false" aria-controls="flush-collapseFour">
+            When is the best time to travel to Mumbai?
+          </button>
+        </h2>
+        <div id="flush-collapseFour" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+          <div class="accordion-body">Each season in Saudi provides unique opportunities to experience different parts of the country. Peak travel times in Saudi are from October to May. Find out what to pack and when to go.
+            </div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <h2 class="accordion-header">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseFive" aria-expanded="false" aria-controls="flush-collapseFive">
+            What are the most popular language?
+          </button>
+        </h2>
+        <div id="flush-collapseFive" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+          <div class="accordion-body">Most popular languages is Hindi but English is also preferable.</div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <h2 class="accordion-header">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseSix" aria-expanded="false" aria-controls="flush-collapseSix">
+            How is the rating of Mumbai?
+          </button>
+        </h2>
+        <div id="flush-collapseSix" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+          <div class="accordion-body">People say good about it.</div>
+        </div>
+      </div>
+  </div>
+</div>
+</div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+
+    <!-- start footer -->
+    {% include 'footer.html' %}
+</body>
+  <script>
+    const LoginDetails = document.getElementById("LoginDetails")
+    const loginDiv = document.getElementById("loginDiv")
+    const loginmenu = document.getElementById("loginmenu")
+    const Info_div = document.getElementById("info")
+    const ul_info = document.getElementById("ulinfo")
+    const liname = document.getElementById("liname")
+    const liemail = document.getElementById("liemail")
+    const li_logout = document.querySelector("#logout")
+    console.log(li_logout);
+  
+    if('{{session.email}}')
+    {
+      console.log('{{session.email}}');
+      LoginDetails.style.display = "flex";
+      loginDiv.style.display = "flex";
+      loginmenu.style.display= "none";
+  
+      liemail.innerText = '{{session.email}}'.replace('&#39','')
+            ul_info.append(liemail)
+  
+      li_logout.innerHTML = "<a href='{{ url_for('login')}}' class='btn btn-light' id='logoutBtn'>Logout</a>"
+      ul_info.appendChild(li_logout);
+      let toggleValue = 1
+          loginDiv.addEventListener("click",()=>{
+    
+      });
+  
+  
+      loginDiv.addEventListener("click",()=>{
+        console.log("hello");
+        if (toggleValue){
+            Info_div.style.display = "flex";
+            Info_div.classList.add("info")
+            toggleValue = 0 
+          } 
+          else{
+            Info_div.style.display ="none"; 
+            toggleValue = 1
+          } 
+        
+      })
+    }
+  </script>
+
+</html>
