@@ -1,0 +1,13 @@
+"source_address","destination_address","temperature","weather","food","clothes","transportation",imglink
+
+"Kandivali, Mumbai","Thakur Village","Varies (typically 25-35°C)","Residential area","Local eateries","Casual wear","Buses, auto-rickshaws, cabs","../static/script/imgs/kandivali/kandivali1.jpg"
+
+"Kandivali, Mumbai","Aksa Beach","Varies (typically 25-35°C)","Coastal area","Beachside shacks","Casual beachwear","Auto-rickshaws, cabs","../static/script/imgs/kandivali/kandivali2.jpg"
+
+"Kandivali, Mumbai","Charkop Market","Varies ( typically 25-35°C)","Local market","Street food stalls","Casual wear","Buses, auto-rickshaws, cabs","../static/script/imgs/kandivali/kandivali3.jpg"
+
+"Kandivali, Mumbai","Shankar Mandir","Varies (typically 25-35°C)","Religious site","Local eateries","Modest attire","Buses, auto-rickshaws, cabs" ,"../static/script/imgs/kandivali/kandivali4.jpg"
+
+"Kandivali, Mumbai","Daffodil's Garden","Varies (typically 25-35°C)","Landscaped garden","Local snacks","Casual wear","Buses, auto-rickshaws, cabs","../static/script/imgs/kandivali/kandivali5.jpg"
+
+"Kandivali, Mumbai","Sai Dham Temple","Varies (typically 25-35°C)","Religious site","Local snacks","Modest attire","Buses, auto-rickshaws, cabs","../static/script/imgs/kandivali/kandivali6.jpg"

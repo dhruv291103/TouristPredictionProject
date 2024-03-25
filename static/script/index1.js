@@ -7,7 +7,7 @@ const arr = Array.from(card);
 const search_result = document.createElement("div");
 search_result.setAttribute("class","search_result");
 
-
+let searchCounter = 0;
 
 input_value.addEventListener('click' ,(e)=>{
     e.preventDefault();
@@ -37,6 +37,9 @@ function searchDestination(event) {
                 cardsContainer.removeChild(placeholderMessage);
             }
 
+             // Clear existing cards
+             cardsContainer.innerHTML = '';
+
             data.forEach(item => {
                 console.log(item)
                 const card = createCard(item);
@@ -44,6 +47,7 @@ function searchDestination(event) {
             });
         })
         .catch(error => console.error('Error fetching data:', error));
+        
     // Function to create a card for an item
     function createCard(item) {
         const card = document.createElement('div');

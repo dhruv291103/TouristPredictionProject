@@ -1,0 +1,13 @@
+"source_address","destination_address","temperature","weather","food","clothes","transportation",imglink
+
+"Borivali, Mumbai","Sanjay Gandhi National Park","Varies (typically 25-35°C)","Natural surroundings","Local eateries","Casual wear","Buses, auto-rickshaws, cabs","../static/script/imgs/borivali/borivali1.jpg"
+
+"Borivali, Mumbai","EsselWorld","Varies (typically 25-35°C)","Amusement park","Multiple dining options","Casual wear","Auto-rickshaws, cabs","../static/script/imgs/borivali/borivali2.jpg"
+
+"Borivali, Mumbai","Kanheri Caves","Varies (typically 25-35°C)","Cave complex","Local snacks","Comfortable walking attire","Buses, auto-rickshaws, cabs","../static/script/imgs/borivali/borivali3.jpg"
+
+"Borivali, Mumbai","Gorai Beach","Varies (typically 25-35°C)","Coastal area","Beachside shacks","Casual beachwear","Ferries, cabs","../static/script/imgs/borivali/borivali4.jpg"
+
+"Borivali, Mumbai","Mandapeshwar Caves","Varies (typically 25-35°C)","Historical caves","Local snacks","Comfortable walking attire","Buses, auto-rickshaws, cabs","../static/script/imgs/borivali/borivali5.jpg"
+
+"Borivali, Mumbai","Global Vipassana Pagoda","Varies (typically 25-35°C)","Meditation center","Cafeteria on-site","Modest attire","Buses, auto-rickshaws, cabs","../static/script/imgs/borivali/borivali6.jpg"

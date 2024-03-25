@@ -7,12 +7,13 @@ from PIL import Image, ImageFont, ImageDraw
 import json
 import csv
 
+
 # database connection code
 app = Flask(__name__)
 app.config["MONGO_URI"] = "mongodb://localhost:27017/TourismDatabase"
 db = PyMongo(app).db
 # database connection code en
-
+# logging.basicConfig(filename='app.log', level=logging.DEBUG)
 
 @app.route('/signUp', methods=['GET','POST'])
 def signUp():
@@ -39,15 +40,15 @@ def login():
     register = db.register
     login_user = register.find_one({"email": request.form.get("email")})
 
-    if login_user:
-        if bcrypt.hashpw(request.form['password'].encode('utf-8'),login_user['password'])==login_user['password']:
-            session["email"] = request.form.get("email")
-            return render_template('index.html',user=login_user)
+    if request.method == 'POST':
+        if login_user:
+            if bcrypt.hashpw(request.form['password'].encode('utf-8'),login_user['password'])==login_user['password']:
+                session["email"] = request.form.get("email")
+                return render_template('index.html',user=login_user)
+            else:
+                return render_template('loginerror.html')
         else:
-            return render_template('loginerror.html')
-    else:
-        flash("Enter email or username...")
-    session.pop('email',None)
+            flash("Enter email or username...")
     return render_template('login.html')
 
 
@@ -380,6 +381,7 @@ def submitbtn():
 
 @app.route("/logout")
 def logout():
+    session.pop('email',None)
     return render_template("index.html")
 
 
@@ -419,6 +421,7 @@ def cancellation():
     register = db.register
     bookings = db.bookings
     email = request.form.get("email")
+    print(email,"before login_user")
     session["email"] = email
     login_user = register.find_one({"email": request.form.get("email")})
     book_data = bookings.find_one({"email": session.get('email')})
@@ -428,9 +431,23 @@ def cancellation():
             db.cancel.insert_one({"Name":request.form["fullname"],"Email":request.form["email"],"contact":request.form["phone"],
             "country":"India","city":request.form["city"],"status":"cancelled"})
             session["email"] = request.form.get("email")
+            print(email)
+            # db.bookings.delete_one({"email": email})
+            myquery = {
+                "Email" : email 
+            }
+            print(myquery)
+            try:
+                email_finded = db.bookings.find_one({"Email":email})
+                deleted_rows = db.bookings.delete_one(myquery)
+            except Exception as e:
+                flash(f"Error deleting booking: {e}")
+            print("Booking Cancel Successfull!!", deleted_rows.deleted_count,email_finded)
             return render_template('cancelsuccess.html')
         else:
             flash("Enter correct email...")
+    if book_data:
+        book_data["_id"] = str(book_data["_id"])
     return render_template("cancellation.html", user_book_data = book_data)
 
 
@@ -782,6 +799,6 @@ def apply_watermark(image_path):
 
 if __name__ == '__main__':
     app.secret_key = 'secretivekeyagain'
-app.run(debug=True, port=5001)
+app.run(debug=True, port=5005)
 
 

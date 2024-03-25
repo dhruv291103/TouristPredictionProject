@@ -1,0 +1,13 @@
+"source_address","destination_address","temperature","weather","food","clothes","transportation","imglink"
+
+"Byculla, Mumbai","Byculla Zoo","Varies (typically 25-35°C)","Zoological park","Snack stands inside the zoo","Casual wear","Local buses, trains, cabs","../static/script/imgs/byculla/bycull1.jpg"
+
+"Byculla, Mumbai","Bhau Daji Lad Museum","Varies (typically 25-35°C)","Museum","No food on-site","Casual wear","Local buses, trains, cabs","../static/script/imgs/byculla/bycull2.jpg"
+
+"Byculla, Mumbai","St. Agnes Church","Varies (typically 25-35°C)","Christian church","Local eateries nearby","Modest attire","Local buses, trains, cabs","../static/script/imgs/byculla/bycull3.jpg"
+
+"Byculla, Mumbai","Dockyard Road Railway Station","Varies (typically 25-35°C)","Railway station","Local eateries nearby","Casual wear","Local trains, buses, cabs","../static/script/imgs/byculla/bycull4.jpg"
+
+"Byculla, Mumbai","Temple Of Eden","Varies (typically 25-35°C)","Event space","Cafeteria inside","Casual wear","Local buses, trains, cabs","../static/script/imgs/byculla/bycull5.jpg"
+
+"Byculla, Mumbai","Lalbaugcha Raja ","Varies (typically 25-35°C)","Ganesh festival pandal","Local snack vendors","Casual wear","Local buses, cabs","../static/script/imgs/byculla/bycull6.jpg"

@@ -1,31 +1,14 @@
 "source_address","destination_address","temperature","weather","food","clothes","transportation",imglink
 
-"Vashi, Navi Mumbai","Inorbit Mall, Vashi","Varies (typically 25-35°C)","Shopping mall","Food court","Casual wear","Local buses, cabs","https://images.app.goo.gl/9hnuSsV4vGn7Rcuj6"
+"Vashi, Navi Mumbai","Inorbit Mall, Vashi","Varies (typically 25-35°C)","Shopping mall","Food court","Casual wear","Local buses, cabs","../static/script/imgs/vashi/vashi1.jpg"
 
-"Vashi, Navi Mumbai","Central Park, Kharghar","Varies (typically 25-35°C)","Urban park","Snack stalls","Casual wear","Local buses, cabs","https://images.app.goo.gl/1QGCDUqoMKDzY7mi8"
+"Vashi, Navi Mumbai","Central Park, Kharghar","Varies (typically 25-35°C)","Urban park","Snack stalls","Casual wear","Local buses, cabs","../static/script/imgs/vashi/vashi2.jpg"
 
-"Vashi, Navi Mumbai","Palm Beach Road","Varies (typically 25-35°C)","Coastal road","Various food options","Casual wear","Local buses, cabs","https://images.app.goo.gl/Ec1g1B4RWWNhNZvx6"
+"Vashi, Navi Mumbai","Palm Beach Road","Varies (typically 25-35°C)","Coastal road","Various food options","Casual wear","Local buses, cabs","../static/script/imgs/vashi/vashi3.jpg"
 
-"Vashi, Navi Mumbai","Sagar Vihar, Vashi","Varies (typically 25-35°C)","Seaside promenade","Local street food","Casual wear","Local buses, cabs","https://images.app.goo.gl/DdtmFZ1ZAyEuw1xd8"
+"Vashi, Navi Mumbai","Sagar Vihar, Vashi","Varies (typically 25-35°C)","Seaside promenade","Local street food","Casual wear","Local buses, cabs","../static/script/imgs/vashi/vashi4.jpg"
 
-"Vashi, Navi Mumbai","Mini Seashore, Vashi","Varies (typically 25-35°C)","Miniature seashore","Local snacks","Casual wear","Local buses, cabs","https://images.app.goo.gl/KuU1pJyVnXiMa2HAA"
+"Vashi, Navi Mumbai","Mini Seashore, Vashi","Varies (typically 25-35°C)","Miniature seashore","Local snacks","Casual wear","Local buses, cabs","../static/script/imgs/vashi/vashi5.jpg"
 
-"Vashi, Navi Mumbai","DY Patil Stadium, Nerul","Varies (typically 25-35°C)","Stadium","Stadium food","Casual wear","Local buses, cabs","https://images.app.goo.gl/5iBzMV5iwfzPg4uD7"
+"Vashi, Navi Mumbai","D.Y Patil Stadium, Vashi","Varies (typically 25-35°C)","D.Y Patil Stadium","Local snacks","Casual wear","Local buses, cabs","../static/script/imgs/vashi/vashi6.jpg"
 
-"Vashi, Navi Mumbai","Kharghar Hills","Varies (typically 25-35°C)","Hill area","Local eateries","Comfortable walking attire","Local buses, cabs","https://images.app.goo.gl/d4SskWqiQNXMy8JGA"
-
-"Vashi, Navi Mumbai","Wonder Park, Nerul","Varies (typically 25-35°C)","Recreational park","Snack stalls","Casual wear","Local buses, cabs","https://images.app.goo.gl/P24ZFZ6KQjfhCh399"
-
-"Vashi, Navi Mumbai","Belapur Fort","Varies (typically 25-35°C)","Historical fort","Local snacks","Comfortable walking attire","Local buses, cabs","https://images.app.goo.gl/2K1KyPKAofoM32Mm7"
-
-"Vashi, Navi Mumbai","Vashi Bridge","Varies (typically 25-35°C)","River bridge","Local street food stalls","Casual wear","Local buses, cabs","https://images.app.goo.gl/6p7QoHHvo928i2qc9"
-
-"Vashi, Navi Mumbai","Nerul Balaji Temple","Varies (typically 25-35°C)","Hindu temple","Local eateries nearby","Modest attire","Local buses, cabs","https://images.app.goo.gl/MVj3RSfNvqNqst9T9"
-
-"Vashi, Navi Mumbai","Rock Garden, Nerul","Varies (typically 25-35°C)","Artificial rock garden","Snack stalls","Casual wear","Local buses, cabs","https://images.app.goo.gl/FmTQqFMLscX5PjPK7"
-
-"Vashi, Navi Mumbai","Kharghar Golf Course","Varies (typically 25-35°C)","Golf course","Clubhouse dining","Sportswear","Local buses, cabs","https://images.app.goo.gl/QdsioAyrTyZ5XuDs6"
-
-"Vashi, Navi Mumbai","Navi Mumbai Municipal Corporation (NMMC) Park","Varies (typically 25-35°C)","Urban park","Snack stalls","Casual wear","Local buses, cabs","https://images.app.goo.gl/zorePkAcRSCcujkE6"
-
-"Vashi, Navi Mumbai","Seawoods Grand Central Mall","Varies (typically 25-35°C)","Shopping mall","Food court","Casual wear","Local buses, cabs","https://images.app.goo.gl/YUwRZZS5ehrLAKEQ8"
